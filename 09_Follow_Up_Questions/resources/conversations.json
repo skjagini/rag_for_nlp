@@ -1,0 +1,86 @@
+{
+  "label": "CONSTRUCTED: seven short help-desk conversations written for this lab, not recorded from users.",
+  "note": "Each assistant turn is written from one policy in data/support-case.json and cites its ID. 'products' names the product(s) a standalone query must keep; 'source_id' is the policy that answers the last turn, or null when no policy answers it (evidence_gap) or the product is unclear (two_products).",
+  "version": "2026-10-18",
+  "conversations": [
+    {
+      "id": "topic_switch",
+      "slice": "topic switch",
+      "turns": [
+        {"role": "user", "content": "How long does an Atlas reset link remain valid?"},
+        {"role": "assistant", "content": "Atlas reset links expire after 30 minutes [H02]."},
+        {"role": "user", "content": "What about Boreal?"}
+      ],
+      "products": ["Boreal"],
+      "source_id": "H04"
+    },
+    {
+      "id": "link_after_boreal",
+      "slice": "reference resolution",
+      "turns": [
+        {"role": "user", "content": "How do I reset my Boreal password?"},
+        {"role": "assistant", "content": "Boreal password reset uses a mobile app [H04]."},
+        {"role": "user", "content": "How long is the link valid?"}
+      ],
+      "products": ["Boreal"],
+      "source_id": "H04"
+    },
+    {
+      "id": "account_type",
+      "slice": "reference resolution",
+      "turns": [
+        {"role": "user", "content": "Can I reset my Atlas password by email?"},
+        {"role": "assistant", "content": "Yes. Atlas passwords can be reset by email [H01]."},
+        {"role": "user", "content": "Can temporary accounts do that?"}
+      ],
+      "products": ["Atlas"],
+      "source_id": "H01"
+    },
+    {
+      "id": "pronoun",
+      "slice": "reference resolution",
+      "turns": [
+        {"role": "user", "content": "Can Atlas export reports?"},
+        {"role": "assistant", "content": "Yes. Atlas exports reports as CSV files [H03]."},
+        {"role": "user", "content": "Who can export all of them?"}
+      ],
+      "products": ["Atlas"],
+      "source_id": "H03"
+    },
+    {
+      "id": "earlier_answer",
+      "slice": "reference resolution",
+      "turns": [
+        {"role": "user", "content": "How often are Atlas invoices sent?"},
+        {"role": "assistant", "content": "Atlas invoices are sent monthly [H05]."},
+        {"role": "user", "content": "Where can I download them?"}
+      ],
+      "products": ["Atlas"],
+      "source_id": "H05"
+    },
+    {
+      "id": "evidence_gap",
+      "slice": "evidence gap",
+      "turns": [
+        {"role": "user", "content": "How often are Atlas invoices sent?"},
+        {"role": "assistant", "content": "Atlas invoices are sent monthly [H05]."},
+        {"role": "user", "content": "What about Boreal?"}
+      ],
+      "products": ["Boreal"],
+      "source_id": null
+    },
+    {
+      "id": "two_products",
+      "slice": "ambiguous",
+      "turns": [
+        {"role": "user", "content": "How do I reset my Atlas password?"},
+        {"role": "assistant", "content": "Atlas passwords can be reset by email [H01]."},
+        {"role": "user", "content": "My colleague uses Boreal. How does it work there?"},
+        {"role": "assistant", "content": "Boreal password reset uses a mobile app [H04]."},
+        {"role": "user", "content": "How long is the link valid?"}
+      ],
+      "products": ["Atlas", "Boreal"],
+      "source_id": null
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Release gate: Lab 11's release tests on the service's saved results. No model call, no API key.
+# To turn it on, copy this file to .github/workflows/release-gate.yml at the top of your repository.
+name: Release gate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m pytest 11_Release_Gate/test_release.py -q
+        env:
+          GATE_BASELINE: 11_Release_Gate/results/baseline.json
+          GATE_CANDIDATE: Capstone_RAG_Service/results/service.json

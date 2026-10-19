@@ -1,0 +1,29 @@
+{
+  "about": "Constructed for Lab 11, not real policies: who may read what (users), four restricted records for the Atlas support team, the April version of H02 that the October policy replaced, and four release cases asked as a support agent or a customer. The five course policies in data/support-case.json are unchanged.",
+  "users": {
+    "customer": ["public"],
+    "agent": ["public", "staff", "internal"]
+  },
+  "restricted": [
+    {"chunk_id": "R01", "source_id": "R01", "title": "Atlas support runbook: longer reset links", "version": "2026-10-01", "access": "staff",
+     "text": "Support agents can send a reset link that stays valid for 4 hours to an Atlas workspace owner who is locked out. Do not offer it to other users."},
+    {"chunk_id": "R02", "source_id": "R02", "title": "Atlas support runbook: temporary accounts", "version": "2026-10-01", "access": "staff",
+     "text": "Support agents reset temporary Atlas accounts from the admin console after they confirm the account's end date."},
+    {"chunk_id": "R03", "source_id": "R03", "title": "Atlas support runbook: report exports", "version": "2026-10-01", "access": "staff",
+     "text": "Support agents can export all reports of an Atlas workspace when its owner asks in writing."},
+    {"chunk_id": "R04", "source_id": "R04", "title": "Atlas incident note: expired links", "version": "2026-10-01", "access": "internal",
+     "text": "When a customer says an Atlas reset link expired too soon, check the request time in the admin console before you send a new link."}
+  ],
+  "outdated": {"chunk_id": "H02-2026-04-01", "source_id": "H02", "title": "Atlas expiry", "version": "2026-04-01", "access": "public",
+               "text": "Atlas reset links expire after 24 hours. Request a new link if the old link has expired."},
+  "cases": [
+    {"question_id": "A01", "user": "agent", "question": "How long can a support agent make an Atlas reset link last?",
+     "type": "restricted", "known_support": ["R01"], "references": ["4 hours"], "refuse": false},
+    {"question_id": "A02", "user": "agent", "question": "How do support agents reset a temporary Atlas account?",
+     "type": "restricted", "known_support": ["R02"], "references": ["admin console"], "refuse": false},
+    {"question_id": "A03", "user": "agent", "question": "What should I check when a customer says an Atlas reset link expired too soon?",
+     "type": "restricted", "known_support": ["R04"], "references": ["request time"], "refuse": false},
+    {"question_id": "A04", "user": "customer", "question": "Can support send me a new Atlas reset link?",
+     "type": "restricted_only", "known_support": [], "references": [], "refuse": true}
+  ]
+}

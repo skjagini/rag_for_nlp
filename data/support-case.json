@@ -1,0 +1,37 @@
+[
+  {
+    "source_id": "H01",
+    "title": "Atlas reset",
+    "text": "Atlas passwords can be reset by email. Temporary accounts require a support agent.",
+    "version": "2026-10-01",
+    "access": "public"
+  },
+  {
+    "source_id": "H02",
+    "title": "Atlas expiry",
+    "text": "Atlas reset links expire after 30 minutes. Request a new link if the old link has expired.",
+    "version": "2026-10-01",
+    "access": "public"
+  },
+  {
+    "source_id": "H03",
+    "title": "Atlas export",
+    "text": "Atlas exports reports as CSV files. Only workspace owners can export all reports.",
+    "version": "2026-10-01",
+    "access": "public"
+  },
+  {
+    "source_id": "H04",
+    "title": "Boreal reset",
+    "text": "Boreal reset links expire after 10 minutes. Password reset uses a mobile app.",
+    "version": "2026-10-01",
+    "access": "public"
+  },
+  {
+    "source_id": "H05",
+    "title": "Atlas billing",
+    "text": "Atlas invoices are sent monthly. Workspace owners can download invoices from Billing.",
+    "version": "2026-10-01",
+    "access": "public"
+  }
+]

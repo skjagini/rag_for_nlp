@@ -1,0 +1,16 @@
+{
+  "snapshot": "2026-10-04",
+  "source_url": "https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json",
+  "original_sha256": "95aa6a52d5d6a735563366753ca50492a658031da74f301ac5238b03966972c9",
+  "license": "CC BY-SA 4.0",
+  "attribution": "Rajpurkar et al., SQuAD 1.1; Wikipedia contributors",
+  "changes": "First three paragraphs of first 40 articles; exact text, IDs added. First two QA records per paragraph; first 30 per half used.",
+  "exhaustive_relevance": false,
+  "question_labels_indexed": false,
+  "protected_run": false,
+  "hashes": {
+    "squad-passages.json": "0ff5eb38d773f810a598bef3cb4bd08b98260c50e8e2b0966f3ad767ccbec99c",
+    "development-questions.json": "48cc462a97dda6c545778d02e98c9c096dc068c103dd77d130ab9422d1ca0e4b",
+    "protected-questions.json": "8e9c4270d6936d0b5ff00269fc3c764d0285f2d1809e256b2320ae939f16ec84"
+  }
+}

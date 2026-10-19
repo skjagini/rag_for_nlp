@@ -1,0 +1,3100 @@
+{
+ "manifest": {
+  "search": "sign-in, allow-list per user, k=3",
+  "k": 3,
+  "rules": "4be8e10f41b6",
+  "chat_model": "gpt-4o-mini",
+  "reasoning_effort": null,
+  "embed_model": "text-embedding-3-small",
+  "judge_model": "gpt-4o-mini",
+  "rerank_model": "gpt-4o-mini",
+  "chat_endpoint": "https://api.openai.com/v1",
+  "embed_endpoint": "https://api.openai.com/v1",
+  "run_date": "2026-10-19",
+  "documents": [
+   {
+    "id": "S00-P00-C00",
+    "source_id": "S00-P00",
+    "version": null,
+    "access": "public",
+    "text": "269912724e80"
+   },
+   {
+    "id": "S00-P00-C01",
+    "source_id": "S00-P00",
+    "version": null,
+    "access": "public",
+    "text": "64b542ab8ea9"
+   },
+   {
+    "id": "S00-P01-C00",
+    "source_id": "S00-P01",
+    "version": null,
+    "access": "public",
+    "text": "ad2769733b08"
+   },
+   {
+    "id": "S00-P01-C01",
+    "source_id": "S00-P01",
+    "version": null,
+    "access": "public",
+    "text": "cb46a87ba9ea"
+   },
+   {
+    "id": "S00-P02-C00",
+    "source_id": "S00-P02",
+    "version": null,
+    "access": "public",
+    "text": "0fc4e54e36ca"
+   },
+   {
+    "id": "S01-P00-C00",
+    "source_id": "S01-P00",
+    "version": null,
+    "access": "public",
+    "text": "a79cad8c03ac"
+   },
+   {
+    "id": "S01-P00-C01",
+    "source_id": "S01-P00",
+    "version": null,
+    "access": "public",
+    "text": "7e7b47f86af3"
+   },
+   {
+    "id": "S01-P01-C00",
+    "source_id": "S01-P01",
+    "version": null,
+    "access": "public",
+    "text": "17fdde66d277"
+   },
+   {
+    "id": "S01-P01-C01",
+    "source_id": "S01-P01",
+    "version": null,
+    "access": "public",
+    "text": "9af03b0776f8"
+   },
+   {
+    "id": "S01-P01-C02",
+    "source_id": "S01-P01",
+    "version": null,
+    "access": "public",
+    "text": "58ac6de0a596"
+   },
+   {
+    "id": "S01-P01-C03",
+    "source_id": "S01-P01",
+    "version": null,
+    "access": "public",
+    "text": "6d0b2870cb0e"
+   },
+   {
+    "id": "S01-P01-C04",
+    "source_id": "S01-P01",
+    "version": null,
+    "access": "public",
+    "text": "091089bd706b"
+   },
+   {
+    "id": "S01-P02-C00",
+    "source_id": "S01-P02",
+    "version": null,
+    "access": "public",
+    "text": "7dac9a9723a4"
+   },
+   {
+    "id": "S01-P02-C01",
+    "source_id": "S01-P02",
+    "version": null,
+    "access": "public",
+    "text": "3a594ad0a251"
+   },
+   {
+    "id": "S02-P00-C00",
+    "source_id": "S02-P00",
+    "version": null,
+    "access": "public",
+    "text": "fbe9e7c710a1"
+   },
+   {
+    "id": "S02-P00-C01",
+    "source_id": "S02-P00",
+    "version": null,
+    "access": "public",
+    "text": "092096ccbf97"
+   },
+   {
+    "id": "S02-P01-C00",
+    "source_id": "S02-P01",
+    "version": null,
+    "access": "public",
+    "text": "ef09fb3c1c3d"
+   },
+   {
+    "id": "S02-P01-C01",
+    "source_id": "S02-P01",
+    "version": null,
+    "access": "public",
+    "text": "62f2e13312aa"
+   },
+   {
+    "id": "S02-P01-C02",
+    "source_id": "S02-P01",
+    "version": null,
+    "access": "public",
+    "text": "c183a3f8718c"
+   },
+   {
+    "id": "S02-P01-C03",
+    "source_id": "S02-P01",
+    "version": null,
+    "access": "public",
+    "text": "0e7132e1521e"
+   },
+   {
+    "id": "S02-P02-C00",
+    "source_id": "S02-P02",
+    "version": null,
+    "access": "public",
+    "text": "72457fa0c915"
+   },
+   {
+    "id": "S03-P00-C00",
+    "source_id": "S03-P00",
+    "version": null,
+    "access": "public",
+    "text": "18fb66889bd6"
+   },
+   {
+    "id": "S03-P01-C00",
+    "source_id": "S03-P01",
+    "version": null,
+    "access": "public",
+    "text": "f01d53478876"
+   },
+   {
+    "id": "S03-P01-C01",
+    "source_id": "S03-P01",
+    "version": null,
+    "access": "public",
+    "text": "993b2591cd2b"
+   },
+   {
+    "id": "S03-P02-C00",
+    "source_id": "S03-P02",
+    "version": null,
+    "access": "public",
+    "text": "b4fe4787dcbe"
+   },
+   {
+    "id": "S03-P02-C01",
+    "source_id": "S03-P02",
+    "version": null,
+    "access": "public",
+    "text": "b2f39d090ae7"
+   },
+   {
+    "id": "S04-P00-C00",
+    "source_id": "S04-P00",
+    "version": null,
+    "access": "public",
+    "text": "4d3f905eee79"
+   },
+   {
+    "id": "S04-P01-C00",
+    "source_id": "S04-P01",
+    "version": null,
+    "access": "public",
+    "text": "bdbff198f266"
+   },
+   {
+    "id": "S04-P01-C01",
+    "source_id": "S04-P01",
+    "version": null,
+    "access": "public",
+    "text": "c57e633916ab"
+   },
+   {
+    "id": "S04-P02-C00",
+    "source_id": "S04-P02",
+    "version": null,
+    "access": "public",
+    "text": "0a6df3de5ffe"
+   },
+   {
+    "id": "S04-P02-C01",
+    "source_id": "S04-P02",
+    "version": null,
+    "access": "public",
+    "text": "b0999def361d"
+   },
+   {
+    "id": "S05-P00-C00",
+    "source_id": "S05-P00",
+    "version": null,
+    "access": "public",
+    "text": "9eb2ffa809c4"
+   },
+   {
+    "id": "S05-P00-C01",
+    "source_id": "S05-P00",
+    "version": null,
+    "access": "public",
+    "text": "0fadffd3cb1b"
+   },
+   {
+    "id": "S05-P01-C00",
+    "source_id": "S05-P01",
+    "version": null,
+    "access": "public",
+    "text": "21698e47f05e"
+   },
+   {
+    "id": "S05-P02-C00",
+    "source_id": "S05-P02",
+    "version": null,
+    "access": "public",
+    "text": "f2865cf76e74"
+   },
+   {
+    "id": "S06-P00-C00",
+    "source_id": "S06-P00",
+    "version": null,
+    "access": "public",
+    "text": "3d811c12dc9b"
+   },
+   {
+    "id": "S06-P00-C01",
+    "source_id": "S06-P00",
+    "version": null,
+    "access": "public",
+    "text": "589275a80c3c"
+   },
+   {
+    "id": "S06-P00-C02",
+    "source_id": "S06-P00",
+    "version": null,
+    "access": "public",
+    "text": "f780ef122628"
+   },
+   {
+    "id": "S06-P01-C00",
+    "source_id": "S06-P01",
+    "version": null,
+    "access": "public",
+    "text": "7aed8e975f7e"
+   },
+   {
+    "id": "S06-P01-C01",
+    "source_id": "S06-P01",
+    "version": null,
+    "access": "public",
+    "text": "7e23a6e2bc12"
+   },
+   {
+    "id": "S06-P02-C00",
+    "source_id": "S06-P02",
+    "version": null,
+    "access": "public",
+    "text": "cfbe6497e6f7"
+   },
+   {
+    "id": "S06-P02-C01",
+    "source_id": "S06-P02",
+    "version": null,
+    "access": "public",
+    "text": "f708f27dfc1b"
+   },
+   {
+    "id": "S07-P00-C00",
+    "source_id": "S07-P00",
+    "version": null,
+    "access": "public",
+    "text": "777f7108cc9e"
+   },
+   {
+    "id": "S07-P00-C01",
+    "source_id": "S07-P00",
+    "version": null,
+    "access": "public",
+    "text": "17276481f613"
+   },
+   {
+    "id": "S07-P01-C00",
+    "source_id": "S07-P01",
+    "version": null,
+    "access": "public",
+    "text": "8a148fbb97c8"
+   },
+   {
+    "id": "S07-P02-C00",
+    "source_id": "S07-P02",
+    "version": null,
+    "access": "public",
+    "text": "e4fd2243995c"
+   },
+   {
+    "id": "S07-P02-C01",
+    "source_id": "S07-P02",
+    "version": null,
+    "access": "public",
+    "text": "b1e9c4f9018b"
+   },
+   {
+    "id": "S07-P02-C02",
+    "source_id": "S07-P02",
+    "version": null,
+    "access": "public",
+    "text": "ce9e17f6e6d6"
+   },
+   {
+    "id": "S08-P00-C00",
+    "source_id": "S08-P00",
+    "version": null,
+    "access": "public",
+    "text": "bc5f1c2743b9"
+   },
+   {
+    "id": "S08-P01-C00",
+    "source_id": "S08-P01",
+    "version": null,
+    "access": "public",
+    "text": "229c565c4a44"
+   },
+   {
+    "id": "S08-P01-C01",
+    "source_id": "S08-P01",
+    "version": null,
+    "access": "public",
+    "text": "4bcc64ab8bfb"
+   },
+   {
+    "id": "S08-P02-C00",
+    "source_id": "S08-P02",
+    "version": null,
+    "access": "public",
+    "text": "41691f612ce2"
+   },
+   {
+    "id": "S08-P02-C01",
+    "source_id": "S08-P02",
+    "version": null,
+    "access": "public",
+    "text": "894ae994772d"
+   },
+   {
+    "id": "S09-P00-C00",
+    "source_id": "S09-P00",
+    "version": null,
+    "access": "public",
+    "text": "9cb87a68cc24"
+   },
+   {
+    "id": "S09-P00-C01",
+    "source_id": "S09-P00",
+    "version": null,
+    "access": "public",
+    "text": "318a62492a90"
+   },
+   {
+    "id": "S09-P00-C02",
+    "source_id": "S09-P00",
+    "version": null,
+    "access": "public",
+    "text": "6a31b7e489b9"
+   },
+   {
+    "id": "S09-P01-C00",
+    "source_id": "S09-P01",
+    "version": null,
+    "access": "public",
+    "text": "a0ac05486d95"
+   },
+   {
+    "id": "S09-P01-C01",
+    "source_id": "S09-P01",
+    "version": null,
+    "access": "public",
+    "text": "987ba6364e84"
+   },
+   {
+    "id": "S09-P02-C00",
+    "source_id": "S09-P02",
+    "version": null,
+    "access": "public",
+    "text": "651e9bcc39e1"
+   },
+   {
+    "id": "S09-P02-C01",
+    "source_id": "S09-P02",
+    "version": null,
+    "access": "public",
+    "text": "046055dc975d"
+   },
+   {
+    "id": "S10-P00-C00",
+    "source_id": "S10-P00",
+    "version": null,
+    "access": "public",
+    "text": "4d7179f1d2ca"
+   },
+   {
+    "id": "S10-P00-C01",
+    "source_id": "S10-P00",
+    "version": null,
+    "access": "public",
+    "text": "fc9a93eea99e"
+   },
+   {
+    "id": "S10-P01-C00",
+    "source_id": "S10-P01",
+    "version": null,
+    "access": "public",
+    "text": "0d1b2263f3b0"
+   },
+   {
+    "id": "S10-P01-C01",
+    "source_id": "S10-P01",
+    "version": null,
+    "access": "public",
+    "text": "3398b61985fc"
+   },
+   {
+    "id": "S10-P01-C02",
+    "source_id": "S10-P01",
+    "version": null,
+    "access": "public",
+    "text": "4abf99c953d6"
+   },
+   {
+    "id": "S10-P01-C03",
+    "source_id": "S10-P01",
+    "version": null,
+    "access": "public",
+    "text": "259c61c5f1c5"
+   },
+   {
+    "id": "S10-P02-C00",
+    "source_id": "S10-P02",
+    "version": null,
+    "access": "public",
+    "text": "50c7cfa9761f"
+   },
+   {
+    "id": "S10-P02-C01",
+    "source_id": "S10-P02",
+    "version": null,
+    "access": "public",
+    "text": "79c5be077ff5"
+   },
+   {
+    "id": "S11-P00-C00",
+    "source_id": "S11-P00",
+    "version": null,
+    "access": "public",
+    "text": "0730bfdaaf74"
+   },
+   {
+    "id": "S11-P00-C01",
+    "source_id": "S11-P00",
+    "version": null,
+    "access": "public",
+    "text": "9acb4f9ffd3e"
+   },
+   {
+    "id": "S11-P01-C00",
+    "source_id": "S11-P01",
+    "version": null,
+    "access": "public",
+    "text": "4584d6542795"
+   },
+   {
+    "id": "S11-P01-C01",
+    "source_id": "S11-P01",
+    "version": null,
+    "access": "public",
+    "text": "f39e8d37ef80"
+   },
+   {
+    "id": "S11-P02-C00",
+    "source_id": "S11-P02",
+    "version": null,
+    "access": "public",
+    "text": "0d1e552ce00a"
+   },
+   {
+    "id": "S11-P02-C01",
+    "source_id": "S11-P02",
+    "version": null,
+    "access": "public",
+    "text": "d6e76345e11a"
+   },
+   {
+    "id": "S12-P00-C00",
+    "source_id": "S12-P00",
+    "version": null,
+    "access": "public",
+    "text": "bb3e1341c013"
+   },
+   {
+    "id": "S12-P00-C01",
+    "source_id": "S12-P00",
+    "version": null,
+    "access": "public",
+    "text": "d6d1eecf2863"
+   },
+   {
+    "id": "S12-P00-C02",
+    "source_id": "S12-P00",
+    "version": null,
+    "access": "public",
+    "text": "fcdaa2435c68"
+   },
+   {
+    "id": "S12-P01-C00",
+    "source_id": "S12-P01",
+    "version": null,
+    "access": "public",
+    "text": "84039a28ccc6"
+   },
+   {
+    "id": "S12-P01-C01",
+    "source_id": "S12-P01",
+    "version": null,
+    "access": "public",
+    "text": "8ebd450ecf21"
+   },
+   {
+    "id": "S12-P01-C02",
+    "source_id": "S12-P01",
+    "version": null,
+    "access": "public",
+    "text": "548b0b70e79b"
+   },
+   {
+    "id": "S12-P02-C00",
+    "source_id": "S12-P02",
+    "version": null,
+    "access": "public",
+    "text": "12bb9c461cb6"
+   },
+   {
+    "id": "S12-P02-C01",
+    "source_id": "S12-P02",
+    "version": null,
+    "access": "public",
+    "text": "307d37aab944"
+   },
+   {
+    "id": "S13-P00-C00",
+    "source_id": "S13-P00",
+    "version": null,
+    "access": "public",
+    "text": "93701124e2f7"
+   },
+   {
+    "id": "S13-P00-C01",
+    "source_id": "S13-P00",
+    "version": null,
+    "access": "public",
+    "text": "c231bbf11e93"
+   },
+   {
+    "id": "S13-P01-C00",
+    "source_id": "S13-P01",
+    "version": null,
+    "access": "public",
+    "text": "8b0be2c7e5cc"
+   },
+   {
+    "id": "S13-P01-C01",
+    "source_id": "S13-P01",
+    "version": null,
+    "access": "public",
+    "text": "f47caaf43a22"
+   },
+   {
+    "id": "S13-P02-C00",
+    "source_id": "S13-P02",
+    "version": null,
+    "access": "public",
+    "text": "286e259e4b67"
+   },
+   {
+    "id": "S13-P02-C01",
+    "source_id": "S13-P02",
+    "version": null,
+    "access": "public",
+    "text": "6a39e2aa0d5a"
+   },
+   {
+    "id": "S13-P02-C02",
+    "source_id": "S13-P02",
+    "version": null,
+    "access": "public",
+    "text": "32d6c4e895ac"
+   },
+   {
+    "id": "S14-P00-C00",
+    "source_id": "S14-P00",
+    "version": null,
+    "access": "public",
+    "text": "0d796dc0d059"
+   },
+   {
+    "id": "S14-P00-C01",
+    "source_id": "S14-P00",
+    "version": null,
+    "access": "public",
+    "text": "8a0ef779a470"
+   },
+   {
+    "id": "S14-P01-C00",
+    "source_id": "S14-P01",
+    "version": null,
+    "access": "public",
+    "text": "4dc3af835c09"
+   },
+   {
+    "id": "S14-P01-C01",
+    "source_id": "S14-P01",
+    "version": null,
+    "access": "public",
+    "text": "be04fcae6b2c"
+   },
+   {
+    "id": "S14-P02-C00",
+    "source_id": "S14-P02",
+    "version": null,
+    "access": "public",
+    "text": "3b7a0827a87a"
+   },
+   {
+    "id": "S14-P02-C01",
+    "source_id": "S14-P02",
+    "version": null,
+    "access": "public",
+    "text": "0d311da089f9"
+   },
+   {
+    "id": "S15-P00-C00",
+    "source_id": "S15-P00",
+    "version": null,
+    "access": "public",
+    "text": "3372c3b95594"
+   },
+   {
+    "id": "S15-P00-C01",
+    "source_id": "S15-P00",
+    "version": null,
+    "access": "public",
+    "text": "7e8033422d37"
+   },
+   {
+    "id": "S15-P01-C00",
+    "source_id": "S15-P01",
+    "version": null,
+    "access": "public",
+    "text": "19d897f0b5cc"
+   },
+   {
+    "id": "S15-P01-C01",
+    "source_id": "S15-P01",
+    "version": null,
+    "access": "public",
+    "text": "fa93e3f6c268"
+   },
+   {
+    "id": "S15-P02-C00",
+    "source_id": "S15-P02",
+    "version": null,
+    "access": "public",
+    "text": "ae7eb08b649a"
+   },
+   {
+    "id": "S15-P02-C01",
+    "source_id": "S15-P02",
+    "version": null,
+    "access": "public",
+    "text": "b9a8ddc8ab32"
+   },
+   {
+    "id": "S15-P02-C02",
+    "source_id": "S15-P02",
+    "version": null,
+    "access": "public",
+    "text": "df055febd2a3"
+   },
+   {
+    "id": "S15-P02-C03",
+    "source_id": "S15-P02",
+    "version": null,
+    "access": "public",
+    "text": "244c0dc5058a"
+   },
+   {
+    "id": "S16-P00-C00",
+    "source_id": "S16-P00",
+    "version": null,
+    "access": "public",
+    "text": "67520200cbd5"
+   },
+   {
+    "id": "S16-P00-C01",
+    "source_id": "S16-P00",
+    "version": null,
+    "access": "public",
+    "text": "33844218ffdd"
+   },
+   {
+    "id": "S16-P00-C02",
+    "source_id": "S16-P00",
+    "version": null,
+    "access": "public",
+    "text": "ef59a88d2f66"
+   },
+   {
+    "id": "S16-P01-C00",
+    "source_id": "S16-P01",
+    "version": null,
+    "access": "public",
+    "text": "fcc1932c47c3"
+   },
+   {
+    "id": "S16-P01-C01",
+    "source_id": "S16-P01",
+    "version": null,
+    "access": "public",
+    "text": "1561969b0b42"
+   },
+   {
+    "id": "S16-P02-C00",
+    "source_id": "S16-P02",
+    "version": null,
+    "access": "public",
+    "text": "ebd440f7202e"
+   },
+   {
+    "id": "S16-P02-C01",
+    "source_id": "S16-P02",
+    "version": null,
+    "access": "public",
+    "text": "401370233c78"
+   },
+   {
+    "id": "S17-P00-C00",
+    "source_id": "S17-P00",
+    "version": null,
+    "access": "public",
+    "text": "7aec90166263"
+   },
+   {
+    "id": "S17-P00-C01",
+    "source_id": "S17-P00",
+    "version": null,
+    "access": "public",
+    "text": "e1063b12a307"
+   },
+   {
+    "id": "S17-P00-C02",
+    "source_id": "S17-P00",
+    "version": null,
+    "access": "public",
+    "text": "1fc9a41cafd1"
+   },
+   {
+    "id": "S17-P01-C00",
+    "source_id": "S17-P01",
+    "version": null,
+    "access": "public",
+    "text": "f9892bcb5944"
+   },
+   {
+    "id": "S17-P01-C01",
+    "source_id": "S17-P01",
+    "version": null,
+    "access": "public",
+    "text": "06070964b795"
+   },
+   {
+    "id": "S17-P01-C02",
+    "source_id": "S17-P01",
+    "version": null,
+    "access": "public",
+    "text": "03343bd2f6ff"
+   },
+   {
+    "id": "S17-P02-C00",
+    "source_id": "S17-P02",
+    "version": null,
+    "access": "public",
+    "text": "0dd840ab7397"
+   },
+   {
+    "id": "S17-P02-C01",
+    "source_id": "S17-P02",
+    "version": null,
+    "access": "public",
+    "text": "988284e1eb86"
+   },
+   {
+    "id": "S17-P02-C02",
+    "source_id": "S17-P02",
+    "version": null,
+    "access": "public",
+    "text": "12432c3f47cd"
+   },
+   {
+    "id": "S18-P00-C00",
+    "source_id": "S18-P00",
+    "version": null,
+    "access": "public",
+    "text": "5c1f057a7b03"
+   },
+   {
+    "id": "S18-P00-C01",
+    "source_id": "S18-P00",
+    "version": null,
+    "access": "public",
+    "text": "209ec7941930"
+   },
+   {
+    "id": "S18-P01-C00",
+    "source_id": "S18-P01",
+    "version": null,
+    "access": "public",
+    "text": "8f2b1e9e2acb"
+   },
+   {
+    "id": "S18-P01-C01",
+    "source_id": "S18-P01",
+    "version": null,
+    "access": "public",
+    "text": "e46ef178e587"
+   },
+   {
+    "id": "S18-P02-C00",
+    "source_id": "S18-P02",
+    "version": null,
+    "access": "public",
+    "text": "40d457778e5e"
+   },
+   {
+    "id": "S18-P02-C01",
+    "source_id": "S18-P02",
+    "version": null,
+    "access": "public",
+    "text": "9d6042cf086b"
+   },
+   {
+    "id": "S19-P00-C00",
+    "source_id": "S19-P00",
+    "version": null,
+    "access": "public",
+    "text": "5444b2183602"
+   },
+   {
+    "id": "S19-P00-C01",
+    "source_id": "S19-P00",
+    "version": null,
+    "access": "public",
+    "text": "92c44cdcf568"
+   },
+   {
+    "id": "S19-P01-C00",
+    "source_id": "S19-P01",
+    "version": null,
+    "access": "public",
+    "text": "48b73f2aa2da"
+   },
+   {
+    "id": "S19-P01-C01",
+    "source_id": "S19-P01",
+    "version": null,
+    "access": "public",
+    "text": "f68548eb4ced"
+   },
+   {
+    "id": "S19-P02-C00",
+    "source_id": "S19-P02",
+    "version": null,
+    "access": "public",
+    "text": "d87ea6622841"
+   },
+   {
+    "id": "S19-P02-C01",
+    "source_id": "S19-P02",
+    "version": null,
+    "access": "public",
+    "text": "a17ce6583fa7"
+   },
+   {
+    "id": "S20-P00-C00",
+    "source_id": "S20-P00",
+    "version": null,
+    "access": "public",
+    "text": "671698f6e7d1"
+   },
+   {
+    "id": "S20-P00-C01",
+    "source_id": "S20-P00",
+    "version": null,
+    "access": "public",
+    "text": "737af64f42f2"
+   },
+   {
+    "id": "S20-P01-C00",
+    "source_id": "S20-P01",
+    "version": null,
+    "access": "public",
+    "text": "782f92e5411f"
+   },
+   {
+    "id": "S20-P01-C01",
+    "source_id": "S20-P01",
+    "version": null,
+    "access": "public",
+    "text": "9ed096275d8a"
+   },
+   {
+    "id": "S20-P01-C02",
+    "source_id": "S20-P01",
+    "version": null,
+    "access": "public",
+    "text": "a6987771b109"
+   },
+   {
+    "id": "S20-P02-C00",
+    "source_id": "S20-P02",
+    "version": null,
+    "access": "public",
+    "text": "47b910c09fd3"
+   },
+   {
+    "id": "S20-P02-C01",
+    "source_id": "S20-P02",
+    "version": null,
+    "access": "public",
+    "text": "e52a31fceeb3"
+   },
+   {
+    "id": "S21-P00-C00",
+    "source_id": "S21-P00",
+    "version": null,
+    "access": "public",
+    "text": "47170810d929"
+   },
+   {
+    "id": "S21-P00-C01",
+    "source_id": "S21-P00",
+    "version": null,
+    "access": "public",
+    "text": "b51f7cc7f4a5"
+   },
+   {
+    "id": "S21-P00-C02",
+    "source_id": "S21-P00",
+    "version": null,
+    "access": "public",
+    "text": "d55dbffde7e7"
+   },
+   {
+    "id": "S21-P01-C00",
+    "source_id": "S21-P01",
+    "version": null,
+    "access": "public",
+    "text": "ee2c66de7de6"
+   },
+   {
+    "id": "S21-P01-C01",
+    "source_id": "S21-P01",
+    "version": null,
+    "access": "public",
+    "text": "3298fb5cf2b8"
+   },
+   {
+    "id": "S21-P02-C00",
+    "source_id": "S21-P02",
+    "version": null,
+    "access": "public",
+    "text": "b1e42e7bd9f2"
+   },
+   {
+    "id": "S21-P02-C01",
+    "source_id": "S21-P02",
+    "version": null,
+    "access": "public",
+    "text": "d7ae8235527d"
+   },
+   {
+    "id": "S21-P02-C02",
+    "source_id": "S21-P02",
+    "version": null,
+    "access": "public",
+    "text": "d9c15d7889cd"
+   },
+   {
+    "id": "S22-P00-C00",
+    "source_id": "S22-P00",
+    "version": null,
+    "access": "public",
+    "text": "20ccea4a6e0a"
+   },
+   {
+    "id": "S22-P00-C01",
+    "source_id": "S22-P00",
+    "version": null,
+    "access": "public",
+    "text": "003b751706dd"
+   },
+   {
+    "id": "S22-P00-C02",
+    "source_id": "S22-P00",
+    "version": null,
+    "access": "public",
+    "text": "dfa4a271125a"
+   },
+   {
+    "id": "S22-P01-C00",
+    "source_id": "S22-P01",
+    "version": null,
+    "access": "public",
+    "text": "54f447ea3bae"
+   },
+   {
+    "id": "S22-P01-C01",
+    "source_id": "S22-P01",
+    "version": null,
+    "access": "public",
+    "text": "6b12e35feea4"
+   },
+   {
+    "id": "S22-P02-C00",
+    "source_id": "S22-P02",
+    "version": null,
+    "access": "public",
+    "text": "6b409885b4ba"
+   },
+   {
+    "id": "S22-P02-C01",
+    "source_id": "S22-P02",
+    "version": null,
+    "access": "public",
+    "text": "df53cdc63e14"
+   },
+   {
+    "id": "S22-P02-C02",
+    "source_id": "S22-P02",
+    "version": null,
+    "access": "public",
+    "text": "1607976b9ec2"
+   },
+   {
+    "id": "S23-P00-C00",
+    "source_id": "S23-P00",
+    "version": null,
+    "access": "public",
+    "text": "063d7ef5075e"
+   },
+   {
+    "id": "S23-P00-C01",
+    "source_id": "S23-P00",
+    "version": null,
+    "access": "public",
+    "text": "30abb3638122"
+   },
+   {
+    "id": "S23-P01-C00",
+    "source_id": "S23-P01",
+    "version": null,
+    "access": "public",
+    "text": "5c372782302a"
+   },
+   {
+    "id": "S23-P01-C01",
+    "source_id": "S23-P01",
+    "version": null,
+    "access": "public",
+    "text": "d0c88fd63478"
+   },
+   {
+    "id": "S23-P01-C02",
+    "source_id": "S23-P01",
+    "version": null,
+    "access": "public",
+    "text": "f110f7414fd7"
+   },
+   {
+    "id": "S23-P02-C00",
+    "source_id": "S23-P02",
+    "version": null,
+    "access": "public",
+    "text": "467a3e38fcc0"
+   },
+   {
+    "id": "S23-P02-C01",
+    "source_id": "S23-P02",
+    "version": null,
+    "access": "public",
+    "text": "8cc066a975bd"
+   },
+   {
+    "id": "S23-P02-C02",
+    "source_id": "S23-P02",
+    "version": null,
+    "access": "public",
+    "text": "c67495897266"
+   },
+   {
+    "id": "S24-P00-C00",
+    "source_id": "S24-P00",
+    "version": null,
+    "access": "public",
+    "text": "044cb1de94a6"
+   },
+   {
+    "id": "S24-P01-C00",
+    "source_id": "S24-P01",
+    "version": null,
+    "access": "public",
+    "text": "c8e6113495d3"
+   },
+   {
+    "id": "S24-P01-C01",
+    "source_id": "S24-P01",
+    "version": null,
+    "access": "public",
+    "text": "e57cbc39cc4b"
+   },
+   {
+    "id": "S24-P02-C00",
+    "source_id": "S24-P02",
+    "version": null,
+    "access": "public",
+    "text": "2f67b25f1934"
+   },
+   {
+    "id": "S24-P02-C01",
+    "source_id": "S24-P02",
+    "version": null,
+    "access": "public",
+    "text": "d9dfcb2c76af"
+   },
+   {
+    "id": "S25-P00-C00",
+    "source_id": "S25-P00",
+    "version": null,
+    "access": "public",
+    "text": "f7b51826ec16"
+   },
+   {
+    "id": "S25-P00-C01",
+    "source_id": "S25-P00",
+    "version": null,
+    "access": "public",
+    "text": "c95caf8af076"
+   },
+   {
+    "id": "S25-P01-C00",
+    "source_id": "S25-P01",
+    "version": null,
+    "access": "public",
+    "text": "e3751dbf67ca"
+   },
+   {
+    "id": "S25-P01-C01",
+    "source_id": "S25-P01",
+    "version": null,
+    "access": "public",
+    "text": "a28416858be0"
+   },
+   {
+    "id": "S25-P02-C00",
+    "source_id": "S25-P02",
+    "version": null,
+    "access": "public",
+    "text": "73ba90054b69"
+   },
+   {
+    "id": "S25-P02-C01",
+    "source_id": "S25-P02",
+    "version": null,
+    "access": "public",
+    "text": "d9441dd3fea5"
+   },
+   {
+    "id": "S26-P00-C00",
+    "source_id": "S26-P00",
+    "version": null,
+    "access": "public",
+    "text": "50f89b32ee7f"
+   },
+   {
+    "id": "S26-P00-C01",
+    "source_id": "S26-P00",
+    "version": null,
+    "access": "public",
+    "text": "99bbc97a9d1e"
+   },
+   {
+    "id": "S26-P00-C02",
+    "source_id": "S26-P00",
+    "version": null,
+    "access": "public",
+    "text": "adc8acfc4b4a"
+   },
+   {
+    "id": "S26-P01-C00",
+    "source_id": "S26-P01",
+    "version": null,
+    "access": "public",
+    "text": "dd215b323cae"
+   },
+   {
+    "id": "S26-P01-C01",
+    "source_id": "S26-P01",
+    "version": null,
+    "access": "public",
+    "text": "93c51ed74f77"
+   },
+   {
+    "id": "S26-P02-C00",
+    "source_id": "S26-P02",
+    "version": null,
+    "access": "public",
+    "text": "6e717bb4e780"
+   },
+   {
+    "id": "S26-P02-C01",
+    "source_id": "S26-P02",
+    "version": null,
+    "access": "public",
+    "text": "0b2e7f9591bc"
+   },
+   {
+    "id": "S27-P00-C00",
+    "source_id": "S27-P00",
+    "version": null,
+    "access": "public",
+    "text": "b26ac082cccd"
+   },
+   {
+    "id": "S27-P00-C01",
+    "source_id": "S27-P00",
+    "version": null,
+    "access": "public",
+    "text": "e9082e58a4aa"
+   },
+   {
+    "id": "S27-P01-C00",
+    "source_id": "S27-P01",
+    "version": null,
+    "access": "public",
+    "text": "73f632e3c540"
+   },
+   {
+    "id": "S27-P01-C01",
+    "source_id": "S27-P01",
+    "version": null,
+    "access": "public",
+    "text": "47fa76452916"
+   },
+   {
+    "id": "S27-P01-C02",
+    "source_id": "S27-P01",
+    "version": null,
+    "access": "public",
+    "text": "a10d7648e8e1"
+   },
+   {
+    "id": "S27-P02-C00",
+    "source_id": "S27-P02",
+    "version": null,
+    "access": "public",
+    "text": "c002ecc4268e"
+   },
+   {
+    "id": "S27-P02-C01",
+    "source_id": "S27-P02",
+    "version": null,
+    "access": "public",
+    "text": "bdca3a483197"
+   },
+   {
+    "id": "S28-P00-C00",
+    "source_id": "S28-P00",
+    "version": null,
+    "access": "public",
+    "text": "473992007f5a"
+   },
+   {
+    "id": "S28-P00-C01",
+    "source_id": "S28-P00",
+    "version": null,
+    "access": "public",
+    "text": "0771dc55ece5"
+   },
+   {
+    "id": "S28-P01-C00",
+    "source_id": "S28-P01",
+    "version": null,
+    "access": "public",
+    "text": "c2dd64d294a9"
+   },
+   {
+    "id": "S28-P01-C01",
+    "source_id": "S28-P01",
+    "version": null,
+    "access": "public",
+    "text": "cd76795fa0b2"
+   },
+   {
+    "id": "S28-P02-C00",
+    "source_id": "S28-P02",
+    "version": null,
+    "access": "public",
+    "text": "7dd022446efa"
+   },
+   {
+    "id": "S28-P02-C01",
+    "source_id": "S28-P02",
+    "version": null,
+    "access": "public",
+    "text": "1b220c4b14f1"
+   },
+   {
+    "id": "S29-P00-C00",
+    "source_id": "S29-P00",
+    "version": null,
+    "access": "public",
+    "text": "ea82c9d7a805"
+   },
+   {
+    "id": "S29-P01-C00",
+    "source_id": "S29-P01",
+    "version": null,
+    "access": "public",
+    "text": "d2e60235044c"
+   },
+   {
+    "id": "S29-P01-C01",
+    "source_id": "S29-P01",
+    "version": null,
+    "access": "public",
+    "text": "4de978814738"
+   },
+   {
+    "id": "S29-P02-C00",
+    "source_id": "S29-P02",
+    "version": null,
+    "access": "public",
+    "text": "07494b3db121"
+   },
+   {
+    "id": "S29-P02-C01",
+    "source_id": "S29-P02",
+    "version": null,
+    "access": "public",
+    "text": "53d7c041e428"
+   },
+   {
+    "id": "S30-P00-C00",
+    "source_id": "S30-P00",
+    "version": null,
+    "access": "public",
+    "text": "1856b455e646"
+   },
+   {
+    "id": "S30-P00-C01",
+    "source_id": "S30-P00",
+    "version": null,
+    "access": "public",
+    "text": "436d00195c47"
+   },
+   {
+    "id": "S30-P01-C00",
+    "source_id": "S30-P01",
+    "version": null,
+    "access": "public",
+    "text": "26db587b3276"
+   },
+   {
+    "id": "S30-P01-C01",
+    "source_id": "S30-P01",
+    "version": null,
+    "access": "public",
+    "text": "8282d95f8aa6"
+   },
+   {
+    "id": "S30-P02-C00",
+    "source_id": "S30-P02",
+    "version": null,
+    "access": "public",
+    "text": "87b4a89f5af4"
+   },
+   {
+    "id": "S30-P02-C01",
+    "source_id": "S30-P02",
+    "version": null,
+    "access": "public",
+    "text": "fef10c78e001"
+   },
+   {
+    "id": "S31-P00-C00",
+    "source_id": "S31-P00",
+    "version": null,
+    "access": "public",
+    "text": "bb6eb57ff2ca"
+   },
+   {
+    "id": "S31-P00-C01",
+    "source_id": "S31-P00",
+    "version": null,
+    "access": "public",
+    "text": "7ec6592b0b13"
+   },
+   {
+    "id": "S31-P00-C02",
+    "source_id": "S31-P00",
+    "version": null,
+    "access": "public",
+    "text": "17059cdf700d"
+   },
+   {
+    "id": "S31-P01-C00",
+    "source_id": "S31-P01",
+    "version": null,
+    "access": "public",
+    "text": "fbba2a14c307"
+   },
+   {
+    "id": "S31-P01-C01",
+    "source_id": "S31-P01",
+    "version": null,
+    "access": "public",
+    "text": "467880188eaa"
+   },
+   {
+    "id": "S31-P02-C00",
+    "source_id": "S31-P02",
+    "version": null,
+    "access": "public",
+    "text": "1e0ca363d250"
+   },
+   {
+    "id": "S31-P02-C01",
+    "source_id": "S31-P02",
+    "version": null,
+    "access": "public",
+    "text": "2cd5fc8643d4"
+   },
+   {
+    "id": "S32-P00-C00",
+    "source_id": "S32-P00",
+    "version": null,
+    "access": "public",
+    "text": "c090fee39769"
+   },
+   {
+    "id": "S32-P00-C01",
+    "source_id": "S32-P00",
+    "version": null,
+    "access": "public",
+    "text": "c163ed3bc414"
+   },
+   {
+    "id": "S32-P01-C00",
+    "source_id": "S32-P01",
+    "version": null,
+    "access": "public",
+    "text": "4e24721f449c"
+   },
+   {
+    "id": "S32-P01-C01",
+    "source_id": "S32-P01",
+    "version": null,
+    "access": "public",
+    "text": "d7a897ad5ba5"
+   },
+   {
+    "id": "S32-P01-C02",
+    "source_id": "S32-P01",
+    "version": null,
+    "access": "public",
+    "text": "0c611093675b"
+   },
+   {
+    "id": "S32-P02-C00",
+    "source_id": "S32-P02",
+    "version": null,
+    "access": "public",
+    "text": "5ed564cae7ea"
+   },
+   {
+    "id": "S32-P02-C01",
+    "source_id": "S32-P02",
+    "version": null,
+    "access": "public",
+    "text": "7c3709425673"
+   },
+   {
+    "id": "S33-P00-C00",
+    "source_id": "S33-P00",
+    "version": null,
+    "access": "public",
+    "text": "3542f1a6505a"
+   },
+   {
+    "id": "S33-P00-C01",
+    "source_id": "S33-P00",
+    "version": null,
+    "access": "public",
+    "text": "1df308596c2c"
+   },
+   {
+    "id": "S33-P00-C02",
+    "source_id": "S33-P00",
+    "version": null,
+    "access": "public",
+    "text": "e7eb89e264f1"
+   },
+   {
+    "id": "S33-P00-C03",
+    "source_id": "S33-P00",
+    "version": null,
+    "access": "public",
+    "text": "821ed946bffc"
+   },
+   {
+    "id": "S33-P00-C04",
+    "source_id": "S33-P00",
+    "version": null,
+    "access": "public",
+    "text": "462629fcdbb5"
+   },
+   {
+    "id": "S33-P00-C05",
+    "source_id": "S33-P00",
+    "version": null,
+    "access": "public",
+    "text": "d1fc29876637"
+   },
+   {
+    "id": "S33-P01-C00",
+    "source_id": "S33-P01",
+    "version": null,
+    "access": "public",
+    "text": "ac7ecfdf074e"
+   },
+   {
+    "id": "S33-P01-C01",
+    "source_id": "S33-P01",
+    "version": null,
+    "access": "public",
+    "text": "3651ce8c43f1"
+   },
+   {
+    "id": "S33-P02-C00",
+    "source_id": "S33-P02",
+    "version": null,
+    "access": "public",
+    "text": "dde49c1d6119"
+   },
+   {
+    "id": "S33-P02-C01",
+    "source_id": "S33-P02",
+    "version": null,
+    "access": "public",
+    "text": "d8c1d686cbe1"
+   },
+   {
+    "id": "S34-P00-C00",
+    "source_id": "S34-P00",
+    "version": null,
+    "access": "public",
+    "text": "216110a791ee"
+   },
+   {
+    "id": "S34-P00-C01",
+    "source_id": "S34-P00",
+    "version": null,
+    "access": "public",
+    "text": "02fa20ad3994"
+   },
+   {
+    "id": "S34-P01-C00",
+    "source_id": "S34-P01",
+    "version": null,
+    "access": "public",
+    "text": "abcd26acd3df"
+   },
+   {
+    "id": "S34-P01-C01",
+    "source_id": "S34-P01",
+    "version": null,
+    "access": "public",
+    "text": "d1874cbf029f"
+   },
+   {
+    "id": "S34-P01-C02",
+    "source_id": "S34-P01",
+    "version": null,
+    "access": "public",
+    "text": "efbd04260424"
+   },
+   {
+    "id": "S34-P02-C00",
+    "source_id": "S34-P02",
+    "version": null,
+    "access": "public",
+    "text": "683252cab373"
+   },
+   {
+    "id": "S34-P02-C01",
+    "source_id": "S34-P02",
+    "version": null,
+    "access": "public",
+    "text": "4c5042dd9969"
+   },
+   {
+    "id": "S35-P00-C00",
+    "source_id": "S35-P00",
+    "version": null,
+    "access": "public",
+    "text": "35e70fedb77a"
+   },
+   {
+    "id": "S35-P00-C01",
+    "source_id": "S35-P00",
+    "version": null,
+    "access": "public",
+    "text": "68a979acd960"
+   },
+   {
+    "id": "S35-P01-C00",
+    "source_id": "S35-P01",
+    "version": null,
+    "access": "public",
+    "text": "693d0a86965d"
+   },
+   {
+    "id": "S35-P01-C01",
+    "source_id": "S35-P01",
+    "version": null,
+    "access": "public",
+    "text": "261173759aae"
+   },
+   {
+    "id": "S35-P01-C02",
+    "source_id": "S35-P01",
+    "version": null,
+    "access": "public",
+    "text": "954aee6ac908"
+   },
+   {
+    "id": "S35-P02-C00",
+    "source_id": "S35-P02",
+    "version": null,
+    "access": "public",
+    "text": "41bfd35df3ad"
+   },
+   {
+    "id": "S35-P02-C01",
+    "source_id": "S35-P02",
+    "version": null,
+    "access": "public",
+    "text": "8b6684592396"
+   },
+   {
+    "id": "S36-P00-C00",
+    "source_id": "S36-P00",
+    "version": null,
+    "access": "public",
+    "text": "c2dcaac500b2"
+   },
+   {
+    "id": "S36-P00-C01",
+    "source_id": "S36-P00",
+    "version": null,
+    "access": "public",
+    "text": "14dd159700d3"
+   },
+   {
+    "id": "S36-P00-C02",
+    "source_id": "S36-P00",
+    "version": null,
+    "access": "public",
+    "text": "9c11f40267c0"
+   },
+   {
+    "id": "S36-P01-C00",
+    "source_id": "S36-P01",
+    "version": null,
+    "access": "public",
+    "text": "5f854e517466"
+   },
+   {
+    "id": "S36-P01-C01",
+    "source_id": "S36-P01",
+    "version": null,
+    "access": "public",
+    "text": "54485af012b5"
+   },
+   {
+    "id": "S36-P02-C00",
+    "source_id": "S36-P02",
+    "version": null,
+    "access": "public",
+    "text": "e0c7bd686045"
+   },
+   {
+    "id": "S36-P02-C01",
+    "source_id": "S36-P02",
+    "version": null,
+    "access": "public",
+    "text": "5104be77afa8"
+   },
+   {
+    "id": "S36-P02-C02",
+    "source_id": "S36-P02",
+    "version": null,
+    "access": "public",
+    "text": "765794fcefd6"
+   },
+   {
+    "id": "S36-P02-C03",
+    "source_id": "S36-P02",
+    "version": null,
+    "access": "public",
+    "text": "ac5d7a2b3b7d"
+   },
+   {
+    "id": "S37-P00-C00",
+    "source_id": "S37-P00",
+    "version": null,
+    "access": "public",
+    "text": "5e8223ca6e1c"
+   },
+   {
+    "id": "S37-P00-C01",
+    "source_id": "S37-P00",
+    "version": null,
+    "access": "public",
+    "text": "4c5925e20ae8"
+   },
+   {
+    "id": "S37-P01-C00",
+    "source_id": "S37-P01",
+    "version": null,
+    "access": "public",
+    "text": "b5fa32e24b22"
+   },
+   {
+    "id": "S37-P01-C01",
+    "source_id": "S37-P01",
+    "version": null,
+    "access": "public",
+    "text": "218ada65ab8f"
+   },
+   {
+    "id": "S37-P01-C02",
+    "source_id": "S37-P01",
+    "version": null,
+    "access": "public",
+    "text": "8626dc218fc0"
+   },
+   {
+    "id": "S37-P02-C00",
+    "source_id": "S37-P02",
+    "version": null,
+    "access": "public",
+    "text": "4e5028309b7d"
+   },
+   {
+    "id": "S37-P02-C01",
+    "source_id": "S37-P02",
+    "version": null,
+    "access": "public",
+    "text": "2e49838d8767"
+   },
+   {
+    "id": "S37-P02-C02",
+    "source_id": "S37-P02",
+    "version": null,
+    "access": "public",
+    "text": "3aa8abbab970"
+   },
+   {
+    "id": "S38-P00-C00",
+    "source_id": "S38-P00",
+    "version": null,
+    "access": "public",
+    "text": "9f55f9335b4a"
+   },
+   {
+    "id": "S38-P00-C01",
+    "source_id": "S38-P00",
+    "version": null,
+    "access": "public",
+    "text": "8d0c9919e2dc"
+   },
+   {
+    "id": "S38-P00-C02",
+    "source_id": "S38-P00",
+    "version": null,
+    "access": "public",
+    "text": "1f2f2d61e536"
+   },
+   {
+    "id": "S38-P01-C00",
+    "source_id": "S38-P01",
+    "version": null,
+    "access": "public",
+    "text": "7198338ecdf5"
+   },
+   {
+    "id": "S38-P01-C01",
+    "source_id": "S38-P01",
+    "version": null,
+    "access": "public",
+    "text": "32e6b1a24901"
+   },
+   {
+    "id": "S38-P02-C00",
+    "source_id": "S38-P02",
+    "version": null,
+    "access": "public",
+    "text": "46ee396bc18b"
+   },
+   {
+    "id": "S38-P02-C01",
+    "source_id": "S38-P02",
+    "version": null,
+    "access": "public",
+    "text": "3633b648677f"
+   },
+   {
+    "id": "S39-P00-C00",
+    "source_id": "S39-P00",
+    "version": null,
+    "access": "public",
+    "text": "7bd758bada97"
+   },
+   {
+    "id": "S39-P00-C01",
+    "source_id": "S39-P00",
+    "version": null,
+    "access": "public",
+    "text": "cdece0349c06"
+   },
+   {
+    "id": "S39-P01-C00",
+    "source_id": "S39-P01",
+    "version": null,
+    "access": "public",
+    "text": "f0277715bcae"
+   },
+   {
+    "id": "S39-P01-C01",
+    "source_id": "S39-P01",
+    "version": null,
+    "access": "public",
+    "text": "47c5b0eaa245"
+   },
+   {
+    "id": "S39-P02-C00",
+    "source_id": "S39-P02",
+    "version": null,
+    "access": "public",
+    "text": "144107a381f7"
+   },
+   {
+    "id": "S39-P02-C01",
+    "source_id": "S39-P02",
+    "version": null,
+    "access": "public",
+    "text": "5eb1ca6989fd"
+   },
+   {
+    "id": "H01",
+    "source_id": "H01",
+    "version": "2026-10-01",
+    "access": "public",
+    "text": "57783ba1ad95"
+   },
+   {
+    "id": "H02",
+    "source_id": "H02",
+    "version": "2026-10-01",
+    "access": "public",
+    "text": "3fb8f7eab504"
+   },
+   {
+    "id": "H03",
+    "source_id": "H03",
+    "version": "2026-10-01",
+    "access": "public",
+    "text": "90c38b63e496"
+   },
+   {
+    "id": "H04",
+    "source_id": "H04",
+    "version": "2026-10-01",
+    "access": "public",
+    "text": "0fb016daa0d7"
+   },
+   {
+    "id": "H05",
+    "source_id": "H05",
+    "version": "2026-10-01",
+    "access": "public",
+    "text": "0fe5639c296c"
+   },
+   {
+    "id": "R01",
+    "source_id": "R01",
+    "version": "2026-10-01",
+    "access": "staff",
+    "text": "89a00fee8033"
+   },
+   {
+    "id": "R02",
+    "source_id": "R02",
+    "version": "2026-10-01",
+    "access": "staff",
+    "text": "8aeb73998d4e"
+   },
+   {
+    "id": "R03",
+    "source_id": "R03",
+    "version": "2026-10-01",
+    "access": "staff",
+    "text": "e9ccc3556019"
+   },
+   {
+    "id": "R04",
+    "source_id": "R04",
+    "version": "2026-10-01",
+    "access": "internal",
+    "text": "eaf779417d6d"
+   }
+  ]
+ },
+ "rows": [
+  {
+   "question_id": "56be4db0acb8001400a502ec",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S00-P00-C00",
+    "S00-P01-C01",
+    "S00-P02-C00"
+   ],
+   "answer": "The AFC was represented by the Denver Broncos at Super Bowl 50.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The AFC champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10",
+     "source_id": "S00-P00-C00",
+     "quote": "The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10"
+    }
+   ],
+   "evidence": [
+    "[S00-P00-C00] Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title. The game was played on February 7, 2016, at Levi's Stadium in the San Francisco Bay Area at Santa Clara, California. As this was the 50th Super Bowl, the league emphasized the",
+    "[S00-P01-C01] their title from Super Bowl XLIX by defeating them 20–18 in the AFC Championship Game. They joined the Patriots, Dallas Cowboys, and Pittsburgh Steelers as one of four teams that have made eight appearances in the Super Bowl.",
+    "[S00-P02-C00] The Broncos took an early lead in Super Bowl 50 and never trailed. Newton was limited by Denver's defense, which sacked him seven times and forced him into three turnovers, including a fumble which they recovered for a touchdown. Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56be4db0acb8001400a502ed",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S00-P00-C00",
+    "S00-P02-C00",
+    "S00-P01-C00"
+   ],
+   "answer": "The NFC was represented by the Carolina Panthers at Super Bowl 50.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The NFC champion was the Carolina Panthers.",
+     "source_id": "S00-P00-C00",
+     "quote": "the National Football Conference (NFC) champion Carolina Panthers"
+    }
+   ],
+   "evidence": [
+    "[S00-P00-C00] Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title. The game was played on February 7, 2016, at Levi's Stadium in the San Francisco Bay Area at Santa Clara, California. As this was the 50th Super Bowl, the league emphasized the",
+    "[S00-P02-C00] The Broncos took an early lead in Super Bowl 50 and never trailed. Newton was limited by Denver's defense, which sacked him seven times and forced him into three turnovers, including a fumble which they recovered for a touchdown. Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles.",
+    "[S00-P01-C00] The Panthers finished the regular season with a 15–1 record, and quarterback Cam Newton was named the NFL Most Valuable Player (MVP). They defeated the Arizona Cardinals 49–15 in the NFC Championship Game and advanced to their second Super Bowl appearance since the franchise was founded in 1995. The Broncos finished the regular season with a 12–4 record, and denied the New England Patriots a chance to defend their title from Super Bowl XLIX by defeating them 20–18 in the AFC"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56be4e1facb8001400a502f6",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S00-P01-C00",
+    "S00-P02-C00",
+    "S00-P00-C00"
+   ],
+   "answer": "Cam Newton was named the NFL Most Valuable Player (MVP).",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Cam Newton was named the NFL Most Valuable Player (MVP).",
+     "source_id": "S00-P01-C00",
+     "quote": "quarterback Cam Newton was named the NFL Most Valuable Player (MVP)."
+    }
+   ],
+   "evidence": [
+    "[S00-P01-C00] The Panthers finished the regular season with a 15–1 record, and quarterback Cam Newton was named the NFL Most Valuable Player (MVP). They defeated the Arizona Cardinals 49–15 in the NFC Championship Game and advanced to their second Super Bowl appearance since the franchise was founded in 1995. The Broncos finished the regular season with a 12–4 record, and denied the New England Patriots a chance to defend their title from Super Bowl XLIX by defeating them 20–18 in the AFC",
+    "[S00-P02-C00] The Broncos took an early lead in Super Bowl 50 and never trailed. Newton was limited by Denver's defense, which sacked him seven times and forced him into three turnovers, including a fumble which they recovered for a touchdown. Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles.",
+    "[S00-P00-C00] Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title. The game was played on February 7, 2016, at Levi's Stadium in the San Francisco Bay Area at Santa Clara, California. As this was the 50th Super Bowl, the league emphasized the"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56be4e1facb8001400a502f9",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S00-P01-C01",
+    "S00-P02-C00",
+    "S00-P00-C00"
+   ],
+   "answer": "The Denver Broncos have made eight appearances in the Super Bowl.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The Denver Broncos have made eight appearances in the Super Bowl.",
+     "source_id": "S00-P01-C01",
+     "quote": "they joined the Patriots, Dallas Cowboys, and Pittsburgh Steelers as one of four teams that have made eight appearances in the Super Bowl."
+    }
+   ],
+   "evidence": [
+    "[S00-P01-C01] their title from Super Bowl XLIX by defeating them 20–18 in the AFC Championship Game. They joined the Patriots, Dallas Cowboys, and Pittsburgh Steelers as one of four teams that have made eight appearances in the Super Bowl.",
+    "[S00-P02-C00] The Broncos took an early lead in Super Bowl 50 and never trailed. Newton was limited by Denver's defense, which sacked him seven times and forced him into three turnovers, including a fumble which they recovered for a touchdown. Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles.",
+    "[S00-P00-C00] Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title. The game was played on February 7, 2016, at Levi's Stadium in the San Francisco Bay Area at Santa Clara, California. As this was the 50th Super Bowl, the league emphasized the"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56be4eafacb8001400a50302",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S00-P00-C00",
+    "S00-P02-C00",
+    "S00-P01-C00"
+   ],
+   "answer": "Von Miller was the Super Bowl 50 MVP.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Von Miller was named Super Bowl MVP.",
+     "source_id": "S00-P02-C00",
+     "quote": "Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles."
+    }
+   ],
+   "evidence": [
+    "[S00-P00-C00] Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title. The game was played on February 7, 2016, at Levi's Stadium in the San Francisco Bay Area at Santa Clara, California. As this was the 50th Super Bowl, the league emphasized the",
+    "[S00-P02-C00] The Broncos took an early lead in Super Bowl 50 and never trailed. Newton was limited by Denver's defense, which sacked him seven times and forced him into three turnovers, including a fumble which they recovered for a touchdown. Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles.",
+    "[S00-P01-C00] The Panthers finished the regular season with a 15–1 record, and quarterback Cam Newton was named the NFL Most Valuable Player (MVP). They defeated the Arizona Cardinals 49–15 in the NFC Championship Game and advanced to their second Super Bowl appearance since the franchise was founded in 1995. The Broncos finished the regular season with a 12–4 record, and denied the New England Patriots a chance to defend their title from Super Bowl XLIX by defeating them 20–18 in the AFC"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56be4eafacb8001400a50303",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S00-P02-C00",
+    "S00-P00-C00",
+    "S00-P01-C00"
+   ],
+   "answer": "Von Miller forced two fumbles in Super Bowl 50.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Von Miller forced two fumbles in Super Bowl 50.",
+     "source_id": "S00-P02-C00",
+     "quote": "Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles."
+    }
+   ],
+   "evidence": [
+    "[S00-P02-C00] The Broncos took an early lead in Super Bowl 50 and never trailed. Newton was limited by Denver's defense, which sacked him seven times and forced him into three turnovers, including a fumble which they recovered for a touchdown. Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles.",
+    "[S00-P00-C00] Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title. The game was played on February 7, 2016, at Levi's Stadium in the San Francisco Bay Area at Santa Clara, California. As this was the 50th Super Bowl, the league emphasized the",
+    "[S00-P01-C00] The Panthers finished the regular season with a 15–1 record, and quarterback Cam Newton was named the NFL Most Valuable Player (MVP). They defeated the Arizona Cardinals 49–15 in the NFC Championship Game and advanced to their second Super Bowl appearance since the franchise was founded in 1995. The Broncos finished the regular season with a 12–4 record, and denied the New England Patriots a chance to defend their title from Super Bowl XLIX by defeating them 20–18 in the AFC"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "5733a5f54776f41900660f45",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S01-P00-C00",
+    "S31-P01-C01",
+    "S31-P00-C02"
+   ],
+   "answer": "Maria Curie was the first female recipient of the Nobel Prize.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Maria Curie was the first female recipient of the Nobel Prize.",
+     "source_id": "S01-P00-C00",
+     "quote": "the first female recipient of the Nobel Prize."
+    }
+   ],
+   "evidence": [
+    "[S01-P00-C00] One of the most famous people born in Warsaw was Maria Skłodowska-Curie, who achieved international recognition for her research on radioactivity and was the first female recipient of the Nobel Prize. Famous musicians include Władysław Szpilman and Frédéric Chopin. Though Chopin was born in the village of Żelazowa Wola, about 60 km (37 mi) from Warsaw, he moved to the city with his family when he was seven months old",
+    "[S31-P01-C01] .S. presidents, several foreign heads of state, 62 living billionaires, 335 Rhodes Scholars, and 242 Marshall Scholars. To date, some 150 Nobel laureates, 18 Fields Medalists and 13 Turing Award winners have been affiliated as students, faculty, or staff.",
+    "[S31-P00-C02] and World War II and began to reform the curriculum and liberalize admissions after the war. The undergraduate college became coeducational after its 1977 merger with Radcliffe College."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "5733a5f54776f41900660f48",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S01-P00-C01",
+    "S01-P00-C00",
+    "S01-P01-C03"
+   ],
+   "answer": "Casimir Pulaski was born in 1745.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Casimir Pulaski was born in 1745.",
+     "source_id": "S01-P00-C01",
+     "quote": "Casimir Pulaski, a Polish general and hero of the American Revolutionary War, was born here in 1745."
+    }
+   ],
+   "evidence": [
+    "[S01-P00-C01] Warsaw, he moved to the city with his family when he was seven months old. Casimir Pulaski, a Polish general and hero of the American Revolutionary War, was born here in 1745.",
+    "[S01-P00-C00] One of the most famous people born in Warsaw was Maria Skłodowska-Curie, who achieved international recognition for her research on radioactivity and was the first female recipient of the Nobel Prize. Famous musicians include Władysław Szpilman and Frédéric Chopin. Though Chopin was born in the village of Żelazowa Wola, about 60 km (37 mi) from Warsaw, he moved to the city with his family when he was seven months old",
+    "[S01-P01-C03] around freely, and royal carps in the pond. The Wilanów Palace Park, dates back to the second half of the 17th century. It covers the area of 43 ha. Its central French-styled area corresponds to the ancient, baroque forms of the palace. The eastern section of the park, closest to the Palace, is the two-level garden with a terrace facing the pond. The park around the Królikarnia Palace is situated on the old escar"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "57336755d058e614000b5a3d",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S01-P01-C00",
+    "S01-P01-C01",
+    "S01-P02-C00"
+   ],
+   "answer": "There are over 100 different species of trees in the Saxon Garden.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "There are over 100 different species of trees in the Saxon Garden.",
+     "source_id": "S01-P01-C00",
+     "quote": "There are over 100 different species of trees"
+    }
+   ],
+   "evidence": [
+    "[S01-P01-C00] The Saxon Garden, covering the area of 15.5 ha, was formally a royal garden. There are over 100 different species of trees and the avenues are a place to sit and relax. At the east end of the park, the Tomb of the Unknown Soldier is situated. In the 19th century the Krasiński Palace Garden was remodelled by Franciszek Szanior. Within the central area of the park one can still find old trees dating from that period: maiden",
+    "[S01-P01-C01] area of the park one can still find old trees dating from that period: maidenhair tree, black walnut, Turkish hazel and Caucasian wingnut trees. With its benches, flower carpets, a pond with ducks on and a playground for kids, the Krasiński Palace Garden is a popular strolling destination for the Varsovians. The Monument of the Warsaw Ghetto Uprising is also situated here. The Łazienki Park covers the area of 76 ha. The unique character and history",
+    "[S01-P02-C00] There are 13 natural reserves in Warsaw – among others, Bielany Forest, Kabaty Woods, Czerniaków Lake. About 15 kilometres (9 miles) from Warsaw, the Vistula river's environment changes strikingly and features a perfectly preserved ecosystem, with a habitat of animals that includes the otter, beaver and hundreds of bird species. There are also several lakes in Warsaw – mainly the oxbow lakes, like Czerniaków Lake, the lakes in the"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "57336755d058e614000b5a3f",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S01-P01-C01",
+    "S01-P01-C04",
+    "S01-P01-C00"
+   ],
+   "answer": "The Krasiński Palace Garden is a popular strolling destination for the Varsovians.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The Krasiński Palace Garden is a popular strolling destination for the Varsovians.",
+     "source_id": "S01-P01-C01",
+     "quote": "the Krasiński Palace Garden is a popular strolling destination for the Varsovians."
+    }
+   ],
+   "evidence": [
+    "[S01-P01-C01] area of the park one can still find old trees dating from that period: maidenhair tree, black walnut, Turkish hazel and Caucasian wingnut trees. With its benches, flower carpets, a pond with ducks on and a playground for kids, the Krasiński Palace Garden is a popular strolling destination for the Varsovians. The Monument of the Warsaw Ghetto Uprising is also situated here. The Łazienki Park covers the area of 76 ha. The unique character and history",
+    "[S01-P01-C04] park around the Królikarnia Palace is situated on the old escarpment of the Vistula. The park has lanes running on a few levels deep into the ravines on both sides of the palace.",
+    "[S01-P01-C00] The Saxon Garden, covering the area of 15.5 ha, was formally a royal garden. There are over 100 different species of trees and the avenues are a place to sit and relax. At the east end of the park, the Tomb of the Unknown Soldier is situated. In the 19th century the Krasiński Palace Garden was remodelled by Franciszek Szanior. Within the central area of the park one can still find old trees dating from that period: maiden"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "57337ddc4776f41900660bbb",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S01-P02-C00",
+    "S01-P01-C04",
+    "S01-P01-C01"
+   ],
+   "answer": "About 15 kilometres (9 miles) from Warsaw, the Vistula river's environment changes strikingly.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The Vistula river's environment changes strikingly.",
+     "source_id": "S01-P02-C00",
+     "quote": "About 15 kilometres (9 miles) from Warsaw, the Vistula river's environment changes strikingly and features a perfectly preserved ecosystem."
+    }
+   ],
+   "evidence": [
+    "[S01-P02-C00] There are 13 natural reserves in Warsaw – among others, Bielany Forest, Kabaty Woods, Czerniaków Lake. About 15 kilometres (9 miles) from Warsaw, the Vistula river's environment changes strikingly and features a perfectly preserved ecosystem, with a habitat of animals that includes the otter, beaver and hundreds of bird species. There are also several lakes in Warsaw – mainly the oxbow lakes, like Czerniaków Lake, the lakes in the",
+    "[S01-P01-C04] park around the Królikarnia Palace is situated on the old escarpment of the Vistula. The park has lanes running on a few levels deep into the ravines on both sides of the palace.",
+    "[S01-P01-C01] area of the park one can still find old trees dating from that period: maidenhair tree, black walnut, Turkish hazel and Caucasian wingnut trees. With its benches, flower carpets, a pond with ducks on and a playground for kids, the Krasiński Palace Garden is a popular strolling destination for the Varsovians. The Monument of the Warsaw Ghetto Uprising is also situated here. The Łazienki Park covers the area of 76 ha. The unique character and history"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "57337ddc4776f41900660bbc",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S01-P02-C00",
+    "S01-P02-C01",
+    "S01-P01-C04"
+   ],
+   "answer": "The Vistula river's ecosystem includes the otter, beaver, and hundreds of bird species.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The Vistula river's ecosystem includes the otter, beaver, and hundreds of bird species.",
+     "source_id": "S01-P02-C00",
+     "quote": "with a habitat of animals that includes the otter, beaver and hundreds of bird species."
+    }
+   ],
+   "evidence": [
+    "[S01-P02-C00] There are 13 natural reserves in Warsaw – among others, Bielany Forest, Kabaty Woods, Czerniaków Lake. About 15 kilometres (9 miles) from Warsaw, the Vistula river's environment changes strikingly and features a perfectly preserved ecosystem, with a habitat of animals that includes the otter, beaver and hundreds of bird species. There are also several lakes in Warsaw – mainly the oxbow lakes, like Czerniaków Lake, the lakes in the",
+    "[S01-P02-C01] the oxbow lakes, like Czerniaków Lake, the lakes in the Łazienki or Wilanów Parks, Kamionek Lake. There are lot of small lakes in the parks, but only a few are permanent – the majority are emptied before winter to clean them of plants and sediments.",
+    "[S01-P01-C04] park around the Królikarnia Palace is situated on the old escarpment of the Vistula. The park has lanes running on a few levels deep into the ravines on both sides of the palace."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56ddde6b9a695914005b9628",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S02-P00-C00",
+    "S02-P01-C01",
+    "S02-P01-C00"
+   ],
+   "answer": "Normandy is located in France.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Normandy is a region in France.",
+     "source_id": "S02-P00-C00",
+     "quote": "a region in France."
+    },
+    {
+     "claim": "The Duchy of Normandy was a great fief of medieval France.",
+     "source_id": "S02-P01-C01",
+     "quote": "a great fief of medieval France."
+    }
+   ],
+   "evidence": [
+    "[S02-P00-C00] The Normans (Norman: Nourmands; French: Normands; Latin: Normanni) were the people who in the 10th and 11th centuries gave their name to Normandy, a region in France. They were descended from Norse (\"Norman\" comes from \"Norseman\") raiders and pirates from Denmark, Iceland and Norway who, under their leader Rollo, agreed to swear fealty to King Charles III of West Francia. Through generations of assimilation and mixing",
+    "[S02-P01-C01] an important literary language. The Duchy of Normandy, which they formed by treaty with the French crown, was a great fief of medieval France, and under Richard I of Normandy was forged into a cohesive and formidable principality in feudal tenure. The Normans are noted both for their culture, such as their unique Romanesque architecture and musical traditions, and for their significant military accomplishments and innovations. Norman adventurers founded the Kingdom of Sicily under Roger II after conquering southern Italy on the Sara",
+    "[S02-P01-C00] The Norman dynasty had a major political, cultural and military impact on medieval Europe and even the Near East. The Normans were famed for their martial spirit and eventually for their Christian piety, becoming exponents of the Catholic orthodoxy into which they assimilated. They adopted the Gallo-Romance language of the Frankish land they settled, their dialect becoming known as Norman, Normaund or Norman French, an important literary language. The Duchy of Normandy, which they formed by treaty with"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56ddde6b9a695914005b9629",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S02-P00-C00",
+    "S02-P01-C00",
+    "S02-P01-C01"
+   ],
+   "answer": "The Normans were in Normandy during the 10th and 11th centuries.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The Normans were in Normandy during the 10th and 11th centuries.",
+     "source_id": "S02-P00-C00",
+     "quote": "in the 10th and 11th centuries gave their name to Normandy"
+    }
+   ],
+   "evidence": [
+    "[S02-P00-C00] The Normans (Norman: Nourmands; French: Normands; Latin: Normanni) were the people who in the 10th and 11th centuries gave their name to Normandy, a region in France. They were descended from Norse (\"Norman\" comes from \"Norseman\") raiders and pirates from Denmark, Iceland and Norway who, under their leader Rollo, agreed to swear fealty to King Charles III of West Francia. Through generations of assimilation and mixing",
+    "[S02-P01-C00] The Norman dynasty had a major political, cultural and military impact on medieval Europe and even the Near East. The Normans were famed for their martial spirit and eventually for their Christian piety, becoming exponents of the Catholic orthodoxy into which they assimilated. They adopted the Gallo-Romance language of the Frankish land they settled, their dialect becoming known as Norman, Normaund or Norman French, an important literary language. The Duchy of Normandy, which they formed by treaty with",
+    "[S02-P01-C01] an important literary language. The Duchy of Normandy, which they formed by treaty with the French crown, was a great fief of medieval France, and under Richard I of Normandy was forged into a cohesive and formidable principality in feudal tenure. The Normans are noted both for their culture, such as their unique Romanesque architecture and musical traditions, and for their significant military accomplishments and innovations. Norman adventurers founded the Kingdom of Sicily under Roger II after conquering southern Italy on the Sara"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56dddf4066d3e219004dad5f",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S02-P01-C02",
+    "S02-P01-C01",
+    "S02-P00-C00"
+   ],
+   "answer": "The duke in the Battle of Hastings was William the Conqueror.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The duke in the Battle of Hastings was William the Conqueror.",
+     "source_id": "S02-P01-C02",
+     "quote": "an expedition on behalf of their duke, William the Conqueror, led to the Norman conquest of England at the Battle of Hastings in 1066."
+    }
+   ],
+   "evidence": [
+    "[S02-P01-C02] founded the Kingdom of Sicily under Roger II after conquering southern Italy on the Saracens and Byzantines, and an expedition on behalf of their duke, William the Conqueror, led to the Norman conquest of England at the Battle of Hastings in 1066. Norman cultural and military influence spread from these new European centres to the Crusader states of the Near East, where their prince Bohemond I founded the Principality of Antioch in the Levant, to Scotland and Wales in Great Britain, to Ireland",
+    "[S02-P01-C01] an important literary language. The Duchy of Normandy, which they formed by treaty with the French crown, was a great fief of medieval France, and under Richard I of Normandy was forged into a cohesive and formidable principality in feudal tenure. The Normans are noted both for their culture, such as their unique Romanesque architecture and musical traditions, and for their significant military accomplishments and innovations. Norman adventurers founded the Kingdom of Sicily under Roger II after conquering southern Italy on the Sara",
+    "[S02-P00-C00] The Normans (Norman: Nourmands; French: Normands; Latin: Normanni) were the people who in the 10th and 11th centuries gave their name to Normandy, a region in France. They were descended from Norse (\"Norman\" comes from \"Norseman\") raiders and pirates from Denmark, Iceland and Norway who, under their leader Rollo, agreed to swear fealty to King Charles III of West Francia. Through generations of assimilation and mixing"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56dddf4066d3e219004dad60",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S02-P01-C01",
+    "S02-P01-C00",
+    "S02-P00-C00"
+   ],
+   "answer": "Richard I of Normandy ruled the duchy of Normandy.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Richard I of Normandy ruled the duchy of Normandy.",
+     "source_id": "S02-P01-C01",
+     "quote": "under Richard I of Normandy was forged into a cohesive and formidable principality in feudal tenure."
+    }
+   ],
+   "evidence": [
+    "[S02-P01-C01] an important literary language. The Duchy of Normandy, which they formed by treaty with the French crown, was a great fief of medieval France, and under Richard I of Normandy was forged into a cohesive and formidable principality in feudal tenure. The Normans are noted both for their culture, such as their unique Romanesque architecture and musical traditions, and for their significant military accomplishments and innovations. Norman adventurers founded the Kingdom of Sicily under Roger II after conquering southern Italy on the Sara",
+    "[S02-P01-C00] The Norman dynasty had a major political, cultural and military impact on medieval Europe and even the Near East. The Normans were famed for their martial spirit and eventually for their Christian piety, becoming exponents of the Catholic orthodoxy into which they assimilated. They adopted the Gallo-Romance language of the Frankish land they settled, their dialect becoming known as Norman, Normaund or Norman French, an important literary language. The Duchy of Normandy, which they formed by treaty with",
+    "[S02-P00-C00] The Normans (Norman: Nourmands; French: Normands; Latin: Normanni) were the people who in the 10th and 11th centuries gave their name to Normandy, a region in France. They were descended from Norse (\"Norman\" comes from \"Norseman\") raiders and pirates from Denmark, Iceland and Norway who, under their leader Rollo, agreed to swear fealty to King Charles III of West Francia. Through generations of assimilation and mixing"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56dde0379a695914005b9636",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S02-P02-C00",
+    "S02-P00-C00",
+    "S02-P01-C00"
+   ],
+   "answer": "The original meaning of the word Norman is \"Northman\" or \"Norseman, Viking.\"",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The original meaning of the word Norman is \"Northman\" or \"Norseman, Viking.\"",
+     "source_id": "S02-P02-C00",
+     "quote": "to mean \"Norseman, Viking\"."
+    },
+    {
+     "claim": "The word Norman comes from \"Norseman.\"",
+     "source_id": "S02-P00-C00",
+     "quote": "\"Norman\" comes from \"Norseman\"."
+    }
+   ],
+   "evidence": [
+    "[S02-P02-C00] The English name \"Normans\" comes from the French words Normans/Normanz, plural of Normant, modern French normand, which is itself borrowed from Old Low Franconian Nortmann \"Northman\" or directly from Old Norse Norðmaðr, Latinized variously as Nortmannus, Normannus, or Nordmannus (recorded in Medieval Latin, 9th century) to mean \"Norseman, Viking\".",
+    "[S02-P00-C00] The Normans (Norman: Nourmands; French: Normands; Latin: Normanni) were the people who in the 10th and 11th centuries gave their name to Normandy, a region in France. They were descended from Norse (\"Norman\" comes from \"Norseman\") raiders and pirates from Denmark, Iceland and Norway who, under their leader Rollo, agreed to swear fealty to King Charles III of West Francia. Through generations of assimilation and mixing",
+    "[S02-P01-C00] The Norman dynasty had a major political, cultural and military impact on medieval Europe and even the Near East. The Normans were famed for their martial spirit and eventually for their Christian piety, becoming exponents of the Catholic orthodoxy into which they assimilated. They adopted the Gallo-Romance language of the Frankish land they settled, their dialect becoming known as Norman, Normaund or Norman French, an important literary language. The Duchy of Normandy, which they formed by treaty with"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56dde0379a695914005b9637",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S02-P02-C00",
+    "S02-P00-C00",
+    "S02-P01-C00"
+   ],
+   "answer": "The Latin version of the word Norman was first recorded in the 9th century.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The Latin version of the word Norman was recorded in the 9th century.",
+     "source_id": "S02-P02-C00",
+     "quote": "Latinized variously as Nortmannus, Normannus, or Nordmannus (recorded in Medieval Latin, 9th century)"
+    }
+   ],
+   "evidence": [
+    "[S02-P02-C00] The English name \"Normans\" comes from the French words Normans/Normanz, plural of Normant, modern French normand, which is itself borrowed from Old Low Franconian Nortmann \"Northman\" or directly from Old Norse Norðmaðr, Latinized variously as Nortmannus, Normannus, or Nordmannus (recorded in Medieval Latin, 9th century) to mean \"Norseman, Viking\".",
+    "[S02-P00-C00] The Normans (Norman: Nourmands; French: Normands; Latin: Normanni) were the people who in the 10th and 11th centuries gave their name to Normandy, a region in France. They were descended from Norse (\"Norman\" comes from \"Norseman\") raiders and pirates from Denmark, Iceland and Norway who, under their leader Rollo, agreed to swear fealty to King Charles III of West Francia. Through generations of assimilation and mixing",
+    "[S02-P01-C00] The Norman dynasty had a major political, cultural and military impact on medieval Europe and even the Near East. The Normans were famed for their martial spirit and eventually for their Christian piety, becoming exponents of the Catholic orthodoxy into which they assimilated. They adopted the Gallo-Romance language of the Frankish land they settled, their dialect becoming known as Norman, Normaund or Norman French, an important literary language. The Duchy of Normandy, which they formed by treaty with"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56df9e2838dc4217001520f6",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S03-P00-C00",
+    "S03-P01-C00",
+    "S03-P02-C00"
+   ],
+   "answer": "Nikola Tesla was born on 10 July 1856.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Nikola Tesla was born on 10 July 1856.",
+     "source_id": "S03-P00-C00",
+     "quote": "10 July 1856"
+    }
+   ],
+   "evidence": [
+    "[S03-P00-C00] Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor, electrical engineer, mechanical engineer, physicist, and futurist best known for his contributions to the design of the modern alternating current (AC) electricity supply system.",
+    "[S03-P01-C00] Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Thomas Edison in New York City. He soon struck out on his own with financial backers, setting up laboratories and companies to develop a range of electrical devices. His patented AC induction motor and transformer were licensed by George Westinghouse, who also hired Tesla for a short time as a consultant. His work in the formative years of electric power development was involved in",
+    "[S03-P02-C00] Tesla went on to pursue his ideas of wireless lighting and electricity distribution in his high-voltage, high-frequency power experiments in New York and Colorado Springs, and made early (1893) pronouncements on the possibility of wireless communication with his devices. He tried to put these ideas to practical use in an ill-fated attempt at intercontinental wireless transmission, his unfinished Wardenclyffe Tower project. In his lab he also conducted a range of experiments with mechanical oscillators"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56df9e2838dc4217001520f8",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S03-P00-C00",
+    "S03-P01-C00",
+    "S03-P02-C00"
+   ],
+   "answer": "Nikola Tesla was of Serbian ethnicity.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Nikola Tesla was of Serbian ethnicity.",
+     "source_id": "S03-P00-C00",
+     "quote": "Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor..."
+    }
+   ],
+   "evidence": [
+    "[S03-P00-C00] Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor, electrical engineer, mechanical engineer, physicist, and futurist best known for his contributions to the design of the modern alternating current (AC) electricity supply system.",
+    "[S03-P01-C00] Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Thomas Edison in New York City. He soon struck out on his own with financial backers, setting up laboratories and companies to develop a range of electrical devices. His patented AC induction motor and transformer were licensed by George Westinghouse, who also hired Tesla for a short time as a consultant. His work in the formative years of electric power development was involved in",
+    "[S03-P02-C00] Tesla went on to pursue his ideas of wireless lighting and electricity distribution in his high-voltage, high-frequency power experiments in New York and Colorado Springs, and made early (1893) pronouncements on the possibility of wireless communication with his devices. He tried to put these ideas to practical use in an ill-fated attempt at intercontinental wireless transmission, his unfinished Wardenclyffe Tower project. In his lab he also conducted a range of experiments with mechanical oscillators"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56df9ee138dc421700152108",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S03-P01-C00",
+    "S03-P00-C00",
+    "S03-P02-C00"
+   ],
+   "answer": "1884",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Tesla emigrated to the United States in 1884",
+     "source_id": "S03-P01-C00",
+     "quote": "emigrating to the United States in 1884"
+    }
+   ],
+   "evidence": [
+    "[S03-P01-C00] Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Thomas Edison in New York City. He soon struck out on his own with financial backers, setting up laboratories and companies to develop a range of electrical devices. His patented AC induction motor and transformer were licensed by George Westinghouse, who also hired Tesla for a short time as a consultant. His work in the formative years of electric power development was involved in",
+    "[S03-P00-C00] Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor, electrical engineer, mechanical engineer, physicist, and futurist best known for his contributions to the design of the modern alternating current (AC) electricity supply system.",
+    "[S03-P02-C00] Tesla went on to pursue his ideas of wireless lighting and electricity distribution in his high-voltage, high-frequency power experiments in New York and Colorado Springs, and made early (1893) pronouncements on the possibility of wireless communication with his devices. He tried to put these ideas to practical use in an ill-fated attempt at intercontinental wireless transmission, his unfinished Wardenclyffe Tower project. In his lab he also conducted a range of experiments with mechanical oscillators"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56df9ee138dc421700152109",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S03-P01-C00",
+    "S03-P02-C00",
+    "S03-P00-C00"
+   ],
+   "answer": "Tesla worked for Thomas Edison in the 1880s.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Thomas Edison in New York City.",
+     "source_id": "S03-P01-C00",
+     "quote": "to work for Thomas Edison in New York City."
+    }
+   ],
+   "evidence": [
+    "[S03-P01-C00] Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Thomas Edison in New York City. He soon struck out on his own with financial backers, setting up laboratories and companies to develop a range of electrical devices. His patented AC induction motor and transformer were licensed by George Westinghouse, who also hired Tesla for a short time as a consultant. His work in the formative years of electric power development was involved in",
+    "[S03-P02-C00] Tesla went on to pursue his ideas of wireless lighting and electricity distribution in his high-voltage, high-frequency power experiments in New York and Colorado Springs, and made early (1893) pronouncements on the possibility of wireless communication with his devices. He tried to put these ideas to practical use in an ill-fated attempt at intercontinental wireless transmission, his unfinished Wardenclyffe Tower project. In his lab he also conducted a range of experiments with mechanical oscillators",
+    "[S03-P00-C00] Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor, electrical engineer, mechanical engineer, physicist, and futurist best known for his contributions to the design of the modern alternating current (AC) electricity supply system."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56dfa01738dc42170015211d",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S03-P02-C00",
+    "S03-P01-C00",
+    "S03-P00-C00"
+   ],
+   "answer": "Tesla discovered the possibility of wireless connectivity in 1893.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Tesla made early pronouncements on the possibility of wireless communication.",
+     "source_id": "S03-P02-C00",
+     "quote": "early (1893) pronouncements on the possibility of wireless communication with his devices."
+    }
+   ],
+   "evidence": [
+    "[S03-P02-C00] Tesla went on to pursue his ideas of wireless lighting and electricity distribution in his high-voltage, high-frequency power experiments in New York and Colorado Springs, and made early (1893) pronouncements on the possibility of wireless communication with his devices. He tried to put these ideas to practical use in an ill-fated attempt at intercontinental wireless transmission, his unfinished Wardenclyffe Tower project. In his lab he also conducted a range of experiments with mechanical oscillators",
+    "[S03-P01-C00] Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Thomas Edison in New York City. He soon struck out on his own with financial backers, setting up laboratories and companies to develop a range of electrical devices. His patented AC induction motor and transformer were licensed by George Westinghouse, who also hired Tesla for a short time as a consultant. His work in the formative years of electric power development was involved in",
+    "[S03-P00-C00] Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor, electrical engineer, mechanical engineer, physicist, and futurist best known for his contributions to the design of the modern alternating current (AC) electricity supply system."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56dfa01738dc42170015211e",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S03-P02-C00",
+    "S03-P01-C00",
+    "S03-P00-C00"
+   ],
+   "answer": "Tesla's experiments were high-voltage.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Tesla pursued his ideas in his high-voltage, high-frequency power experiments.",
+     "source_id": "S03-P02-C00",
+     "quote": "his high-voltage, high-frequency power experiments"
+    }
+   ],
+   "evidence": [
+    "[S03-P02-C00] Tesla went on to pursue his ideas of wireless lighting and electricity distribution in his high-voltage, high-frequency power experiments in New York and Colorado Springs, and made early (1893) pronouncements on the possibility of wireless communication with his devices. He tried to put these ideas to practical use in an ill-fated attempt at intercontinental wireless transmission, his unfinished Wardenclyffe Tower project. In his lab he also conducted a range of experiments with mechanical oscillators",
+    "[S03-P01-C00] Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Thomas Edison in New York City. He soon struck out on his own with financial backers, setting up laboratories and companies to develop a range of electrical devices. His patented AC induction motor and transformer were licensed by George Westinghouse, who also hired Tesla for a short time as a consultant. His work in the formative years of electric power development was involved in",
+    "[S03-P00-C00] Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor, electrical engineer, mechanical engineer, physicist, and futurist best known for his contributions to the design of the modern alternating current (AC) electricity supply system."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56e16182e3433e1400422e28",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S04-P00-C00",
+    "S04-P02-C00",
+    "S04-P01-C00"
+   ],
+   "answer": "Computational complexity theory deals with broadly classifying computational problems by difficulty and class of relationship.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty, and relating those classes to each other.",
+     "source_id": "S04-P00-C00",
+     "quote": "Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty, and relating those classes to each other."
+    }
+   ],
+   "evidence": [
+    "[S04-P00-C00] Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty, and relating those classes to each other. A computational problem is understood to be a task that is in principle amenable to being solved by a computer, which is equivalent to stating that the problem may be solved by mechanical application of mathematical steps, such as an algorithm.",
+    "[S04-P02-C00] Closely related fields in theoretical computer science are analysis of algorithms and computability theory. A key distinction between analysis of algorithms and computational complexity theory is that the former is devoted to analyzing the amount of resources needed by a particular algorithm to solve a problem, whereas the latter asks a more general question about all possible algorithms that could be used to solve the same problem. More precisely, it tries to classify problems that can or cannot be solved with appropriately restricted resources. In turn, imposing restrictions",
+    "[S04-P01-C00] A problem is regarded as inherently difficult if its solution requires significant resources, whatever the algorithm used. The theory formalizes this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage. Other complexity measures are also used, such as the amount of communication (used in communication complexity), the number of gates in a circuit (used in circuit complexity) and the number of processors (used in"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56e16182e3433e1400422e29",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S04-P00-C00",
+    "S04-P01-C00",
+    "S04-P02-C00"
+   ],
+   "answer": "Computational problems are classified according to their inherent difficulty.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Computational problems are classified according to their inherent difficulty.",
+     "source_id": "S04-P00-C00",
+     "quote": "classifying computational problems according to their inherent difficulty"
+    }
+   ],
+   "evidence": [
+    "[S04-P00-C00] Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty, and relating those classes to each other. A computational problem is understood to be a task that is in principle amenable to being solved by a computer, which is equivalent to stating that the problem may be solved by mechanical application of mathematical steps, such as an algorithm.",
+    "[S04-P01-C00] A problem is regarded as inherently difficult if its solution requires significant resources, whatever the algorithm used. The theory formalizes this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage. Other complexity measures are also used, such as the amount of communication (used in communication complexity), the number of gates in a circuit (used in circuit complexity) and the number of processors (used in",
+    "[S04-P02-C00] Closely related fields in theoretical computer science are analysis of algorithms and computability theory. A key distinction between analysis of algorithms and computational complexity theory is that the former is devoted to analyzing the amount of resources needed by a particular algorithm to solve a problem, whereas the latter asks a more general question about all possible algorithms that could be used to solve the same problem. More precisely, it tries to classify problems that can or cannot be solved with appropriately restricted resources. In turn, imposing restrictions"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56e16839cd28a01900c67887",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S04-P01-C00",
+    "S04-P00-C00",
+    "S04-P02-C01"
+   ],
+   "answer": "Computational complexity theory broadly defines the inherent difficulty of a computational problem.",
+   "refused": false,
+   "passed": false,
+   "claims": [
+    {
+     "claim": "Computational complexity theory focuses on classifying computational problems according to their inherent difficulty.",
+     "source_id": "S04-P00-C00",
+     "quote": "Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty."
+    }
+   ],
+   "evidence": [
+    "[S04-P01-C00] A problem is regarded as inherently difficult if its solution requires significant resources, whatever the algorithm used. The theory formalizes this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage. Other complexity measures are also used, such as the amount of communication (used in communication complexity), the number of gates in a circuit (used in circuit complexity) and the number of processors (used in",
+    "[S04-P00-C00] Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty, and relating those classes to each other. A computational problem is understood to be a task that is in principle amenable to being solved by a computer, which is equivalent to stating that the problem may be solved by mechanical application of mathematical steps, such as an algorithm.",
+    "[S04-P02-C01] that can or cannot be solved with appropriately restricted resources. In turn, imposing restrictions on the available resources is what distinguishes computational complexity from computability theory: the latter theory asks what kind of problems can, in principle, be solved algorithmically."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56e16839cd28a01900c67888",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S04-P01-C00",
+    "S04-P02-C01",
+    "S04-P00-C00"
+   ],
+   "answer": "The method used to intuitively assess or quantify the amount of resources required to solve a computational problem is through mathematical models of computation that study these problems and quantify the resources needed, such as time and storage.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Mathematical models of computation are introduced to study problems and quantify the amount of resources needed to solve them.",
+     "source_id": "S04-P01-C00",
+     "quote": "theory formalizes this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage."
+    }
+   ],
+   "evidence": [
+    "[S04-P01-C00] A problem is regarded as inherently difficult if its solution requires significant resources, whatever the algorithm used. The theory formalizes this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage. Other complexity measures are also used, such as the amount of communication (used in communication complexity), the number of gates in a circuit (used in circuit complexity) and the number of processors (used in",
+    "[S04-P02-C01] that can or cannot be solved with appropriately restricted resources. In turn, imposing restrictions on the available resources is what distinguishes computational complexity from computability theory: the latter theory asks what kind of problems can, in principle, be solved algorithmically.",
+    "[S04-P00-C00] Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty, and relating those classes to each other. A computational problem is understood to be a task that is in principle amenable to being solved by a computer, which is equivalent to stating that the problem may be solved by mechanical application of mathematical steps, such as an algorithm."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56e17644e3433e1400422f40",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S04-P02-C00",
+    "S04-P00-C00",
+    "S04-P01-C01"
+   ],
+   "answer": "The two fields of theoretical computer science that closely mirror computational complexity theory are analysis of algorithms and computability theory.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The two fields are analysis of algorithms and computability theory.",
+     "source_id": "S04-P02-C00",
+     "quote": "Closely related fields in theoretical computer science are analysis of algorithms and computability theory."
+    }
+   ],
+   "evidence": [
+    "[S04-P02-C00] Closely related fields in theoretical computer science are analysis of algorithms and computability theory. A key distinction between analysis of algorithms and computational complexity theory is that the former is devoted to analyzing the amount of resources needed by a particular algorithm to solve a problem, whereas the latter asks a more general question about all possible algorithms that could be used to solve the same problem. More precisely, it tries to classify problems that can or cannot be solved with appropriately restricted resources. In turn, imposing restrictions",
+    "[S04-P00-C00] Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty, and relating those classes to each other. A computational problem is understood to be a task that is in principle amenable to being solved by a computer, which is equivalent to stating that the problem may be solved by mechanical application of mathematical steps, such as an algorithm.",
+    "[S04-P01-C01] a circuit (used in circuit complexity) and the number of processors (used in parallel computing). One of the roles of computational complexity theory is to determine the practical limits on what computers can and cannot do."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "56e17644e3433e1400422f41",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "S04-P02-C00",
+    "S04-P01-C00",
+    "S04-P02-C01"
+   ],
+   "answer": "Analysis of algorithms analyzes the resource requirements of a specific algorithm isolated unto itself within a given problem.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Analysis of algorithms analyzes the resource requirements of a specific algorithm isolated unto itself within a given problem.",
+     "source_id": "S04-P02-C00",
+     "quote": "the former is devoted to analyzing the amount of resources needed by a particular algorithm to solve a problem"
+    }
+   ],
+   "evidence": [
+    "[S04-P02-C00] Closely related fields in theoretical computer science are analysis of algorithms and computability theory. A key distinction between analysis of algorithms and computational complexity theory is that the former is devoted to analyzing the amount of resources needed by a particular algorithm to solve a problem, whereas the latter asks a more general question about all possible algorithms that could be used to solve the same problem. More precisely, it tries to classify problems that can or cannot be solved with appropriately restricted resources. In turn, imposing restrictions",
+    "[S04-P01-C00] A problem is regarded as inherently difficult if its solution requires significant resources, whatever the algorithm used. The theory formalizes this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage. Other complexity measures are also used, such as the amount of communication (used in communication complexity), the number of gates in a circuit (used in circuit complexity) and the number of processors (used in",
+    "[S04-P02-C01] that can or cannot be solved with appropriately restricted resources. In turn, imposing restrictions on the available resources is what distinguishes computational complexity from computability theory: the latter theory asks what kind of problems can, in principle, be solved algorithmically."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "G01",
+   "user": "customer",
+   "type": "answerable",
+   "refuse": false,
+   "packed": [
+    "H02",
+    "H04",
+    "H01"
+   ],
+   "answer": "Atlas reset links remain valid for 30 minutes.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Atlas reset links expire after 30 minutes.",
+     "source_id": "H02",
+     "quote": "Atlas reset links expire after 30 minutes."
+    }
+   ],
+   "evidence": [
+    "[H02] Atlas reset links expire after 30 minutes. Request a new link if the old link has expired.",
+    "[H04] Boreal reset links expire after 10 minutes. Password reset uses a mobile app.",
+    "[H01] Atlas passwords can be reset by email. Temporary accounts require a support agent."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "G02",
+   "user": "customer",
+   "type": "paraphrase",
+   "refuse": false,
+   "packed": [
+    "H01",
+    "H04",
+    "H02"
+   ],
+   "answer": "The password recovery email for Atlas stops working after 30 minutes.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "The password recovery email for Atlas stops working after 30 minutes.",
+     "source_id": "H02",
+     "quote": "Atlas reset links expire after 30 minutes."
+    }
+   ],
+   "evidence": [
+    "[H01] Atlas passwords can be reset by email. Temporary accounts require a support agent.",
+    "[H04] Boreal reset links expire after 10 minutes. Password reset uses a mobile app.",
+    "[H02] Atlas reset links expire after 30 minutes. Request a new link if the old link has expired."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "G03",
+   "user": "customer",
+   "type": "missing_pack_support",
+   "refuse": true,
+   "packed": [
+    "H01",
+    "H04",
+    "H02"
+   ],
+   "answer": "Insufficient evidence.",
+   "refused": true,
+   "passed": true,
+   "claims": [],
+   "evidence": [
+    "[H01] Atlas passwords can be reset by email. Temporary accounts require a support agent.",
+    "[H04] Boreal reset links expire after 10 minutes. Password reset uses a mobile app.",
+    "[H02] Atlas reset links expire after 30 minutes. Request a new link if the old link has expired."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "G04",
+   "user": "customer",
+   "type": "out_of_scope",
+   "refuse": true,
+   "packed": [
+    "S37-P01-C00",
+    "S37-P01-C01",
+    "S13-P01-C01"
+   ],
+   "answer": "Insufficient evidence.",
+   "refused": true,
+   "passed": true,
+   "claims": [],
+   "evidence": [
+    "[S37-P01-C00] Kenya has a warm and humid tropical climate on its Indian Ocean coastline. The climate is cooler in the savannah grasslands around the capital city, Nairobi, and especially closer to Mount Kenya, which has snow permanently on its peaks. Further inland, in the Nyanza region, there is a hot and dry climate which becomes humid around Lake Victoria, the largest tropical fresh-water lake in the world. This gives way to temperate and forested hilly areas in the neighboring western region. The north-",
+    "[S37-P01-C01] way to temperate and forested hilly areas in the neighboring western region. The north-eastern regions along the border with Somalia and Ethiopia are arid and semi-arid areas with near-desert landscapes. Kenya is known for its safaris, diverse climate and geography, and expansive wildlife reserves and national parks such as the East and West Tsavo National Park, the Maasai Mara, Lake Nakuru National Park, and Aberdares National Park. Kenya has several world heritage sites such",
+    "[S13-P01-C01] Israel to pull back from the Sinai Peninsula and the Golan Heights. By January 18, 1974, US Secretary of State Henry Kissinger had negotiated an Israeli troop withdrawal from parts of the Sinai Peninsula. The promise of a negotiated settlement between Israel and Syria was enough to convince Arab oil producers to lift the embargo in March 1974."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "G05",
+   "user": "customer",
+   "type": "exception",
+   "refuse": false,
+   "packed": [
+    "H01",
+    "H02",
+    "H04"
+   ],
+   "answer": "No, temporary Atlas accounts cannot use the usual email route.",
+   "refused": false,
+   "passed": false,
+   "claims": [
+    {
+     "claim": "Temporary accounts require a support agent.",
+     "source_id": "H01",
+     "quote": "Temporary accounts require a support agent."
+    }
+   ],
+   "evidence": [
+    "[H01] Atlas passwords can be reset by email. Temporary accounts require a support agent.",
+    "[H02] Atlas reset links expire after 30 minutes. Request a new link if the old link has expired.",
+    "[H04] Boreal reset links expire after 10 minutes. Password reset uses a mobile app."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "G07",
+   "user": "customer",
+   "type": "missing_from_corpus",
+   "refuse": true,
+   "packed": [
+    "H02",
+    "H04",
+    "H01"
+   ],
+   "answer": "Insufficient evidence.",
+   "refused": true,
+   "passed": true,
+   "claims": [],
+   "evidence": [
+    "[H02] Atlas reset links expire after 30 minutes. Request a new link if the old link has expired.",
+    "[H04] Boreal reset links expire after 10 minutes. Password reset uses a mobile app.",
+    "[H01] Atlas passwords can be reset by email. Temporary accounts require a support agent."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "G08",
+   "user": "customer",
+   "type": "wrong_product",
+   "refuse": true,
+   "packed": [
+    "H03",
+    "H05",
+    "S38-P00-C01"
+   ],
+   "answer": "Only workspace owners can export all reports in Boreal.",
+   "refused": false,
+   "passed": false,
+   "claims": [
+    {
+     "claim": "Only workspace owners can export all reports.",
+     "source_id": "H03",
+     "quote": "Only workspace owners can export all reports."
+    }
+   ],
+   "evidence": [
+    "[H03] Atlas exports reports as CSV files. Only workspace owners can export all reports.",
+    "[H05] Atlas invoices are sent monthly. Workspace owners can download invoices from Billing.",
+    "[S38-P00-C01] 43/53. Membership of the IPCC is open to all members of the WMO and UNEP. The IPCC produces reports that support the United Nations Framework Convention on Climate Change (UNFCCC), which is the main international treaty on climate change. The ultimate objective of the UNFCCC is to \"stabilize greenhouse gas concentrations in the atmosphere at a level that would prevent dangerous anthropogenic [i.e., human-induced] interference with the climate"
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "G09",
+   "user": "customer",
+   "type": "wrong_product",
+   "refuse": false,
+   "packed": [
+    "H04",
+    "H01",
+    "H02"
+   ],
+   "answer": "Insufficient evidence.",
+   "refused": true,
+   "passed": false,
+   "claims": [],
+   "evidence": [
+    "[H04] Boreal reset links expire after 10 minutes. Password reset uses a mobile app.",
+    "[H01] Atlas passwords can be reset by email. Temporary accounts require a support agent.",
+    "[H02] Atlas reset links expire after 30 minutes. Request a new link if the old link has expired."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "A01",
+   "user": "agent",
+   "type": "restricted",
+   "refuse": false,
+   "packed": [
+    "R04",
+    "R01",
+    "H02"
+   ],
+   "answer": "Support agents can make an Atlas reset link last for 4 hours.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Support agents can send a reset link that stays valid for 4 hours.",
+     "source_id": "R01",
+     "quote": "Support agents can send a reset link that stays valid for 4 hours to an Atlas workspace owner who is locked out."
+    }
+   ],
+   "evidence": [
+    "[R04] When a customer says an Atlas reset link expired too soon, check the request time in the admin console before you send a new link.",
+    "[R01] Support agents can send a reset link that stays valid for 4 hours to an Atlas workspace owner who is locked out. Do not offer it to other users.",
+    "[H02] Atlas reset links expire after 30 minutes. Request a new link if the old link has expired."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "A02",
+   "user": "agent",
+   "type": "restricted",
+   "refuse": false,
+   "packed": [
+    "R02",
+    "H01",
+    "R01"
+   ],
+   "answer": "Support agents reset temporary Atlas accounts from the admin console after they confirm the account's end date.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Support agents reset temporary Atlas accounts from the admin console after they confirm the account's end date.",
+     "source_id": "R02",
+     "quote": "Support agents reset temporary Atlas accounts from the admin console after they confirm the account's end date."
+    }
+   ],
+   "evidence": [
+    "[R02] Support agents reset temporary Atlas accounts from the admin console after they confirm the account's end date.",
+    "[H01] Atlas passwords can be reset by email. Temporary accounts require a support agent.",
+    "[R01] Support agents can send a reset link that stays valid for 4 hours to an Atlas workspace owner who is locked out. Do not offer it to other users."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "A03",
+   "user": "agent",
+   "type": "restricted",
+   "refuse": false,
+   "packed": [
+    "R04",
+    "H02",
+    "R01"
+   ],
+   "answer": "Check the request time in the admin console before you send a new link.",
+   "refused": false,
+   "passed": true,
+   "claims": [
+    {
+     "claim": "Check the request time in the admin console before you send a new link.",
+     "source_id": "R04",
+     "quote": "When a customer says an Atlas reset link expired too soon, check the request time in the admin console before you send a new link."
+    }
+   ],
+   "evidence": [
+    "[R04] When a customer says an Atlas reset link expired too soon, check the request time in the admin console before you send a new link.",
+    "[H02] Atlas reset links expire after 30 minutes. Request a new link if the old link has expired.",
+    "[R01] Support agents can send a reset link that stays valid for 4 hours to an Atlas workspace owner who is locked out. Do not offer it to other users."
+   ],
+   "checked": true
+  },
+  {
+   "question_id": "A04",
+   "user": "customer",
+   "type": "restricted_only",
+   "refuse": true,
+   "packed": [
+    "H02",
+    "H01",
+    "H04"
+   ],
+   "answer": "Insufficient evidence.",
+   "refused": true,
+   "passed": true,
+   "claims": [],
+   "evidence": [
+    "[H02] Atlas reset links expire after 30 minutes. Request a new link if the old link has expired.",
+    "[H01] Atlas passwords can be reset by email. Temporary accounts require a support agent.",
+    "[H04] Boreal reset links expire after 10 minutes. Password reset uses a mobile app."
+   ],
+   "checked": true
+  }
+ ]
+}

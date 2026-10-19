@@ -1,0 +1,99 @@
+# Lab 03: How to generate an answer that cites its sources
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tatwan/rag_for_nlp/blob/main/03_Cited_Answers/03_cited_answers.ipynb)
+
+**CPU | API key: `OPENAI_API_KEY` (chat and embedding calls) | Practises: grounded answers with citations and
+abstention, and checking them in code | In class**
+
+## Goal
+
+Answer a question from retrieved evidence with citations, check the citations in code, and know what each check
+cannot see. The moment that teaches it: asked *Who was the first person to walk on the Moon?*, with four chunks about
+the Apollo program that never name him, the model answers *Neil Armstrong* with a real chunk ID in 5 of 5 runs, and
+later with quotes that really are in the cited chunks in 5 of 5. Every check passes a name the evidence does not
+contain, until one rule line lets the model say the evidence does not answer.
+
+## What you will learn
+
+- How to pack retrieved chunks as `[ID] text` evidence lines inside a token budget, and compare your token count with
+  the API's.
+- How to call a chat model by hand, and why `chat_options()` sends `temperature` to one model and not to another.
+- How to ask for citations and check the cited IDs in code.
+- How to let the model answer *Insufficient evidence.*, and measure what that rule costs on questions it should answer.
+- How to get claims with quotes as JSON, check the reply's shape, and check each quote against its evidence line.
+- How a line planted in the index gets past every one of these checks.
+
+## Coming from
+
+Lab 01 built the search and `shared/search.py`; you can rank the corpus for a question and you know a score is not
+evidence. This lab adds the step after the search: the model answers from the chunks, and code checks what it cites.
+It stays in plain Python with the OpenAI SDK, so the request, the JSON schema and every check are visible.
+
+## What you will do
+
+**Part A: Pack the evidence for one question.** Search the chunks and the five policies, then pack the best chunks as
+`[ID] text` lines inside a 400-token budget.
+**Part B: Answer from the evidence by hand.** One Chat Completions call with a system and a user message, your token
+count beside `usage`, then `chat_options()` read and used.
+**Part C: Ask for citations and check the IDs.** One rule line with an example, a regular expression that checks the
+cited IDs, and the Moon question, answered with a valid ID.
+**Part D: Let the model say the evidence does not answer.** The abstention line, measured on three unanswerable
+questions, the 30 development questions and one question that needs a step of reasoning.
+**Part E: Quote the evidence and check the quotes in code.** A JSON schema, the `JSON_MODE` switch, `parse()`, a quote
+check, and the Moon question again with every quote found.
+**Part F: Test a line planted in the index.** A fake policy update, ranked first and followed in every run, with or
+without tags; what each check reads.
+**Part G: Keep the answer step in `shared/answer.py`.** The same steps as functions, used from here on.
+**Going further.** An instruction planted in the evidence, which the model refuses to follow and still cannot answer
+past.
+**Challenge.** Test the answer step on four questions of your own. Optional: flag names the evidence does not contain.
+
+## Checkpoints
+
+| After | You should see |
+|---|---|
+| Part A | 277 chunks; Tesla's evidence: four lines, 316 tokens |
+| Part B | *Nikola Tesla was born on 10 July 1856.*; your count 342, billed 353; `chat_options` sends `temperature: 0` |
+| Part C | Tesla with `[S03-P00-C00]`; the Moon question: *Neil Armstrong* with a valid ID in 5 of 5 |
+| Part D | unanswerable questions abstain 5 of 5 each; 0 of 30 development questions refused; the temporary-accounts question refused 5 of 5 with the rule, 0 of 5 without |
+| Part E | 32 claims on the 30 development questions, every quote found; without the abstention line, the Moon question names Armstrong in 5 of 5 with all 10 quotes found |
+| Part F | the planted H99 ranks first; *24 hours* in 5 of 5, quote found; with tags, 5 of 5 |
+| Part G | the module: Tesla answered with its quote found, *Insufficient evidence.* for the Moon |
+
+The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 18 Oct 2026
+(macOS, Python 3.13.5, a fresh `uv sync`). The same notebook ran on the `pip` route (Python 3.12.14) and with
+`gpt-6-luna` and `REASONING_EFFORT=none`. Model replies vary between runs: compare the pattern (which answers
+abstain, which checks pass), not every word.
+
+**On the other routes.** The `pip` run showed the same pattern in every part (33 claims in Part E instead of 32). With
+`gpt-6-luna` the lab runs unchanged, and the model fails in different places: the Moon question named Armstrong in 3 of
+5 runs in Part C (two of them cited); the abstention line did not refuse the temporary-accounts question (0 of 5);
+without the abstention line its JSON answers to the Moon question said the evidence does not identify him (5 of 5), so
+Part E's blind spot did not appear; and it ignored the planted order in Going further (30 minutes, 5 of 5). The planted
+policy update in Part F fooled both models in 5 of 5 runs. Which failures you see depends on the model; the checks and
+the way to measure them do not.
+
+## Before you start
+
+- **Lab 00 first,** then Lab 01: this lab uses `shared/search.py` and the cached chunk vectors.
+- **Open the notebook:** on Colab with the badge above (add `OPENAI_API_KEY` under Secrets first); locally or in a
+  codespace, open `03_cited_answers.ipynb` and choose the `.venv` kernel. Run Setup and Config first.
+- **Data:** `data/squad-chunks.json`, `data/support-case.json` and `data/development-questions.json`, read in place.
+  The planted line in Part F exists only in the notebook; the data files are not changed.
+- **Cost:** about 120 short chat calls and 280 embeddings, well under one US cent on `gpt-4o-mini`.
+
+The notebook ends with a troubleshooting table: `temperature` on a reasoning model, a strict schema without
+`additionalProperties`, `json_object` without the word JSON, and a reply that is not JSON.
+
+## Resources
+
+- [OpenAI: create chat completion](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create):
+  messages, `temperature`, `reasoning_effort`, `response_format` and `usage`
+- [OpenAI: structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs): strict JSON schemas,
+  what they support, and JSON mode
+- [OWASP: LLM01 prompt injection](https://genai.owasp.org/llmrisk/llm01-prompt-injection/): indirect injection through
+  retrieved content, and the layered controls
+- [Joren et al., *Sufficient Context*, ICLR 2025](https://arxiv.org/abs/2411.06037): why models answer instead of
+  abstaining when the context is not enough
+
+Next: [Lab 04](../04_Trace_And_Diagnose/README.md) (find the stage where an answer failed). Back to [the lab list](../README.md).

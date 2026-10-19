@@ -1,0 +1,25 @@
+[project]
+name = "rag-for-nlp"
+version = "0.1.0"
+description = "Hands-on labs for Retrieval-Augmented Generation for NLP"
+requires-python = ">=3.11,<3.15"
+dependencies = [
+    "openai>=2.54,<4",
+    "numpy>=2.0,<3",
+    "tiktoken>=0.8,<1",
+    "python-dotenv>=1.0,<2",
+    "bm25s>=0.3,<0.4",
+    "langchain>=1.4,<2",
+    "langchain-openai>=1.7,<2",
+    "langchain-text-splitters>=1.1,<2",
+    "pytest>=8,<10",
+    "ipykernel>=6.29,<8",
+]
+
+[dependency-groups]
+capstone = ["gradio>=6,<7"]
+# The optional LlamaIndex lab installs its packages in its own environment: llama-index-llms-openai requires
+# openai<3, and a group here would hold every lab's lock to openai 2.x.
+
+[tool.uv]
+package = false

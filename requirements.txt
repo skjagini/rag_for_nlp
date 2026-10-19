@@ -1,0 +1,14 @@
+# The packages the labs import, as in pyproject.toml, for pip and Colab. Ranges keep Colab's preinstalled openai and numpy.
+# The notebook kernel package (ipykernel) is not listed: Colab ships its own, which must not be replaced.
+# With pip on your own machine, install it on the same command: pip install -r requirements.txt ipykernel
+openai>=2.54,<4
+numpy>=2.0,<3
+tiktoken>=0.8,<1
+python-dotenv>=1.0,<2
+bm25s>=0.3,<0.4
+langchain>=1.4,<2
+langchain-openai>=1.7,<2
+langchain-text-splitters>=1.1,<2
+pytest>=8,<10
+# Capstone only: pip install "gradio>=6,<7"
+# Optional LlamaIndex lab only, in a separate environment (it needs openai<3): pip install "llama-index-core>=0.14,<0.15" "llama-index-llms-openai-like>=0.8,<0.9" "llama-index-embeddings-openai-like>=0.4,<0.5"

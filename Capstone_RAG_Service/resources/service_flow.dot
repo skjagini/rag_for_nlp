@@ -1,0 +1,28 @@
+// One request through the capstone's service, and the release gate on the saved results.
+// Export: dot -Tpng -Gdpi=130 service_flow.dot -o service_flow.png
+digraph service {
+  rankdir=LR;
+  graph [fontname="Helvetica", fontsize=11, nodesep=0.3, ranksep=0.4, bgcolor="white"];
+  node  [fontname="Helvetica", fontsize=11, shape=box, style="rounded,filled", fillcolor="#eef0fb", color="#3b3f8f"];
+  edge  [fontname="Helvetica", fontsize=10, color="#444444"];
+
+  subgraph cluster_request {
+    label="One request (Parts A to D)"; fontname="Helvetica"; color="#cccccc"; style=rounded;
+    visitor  [label="Visitor\nbrowser or gradio_client", fillcolor="#ffffff"];
+    signin   [label="Sign-in\nlogin → user", fillcolor="#e8f5c8", color="#4d7a00"];
+    search   [label="Search\nfilter can_read(user), k=3"];
+    answer   [label="Cited answer\nCHAT_MODEL"];
+    check    [label="Quote check\nshow or hold back"];
+    traces   [label="Trace record\n.cache/capstone/traces.jsonl", shape=note, fillcolor="#fff7e0", color="#a07800"];
+    visitor -> signin -> search -> answer -> check;
+    check -> visitor [label="page updates:\nprogress, sources, answer", constraint=false];
+    check -> traces [style=dashed];
+  }
+  subgraph cluster_gate {
+    label="Before a change ships (Part E)"; fontname="Helvetica"; color="#cccccc"; style=rounded;
+    results  [label="42 release questions\nthrough the page\nresults/service.json", shape=note, fillcolor="#fff7e0", color="#a07800"];
+    gate     [label="Lab 11's gate\npytest, no key", fillcolor="#e8f5c8", color="#4d7a00"];
+    results -> gate;
+  }
+  traces -> results [style=invis];
+}

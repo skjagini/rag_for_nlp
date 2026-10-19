@@ -1,0 +1,21 @@
+{
+  "name": "rag_for_nlp",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13",
+  "postCreateCommand": "pipx install uv && uv sync",
+  "containerEnv": {
+    "TIKTOKEN_CACHE_DIR": "${containerWorkspaceFolder}/.cache/tiktoken"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "ms-toolsai.jupyter"],
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python"
+      }
+    }
+  },
+  "secrets": {
+    "OPENAI_API_KEY": {
+      "description": "Your OpenAI API key. The labs read it from the environment and never print it."
+    }
+  }
+}

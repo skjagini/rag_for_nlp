@@ -1,0 +1,21 @@
+{
+  "about": "Constructed for these labs: golden cases for the Atlas and Boreal policies (data/support-case.json). G01 to G05 were reviewed from a draft; G06, a follow-up question, is left to the lab on follow-up questions; G07 to G09 were added at review. Not human annotations, not a benchmark.",
+  "cases": [
+    {"question_id": "G01", "split": "development", "question": "How long does an Atlas reset link remain valid?",
+     "type": "answerable", "known_support": ["H02"], "references": ["30 minutes"], "refuse": false},
+    {"question_id": "G02", "split": "development", "question": "When does the password recovery email stop working for Atlas?",
+     "type": "paraphrase", "known_support": ["H02"], "references": ["30 minutes"], "refuse": false},
+    {"question_id": "G03", "split": "development", "question": "Can temporary Atlas accounts reset by email?",
+     "type": "missing_pack_support", "known_support": ["H01"], "references": [], "refuse": true, "pack": ["H02"]},
+    {"question_id": "G04", "split": "development", "question": "What is tomorrow's weather in Amman?",
+     "type": "out_of_scope", "known_support": [], "references": [], "refuse": true},
+    {"question_id": "G05", "split": "development", "question": "Can temporary Atlas accounts use the usual email route?",
+     "type": "exception", "known_support": ["H01"], "references": ["support agent"], "refuse": false},
+    {"question_id": "G07", "split": "development", "question": "Can an Atlas link be extended to one hour?",
+     "type": "missing_from_corpus", "known_support": [], "references": [], "refuse": true},
+    {"question_id": "G08", "split": "development", "question": "Who can export all reports in Boreal?",
+     "type": "wrong_product", "known_support": [], "references": [], "refuse": true},
+    {"question_id": "G09", "split": "development", "question": "Do I need the mobile app to reset my Atlas password?",
+     "type": "wrong_product", "known_support": ["H01"], "references": ["by email"], "refuse": false}
+  ]
+}

@@ -1,0 +1,670 @@
+[
+  {
+    "question_id": "56be4db0acb8001400a502ec",
+    "question": "Which NFL team represented the AFC at Super Bowl 50?",
+    "answers": [
+      {
+        "answer_start": 177,
+        "text": "Denver Broncos"
+      },
+      {
+        "answer_start": 177,
+        "text": "Denver Broncos"
+      },
+      {
+        "answer_start": 177,
+        "text": "Denver Broncos"
+      }
+    ],
+    "known_support": [
+      "S00-P00"
+    ],
+    "article_index": 0
+  },
+  {
+    "question_id": "56be4db0acb8001400a502ed",
+    "question": "Which NFL team represented the NFC at Super Bowl 50?",
+    "answers": [
+      {
+        "answer_start": 249,
+        "text": "Carolina Panthers"
+      },
+      {
+        "answer_start": 249,
+        "text": "Carolina Panthers"
+      },
+      {
+        "answer_start": 249,
+        "text": "Carolina Panthers"
+      }
+    ],
+    "known_support": [
+      "S00-P00"
+    ],
+    "article_index": 0
+  },
+  {
+    "question_id": "56be4e1facb8001400a502f6",
+    "question": "Which Carolina Panthers player was named Most Valuable Player?",
+    "answers": [
+      {
+        "answer_start": 77,
+        "text": "Cam Newton"
+      },
+      {
+        "answer_start": 77,
+        "text": "Cam Newton"
+      },
+      {
+        "answer_start": 77,
+        "text": "Cam Newton"
+      }
+    ],
+    "known_support": [
+      "S00-P01"
+    ],
+    "article_index": 0
+  },
+  {
+    "question_id": "56be4e1facb8001400a502f9",
+    "question": "How many appearances have the Denver Broncos made in the Super Bowl?",
+    "answers": [
+      {
+        "answer_start": 467,
+        "text": "8"
+      },
+      {
+        "answer_start": 601,
+        "text": "eight"
+      },
+      {
+        "answer_start": 601,
+        "text": "eight"
+      }
+    ],
+    "known_support": [
+      "S00-P01"
+    ],
+    "article_index": 0
+  },
+  {
+    "question_id": "56be4eafacb8001400a50302",
+    "question": "Who was the Super Bowl 50 MVP?",
+    "answers": [
+      {
+        "answer_start": 248,
+        "text": "Von Miller"
+      },
+      {
+        "answer_start": 248,
+        "text": "Von Miller"
+      },
+      {
+        "answer_start": 252,
+        "text": "Miller"
+      }
+    ],
+    "known_support": [
+      "S00-P02"
+    ],
+    "article_index": 0
+  },
+  {
+    "question_id": "56be4eafacb8001400a50303",
+    "question": "How many fumbles did Von Miller force in Super Bowl 50?",
+    "answers": [
+      {
+        "answer_start": 314,
+        "text": "2"
+      },
+      {
+        "answer_start": 328,
+        "text": "two"
+      },
+      {
+        "answer_start": 328,
+        "text": "two"
+      }
+    ],
+    "known_support": [
+      "S00-P02"
+    ],
+    "article_index": 0
+  },
+  {
+    "question_id": "5733a5f54776f41900660f45",
+    "question": "What was Maria Curie the first female recipient of?",
+    "answers": [
+      {
+        "answer_start": 188,
+        "text": "Nobel Prize"
+      },
+      {
+        "answer_start": 188,
+        "text": "Nobel Prize"
+      },
+      {
+        "answer_start": 188,
+        "text": "Nobel Prize"
+      }
+    ],
+    "known_support": [
+      "S01-P00"
+    ],
+    "article_index": 1
+  },
+  {
+    "question_id": "5733a5f54776f41900660f48",
+    "question": "What year was Casimir Pulaski born in Warsaw?",
+    "answers": [
+      {
+        "answer_start": 517,
+        "text": "1745"
+      },
+      {
+        "answer_start": 517,
+        "text": "1745"
+      },
+      {
+        "answer_start": 517,
+        "text": "1745"
+      }
+    ],
+    "known_support": [
+      "S01-P00"
+    ],
+    "article_index": 1
+  },
+  {
+    "question_id": "57336755d058e614000b5a3d",
+    "question": "Over how many species of trees can be found in the Saxon Garden?",
+    "answers": [
+      {
+        "answer_start": 92,
+        "text": "100"
+      },
+      {
+        "answer_start": 87,
+        "text": "over 100"
+      },
+      {
+        "answer_start": 92,
+        "text": "100"
+      }
+    ],
+    "known_support": [
+      "S01-P01"
+    ],
+    "article_index": 1
+  },
+  {
+    "question_id": "57336755d058e614000b5a3f",
+    "question": "What is a popular strolling destination for the Varsovians?",
+    "answers": [
+      {
+        "answer_start": 579,
+        "text": "Krasiński Palace Garden"
+      },
+      {
+        "answer_start": 579,
+        "text": "Krasiński Palace Garden"
+      },
+      {
+        "answer_start": 579,
+        "text": "Krasiński Palace Garden"
+      }
+    ],
+    "known_support": [
+      "S01-P01"
+    ],
+    "article_index": 1
+  },
+  {
+    "question_id": "57337ddc4776f41900660bbb",
+    "question": "How far from Warsaw does the Vistula river's environment change noticeably? ",
+    "answers": [
+      {
+        "answer_start": 109,
+        "text": "15 kilometres"
+      },
+      {
+        "answer_start": 109,
+        "text": "15 kilometres"
+      },
+      {
+        "answer_start": 103,
+        "text": "About 15 kilometres"
+      }
+    ],
+    "known_support": [
+      "S01-P02"
+    ],
+    "article_index": 1
+  },
+  {
+    "question_id": "57337ddc4776f41900660bbc",
+    "question": "What animals does the Vistula river's ecosystem include?",
+    "answers": [
+      {
+        "answer_start": 287,
+        "text": "otter, beaver and hundreds of bird species"
+      },
+      {
+        "answer_start": 287,
+        "text": "otter, beaver and hundreds of bird species"
+      },
+      {
+        "answer_start": 287,
+        "text": "otter, beaver and hundreds of bird species."
+      }
+    ],
+    "known_support": [
+      "S01-P02"
+    ],
+    "article_index": 1
+  },
+  {
+    "question_id": "56ddde6b9a695914005b9628",
+    "question": "In what country is Normandy located?",
+    "answers": [
+      {
+        "answer_start": 159,
+        "text": "France"
+      },
+      {
+        "answer_start": 159,
+        "text": "France"
+      },
+      {
+        "answer_start": 159,
+        "text": "France"
+      },
+      {
+        "answer_start": 159,
+        "text": "France"
+      }
+    ],
+    "known_support": [
+      "S02-P00"
+    ],
+    "article_index": 2
+  },
+  {
+    "question_id": "56ddde6b9a695914005b9629",
+    "question": "When were the Normans in Normandy?",
+    "answers": [
+      {
+        "answer_start": 94,
+        "text": "10th and 11th centuries"
+      },
+      {
+        "answer_start": 87,
+        "text": "in the 10th and 11th centuries"
+      },
+      {
+        "answer_start": 94,
+        "text": "10th and 11th centuries"
+      },
+      {
+        "answer_start": 94,
+        "text": "10th and 11th centuries"
+      }
+    ],
+    "known_support": [
+      "S02-P00"
+    ],
+    "article_index": 2
+  },
+  {
+    "question_id": "56dddf4066d3e219004dad5f",
+    "question": "Who was the duke in the battle of Hastings?",
+    "answers": [
+      {
+        "answer_start": 1022,
+        "text": "William the Conqueror"
+      },
+      {
+        "answer_start": 1022,
+        "text": "William the Conqueror"
+      },
+      {
+        "answer_start": 1022,
+        "text": "William the Conqueror"
+      }
+    ],
+    "known_support": [
+      "S02-P01"
+    ],
+    "article_index": 2
+  },
+  {
+    "question_id": "56dddf4066d3e219004dad60",
+    "question": "Who ruled the duchy of Normandy",
+    "answers": [
+      {
+        "answer_start": 573,
+        "text": "Richard I"
+      },
+      {
+        "answer_start": 573,
+        "text": "Richard I"
+      },
+      {
+        "answer_start": 573,
+        "text": "Richard I"
+      }
+    ],
+    "known_support": [
+      "S02-P01"
+    ],
+    "article_index": 2
+  },
+  {
+    "question_id": "56dde0379a695914005b9636",
+    "question": "What is the original meaning of the word Norman?",
+    "answers": [
+      {
+        "answer_start": 341,
+        "text": "Viking"
+      },
+      {
+        "answer_start": 331,
+        "text": "Norseman, Viking"
+      },
+      {
+        "answer_start": 331,
+        "text": "Norseman, Viking"
+      }
+    ],
+    "known_support": [
+      "S02-P02"
+    ],
+    "article_index": 2
+  },
+  {
+    "question_id": "56dde0379a695914005b9637",
+    "question": "When was the Latin version of the word Norman first recorded?",
+    "answers": [
+      {
+        "answer_start": 309,
+        "text": "9th century"
+      },
+      {
+        "answer_start": 309,
+        "text": "9th century"
+      },
+      {
+        "answer_start": 309,
+        "text": "9th century"
+      }
+    ],
+    "known_support": [
+      "S02-P02"
+    ],
+    "article_index": 2
+  },
+  {
+    "question_id": "56df9e2838dc4217001520f6",
+    "question": "In what year was Nikola Tesla born? ",
+    "answers": [
+      {
+        "answer_start": 54,
+        "text": "1856"
+      },
+      {
+        "answer_start": 54,
+        "text": "1856"
+      },
+      {
+        "answer_start": 54,
+        "text": "1856"
+      }
+    ],
+    "known_support": [
+      "S03-P00"
+    ],
+    "article_index": 3
+  },
+  {
+    "question_id": "56df9e2838dc4217001520f8",
+    "question": "What was Nikola Tesla's ethnicity?",
+    "answers": [
+      {
+        "answer_start": 14,
+        "text": "Serbian"
+      },
+      {
+        "answer_start": 14,
+        "text": "Serbian"
+      },
+      {
+        "answer_start": 14,
+        "text": "Serbian"
+      }
+    ],
+    "known_support": [
+      "S03-P00"
+    ],
+    "article_index": 3
+  },
+  {
+    "question_id": "56df9ee138dc421700152108",
+    "question": "In what year did Nikola Tesla emigrate to the United States?",
+    "answers": [
+      {
+        "answer_start": 106,
+        "text": "1884"
+      },
+      {
+        "answer_start": 106,
+        "text": "1884"
+      },
+      {
+        "answer_start": 106,
+        "text": "1884"
+      }
+    ],
+    "known_support": [
+      "S03-P01"
+    ],
+    "article_index": 3
+  },
+  {
+    "question_id": "56df9ee138dc421700152109",
+    "question": "Who did Tesla work for in the 1880s?",
+    "answers": [
+      {
+        "answer_start": 123,
+        "text": "Thomas Edison"
+      },
+      {
+        "answer_start": 123,
+        "text": "Thomas Edison"
+      },
+      {
+        "answer_start": 123,
+        "text": "Thomas Edison"
+      }
+    ],
+    "known_support": [
+      "S03-P01"
+    ],
+    "article_index": 3
+  },
+  {
+    "question_id": "56dfa01738dc42170015211d",
+    "question": "When did Tesla discover the possibility of wireless connectivity?",
+    "answers": [
+      {
+        "answer_start": 188,
+        "text": "1893"
+      },
+      {
+        "answer_start": 188,
+        "text": "1893"
+      },
+      {
+        "answer_start": 188,
+        "text": "1893"
+      }
+    ],
+    "known_support": [
+      "S03-P02"
+    ],
+    "article_index": 3
+  },
+  {
+    "question_id": "56dfa01738dc42170015211e",
+    "question": "Were Tesla's experiments high-voltage or low-voltage?",
+    "answers": [
+      {
+        "answer_start": 91,
+        "text": "high-voltage"
+      },
+      {
+        "answer_start": 91,
+        "text": "high-voltage"
+      },
+      {
+        "answer_start": 91,
+        "text": "high-voltage"
+      }
+    ],
+    "known_support": [
+      "S03-P02"
+    ],
+    "article_index": 3
+  },
+  {
+    "question_id": "56e16182e3433e1400422e28",
+    "question": "What branch of theoretical computer science deals with broadly classifying computational problems by difficulty and class of relationship?",
+    "answers": [
+      {
+        "answer_start": 0,
+        "text": "Computational complexity theory"
+      },
+      {
+        "answer_start": 0,
+        "text": "Computational complexity theory"
+      },
+      {
+        "answer_start": 0,
+        "text": "Computational complexity theory"
+      }
+    ],
+    "known_support": [
+      "S04-P00"
+    ],
+    "article_index": 4
+  },
+  {
+    "question_id": "56e16182e3433e1400422e29",
+    "question": "By what main attribute are computational problems classified utilizing computational complexity theory? ",
+    "answers": [
+      {
+        "answer_start": 175,
+        "text": "inherent difficulty"
+      },
+      {
+        "answer_start": 169,
+        "text": "their inherent difficulty"
+      },
+      {
+        "answer_start": 175,
+        "text": "inherent difficulty"
+      }
+    ],
+    "known_support": [
+      "S04-P00"
+    ],
+    "article_index": 4
+  },
+  {
+    "question_id": "56e16839cd28a01900c67887",
+    "question": "What measure of a computational problem broadly defines the inherent difficulty of the solution?",
+    "answers": [
+      {
+        "answer_start": 46,
+        "text": "if its solution requires significant resources"
+      },
+      {
+        "answer_start": 49,
+        "text": "its solution requires significant resources"
+      },
+      {
+        "answer_start": 46,
+        "text": "if its solution requires significant resources"
+      }
+    ],
+    "known_support": [
+      "S04-P01"
+    ],
+    "article_index": 4
+  },
+  {
+    "question_id": "56e16839cd28a01900c67888",
+    "question": "What method is used to intuitively assess or quantify the amount of resources required to solve a computational problem?",
+    "answers": [
+      {
+        "answer_start": 176,
+        "text": "mathematical models of computation"
+      },
+      {
+        "answer_start": 176,
+        "text": "mathematical models of computation"
+      },
+      {
+        "answer_start": 176,
+        "text": "mathematical models of computation"
+      }
+    ],
+    "known_support": [
+      "S04-P01"
+    ],
+    "article_index": 4
+  },
+  {
+    "question_id": "56e17644e3433e1400422f40",
+    "question": "What two fields of theoretical computer science closely mirror computational complexity theory?",
+    "answers": [
+      {
+        "answer_start": 59,
+        "text": "analysis of algorithms and computability theory"
+      },
+      {
+        "answer_start": 59,
+        "text": "analysis of algorithms and computability theory"
+      },
+      {
+        "answer_start": 59,
+        "text": "analysis of algorithms and computability theory"
+      }
+    ],
+    "known_support": [
+      "S04-P02"
+    ],
+    "article_index": 4
+  },
+  {
+    "question_id": "56e17644e3433e1400422f41",
+    "question": "What field of computer science analyzes the resource requirements of a specific algorithm isolated unto itself within a given problem?",
+    "answers": [
+      {
+        "answer_start": 59,
+        "text": "analysis of algorithms"
+      },
+      {
+        "answer_start": 134,
+        "text": "analysis of algorithms"
+      },
+      {
+        "answer_start": 134,
+        "text": "analysis of algorithms"
+      }
+    ],
+    "known_support": [
+      "S04-P02"
+    ],
+    "article_index": 4
+  }
+]
