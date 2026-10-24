@@ -13,6 +13,10 @@ two parts gets one half wrong from the fixed pipeline, because the passage for t
 read; the model splits it into two searches and answers both parts. On a simple question it costs an extra model
 call, and on a greeting it skips a search the pipeline always makes.
 
+The pipeline you have built searches once, with the question as typed or rewritten (Lab 09), and always reads
+the top three passages. That fixed step cannot split a question with two parts or skip a search it does not
+need; this lab gives the search to the model and measures what that decision costs.
+
 ## What you will learn
 
 - How a fixed search-then-answer pipeline handles a question with two parts, and a message that asks nothing.
@@ -101,5 +105,12 @@ low, the graph picture on a blocked network, and tools on a reasoning model at t
 - [OpenAI: function calling](https://developers.openai.com/api/docs/guides/function-calling): tool calls, parallel calls
   in one reply, and the tool results the API expects back
 - [Asai et al., *Self-RAG*, ICLR 2024](https://arxiv.org/abs/2310.11511): a model trained to decide when to retrieve
+
+**The same idea in three RAG books' code**
+
+- [*RAG from First Principles*, `10-AdvanceRAG/04-AgenticRAG/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/10-AdvanceRAG/04-AgenticRAG): agentic and adaptive RAG as LangGraph
+  graphs, with nodes that grade the retrieved documents and rewrite the question, and pictures of both graphs
+- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_12/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_12): a LangGraph agent that chooses between web search and a retriever tool,
+  then grades what came back
 
 Back to [the lab list](../README.md).

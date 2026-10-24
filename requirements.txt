@@ -9,6 +9,7 @@ bm25s>=0.3,<0.4
 langchain>=1.4,<2
 langchain-openai>=1.7,<2
 langchain-text-splitters>=1.1,<2
+pypdf>=6,<7
 pytest>=8,<10
 # Capstone only: pip install "gradio>=6,<7"
 # Optional LlamaIndex lab only, in its own environment (it needs openai<3): see Optional_LlamaIndex_Pipeline/README.md and its requirements.txt

@@ -12,6 +12,10 @@ moment that teaches it: the standard word-overlap score gives half credit to a w
 credit to a right answer written as a full sentence. And the pipeline looks good on the whole set while failing some
 of the policy questions written to test it, one of them answering a Boreal question from the Atlas policy.
 
+Lab 04 named the failing stage for a few wrong answers, one trace at a time, and Lab 05 rebuilt the same pipeline
+with LangChain. Before you change a stage, you need to measure every question the same way each time, so you can
+see what a change fixes and what it breaks: this lab writes that question set and scores the pipeline on it.
+
 ## What you will learn
 
 - How to compute hit@3 and mean reciprocal rank (MRR) with every question in the denominator.
@@ -56,6 +60,9 @@ the slices, three runs of the policy cases, and the rows saved for later labs.
 | Part E | hit@3 9 of 9 (1 not counted), MRR@3 0.870; EM 1 of 9, F1 0.371; `found()` 7 of 9; refused 1 of 1 and 0 of 9 |
 | Part F | passed 34 of 38: development 29 of 30, policy cases 5 of 8; exception 0 of 1, wrong product 0 of 2, refusal slice 3 of 4; G05, G08, G09 failed 3 of 3 runs |
 
+These counts compare versions of this pipeline on the same 38 records; they do not estimate how often it is right on
+new questions (Part F says why).
+
 The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 18 Oct 2026
 (macOS, Python 3.13.5, a fresh `uv sync`; `langchain-core` 1.6.12, `langchain-openai` 1.7.2). The same notebook ran on
 the `pip` route (Python 3.12.11) and with `gpt-6-luna` and `REASONING_EFFORT=none`. Model replies vary between runs:
@@ -96,5 +103,14 @@ IDs, a reciprocal rank of a miss, and an average over refusal records.
   exact match recall, a short reference found inside a long generated answer
 - [LangSmith: evaluation concepts](https://docs.langchain.com/langsmith/evaluation-concepts): datasets, reference
   outputs, evaluators and experiments as a hosted service
+
+**The same idea in three RAG books' code**
+
+- [*Hands-On RAG for Production*, `chapter6/metrics.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter6/metrics.ipynb): context precision and recall from retrieved and
+  relevant chunk IDs, and BLEU and ROUGE-L for the answers, on three worked examples
+- [*RAG from First Principles*, `09-Evaluation/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/09-Evaluation): one script each for RAGAS, TruLens, DeepEval and LlamaIndex's
+  evaluators
+- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_09/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_09): RAGAS generating a ten-question test set from a PDF, then
+  scoring a vector-search chain against a hybrid one
 
 Next: [Lab 07](../07_LLM_Judge_Calibration/README.md) (check an LLM judge against your own labels). Back to [the lab list](../README.md).

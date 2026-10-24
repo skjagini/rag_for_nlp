@@ -12,6 +12,10 @@ teaches it: you fail two answers that came from the wrong product's policy; the 
 from the evidence as its reason, and a few lines of code catch what it missed. On answers from a small open model the
 judge agrees with you, but fails one that followed an order planted in the evidence without ever naming the order.
 
+You can now score every golden record, but only with string checks: an accepted answer found in the reply, or the
+refusal string. Those cannot say whether an answer's claims are supported by its evidence; an LLM judge can try,
+and this lab measures how far its verdicts match yours.
+
 ## What you will learn
 
 - How to write the claims a summary must keep before you read it, and label each one kept, weakened, changed or
@@ -108,6 +112,13 @@ evidence passed to `span_found()` as one string.
   and human review as a hosted service
 - [Es et al., *RAGAS*, 2023](https://arxiv.org/abs/2309.15217): faithfulness as the share of an answer's claims the
   context supports
+
+**The same idea in three RAG books' code**
+
+- [*Hands-On RAG for Production*, `chapter6/llm-as-a-judge.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter6/llm-as-a-judge.ipynb): a GPT-4o judge that scores
+  faithfulness and answer relevance from 1 to 5, with its reasoning, on short made-up examples
+- [*Hands-On RAG for Production*, `chapter6/umbrela.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter6/umbrela.ipynb): UMBRELA, a judge that scores how well each
+  retrieved passage answers a query, from 0 to 3, through a structured-output schema
 
 Next: [Lab 08](../08_Hybrid_Search_And_Reranking/README.md) (improve retrieval with hybrid search and reranking). Back
 to [the lab list](../README.md).

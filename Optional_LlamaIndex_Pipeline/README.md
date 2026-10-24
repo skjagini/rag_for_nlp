@@ -122,4 +122,9 @@ retriever's default of two nodes.
 - [LlamaIndex: structured outputs from a query engine](https://developers.llamaindex.ai/python/framework/module_guides/querying/structured_outputs/query_engine/):
   `output_cls`
 
+**The same idea in three RAG books' code**
+
+- [*RAG from First Principles*, `00-SimpleRAG/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/00-SimpleRAG): one small RAG written many ways: LlamaIndex in five lines with the
+  models swapped, LangChain, LCEL, LangGraph and plain Python
+
 Back to [Lab 05](../05_Rebuild_With_LangChain/README.md) or to [the lab list](../README.md).

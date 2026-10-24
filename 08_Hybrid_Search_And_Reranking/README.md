@@ -12,6 +12,10 @@ each change helps and what it costs. The moment that teaches it: hybrid search, 
 vector search on these questions and moves a few the wrong way. The reranker fixes one question worded unlike its
 answer, adds a model call to every question, and sometimes names a chunk it was never given.
 
+You can now measure the pipeline question by question and know how far to trust a judge. What you cannot yet say
+is whether a common retrieval change, keyword search or a reranker, makes this pipeline better: this lab tries
+both and decides from the questions each one gains and loses.
+
 ## What you will learn
 
 - How BM25 scores a chunk by the words it shares with a question, by hand and with `bm25s`.
@@ -104,6 +108,19 @@ JSON mode without the word JSON, and `REASONING_EFFORT` sent to a reranker that 
   engine and a vector database
 - [Sun and others (2023), RankGPT](https://arxiv.org/abs/2304.09542): listwise reranking with a chat model
 - [Cohere: rerank overview](https://docs.cohere.com/docs/rerank-overview): a production cross-encoder reranker
+
+**The same idea in three RAG books' code**
+
+- [*Hands-On RAG for Production*, `chapter3/reranking.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter3/reranking.ipynb): a cross-encoder reranker (BGE Reranker v2)
+  scoring query and passage pairs and reordering the passages
+- [*RAG from First Principles*, `03-Embedding/03-BM25.py`](https://github.com/PacktPublishing/RAG-from-First-Principles/blob/main/03-Embedding/03-BM25.py): BM25 written from scratch (IDF, `k1`, `b`) on
+  three short texts
+- [*RAG from First Principles*, `07-PostRetrieval/01-Reranking/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/07-PostRetrieval/01-Reranking): six reranking scripts: RRF over
+  several rewrites of one question, a cross-encoder, ColBERT, Cohere, RankLLM and recency weighting
+- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_08/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_08): hybrid search over a PDF report, once with a hand-written weighted fusion
+  of vector and BM25 ranks and once with LangChain's `EnsembleRetriever`
+- Awesome LLM Apps: [`hybrid_search_rag`](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/rag_tutorials/hybrid_search_rag), a Streamlit app over uploaded PDFs with hybrid
+  search and a Cohere reranker (RAGLite, Claude for the answers)
 
 Next: [Lab 09: How to answer follow-up questions with retrieval](../09_Follow_Up_Questions/README.md). Back to
 [the lab list](../README.md).

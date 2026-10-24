@@ -12,6 +12,10 @@ cannot see. The moment that teaches it: asked who first walked on the Moon, with
 that never names him, the model answers *Neil Armstrong* and cites a real chunk, even with quotes that really are in
 it, so every check passes. What stops it is one rule line that lets the model say the evidence does not answer.
 
+You can now rank passages for a question and count how often the right one comes back, but a ranked list is not an
+answer, and a high score does not show that a passage answers. This lab adds the answer step: the model answers
+from the passages and cites them, and code checks the citations.
+
 ## What you will learn
 
 - How to pack retrieved chunks as `[ID] text` evidence lines inside a token budget, and compare your token count with
@@ -98,4 +102,17 @@ The notebook ends with a troubleshooting table: `temperature` on a reasoning mod
 - [Joren et al., *Sufficient Context*, ICLR 2025](https://arxiv.org/abs/2411.06037): why models answer instead of
   abstaining when the context is not enough
 
-Next: [Lab 04](../04_Trace_And_Diagnose/README.md) (find the stage where an answer failed), or the self-study [Lab 03](../03_Chunking_With_Lineage/README.md) (chunking). Back to [the lab list](../README.md).
+**The same idea in three RAG books' code**
+
+- [*Hands-On RAG for Production*, `chapter1/sample-rag.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter1/sample-rag.ipynb): a whole pipeline in a few cells: a PDF
+  loaded and split, LanceDB as the vector store, and an LCEL chain told to answer only from the top three chunks
+- [*Hands-On RAG for Production*, `chapter3/hallucinations.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter3/hallucinations.ipynb): Vectara's HHEM model scoring, from
+  0 to 1, how well a summary is supported by its source, on four pairs from consistent to a wrong unit
+- [*RAG from First Principles*, `08-Generation/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/08-Generation): scripts for prompt templates, few-shot examples, JSON and
+  Pydantic output parsing, function calling and Self-RAG
+- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_03/CHAPTER3-1_SOURCES.ipynb`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/blob/main/CHAPTER_03/CHAPTER3-1_SOURCES.ipynb): a LangChain
+  chain that returns the retrieved documents beside its answer, so the sources can be shown with it
+- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_05/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_05): a red-team notebook that tries to make the chain print its
+  prompt, and a blue-team notebook that scores relevance with a second model call and answers *I don't know.* below 4
+
+Next: [Lab 03](../03_Chunking_With_Lineage/README.md) Part A (in class; the rest of Lab 03 is self-study), then [Lab 04](../04_Trace_And_Diagnose/README.md) (find the stage where an answer failed). Back to [the lab list](../README.md).

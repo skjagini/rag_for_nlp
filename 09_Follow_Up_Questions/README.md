@@ -13,6 +13,10 @@ Searched as typed, it finds the Atlas policy, and the answer gives Atlas's time 
 the question to name Boreal fixes it; letting the model write its own search drops Boreal again, and a two-line check
 catches both.
 
+You can now test a retrieval change on paired questions, but every question so far has stood on its own. In a
+conversation the second question often names nothing (*How long is the link valid?*), and the search reads only
+the words it is given, so this lab adds a step between the conversation and the search.
+
 ## What you will learn
 
 - Why a follow-up searched as typed can find the wrong evidence, or leave the answer with no question, while every
@@ -98,5 +102,12 @@ back without its result, and tools on a reasoning model at the wrong effort.
   `tool_calls`, the execution loop and `ToolMessage`
 - [OpenAI: function calling](https://developers.openai.com/api/docs/guides/function-calling): what the API receives for
   a tool and returns for a call
+
+**The same idea in three RAG books' code**
+
+- [*RAG from First Principles*, `05-PreRetrieval/02-QueryTranslation/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/05-PreRetrieval/02-QueryTranslation): one script each for
+  rewriting a query with a prompt, splitting it into several queries, a clarification tree and HyDE
+- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_12/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_12): a LangGraph agent that grades the documents it retrieved and rewrites the
+  question when they are not relevant
 
 Next: [Lab 10](../10_Long_Context_Or_Retrieval/README.md) (choose between long context and retrieval). Back to [the lab list](../README.md).

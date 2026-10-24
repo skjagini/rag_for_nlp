@@ -12,6 +12,10 @@ support agents use the assistant scores better than today's release, and the tes
 customers may not read reached the evidence given to customers. Before that, an outdated policy left in the index
 after an update keeps answering with the old rule.
 
+Your pipeline now answers follow-ups, and you can measure any change question by question, but every user can read
+everything in the index, and nothing stops a change that scores better while breaking a rule. This lab adds
+documents customers may not read, and writes tests a change must pass before release.
+
 ## What you will learn
 
 - How to label every document with who may read it, and list a user's allowed records by hand.
@@ -119,5 +123,14 @@ find, and pytest started from the wrong folder.
   [fixtures](https://docs.pytest.org/en/stable/how-to/fixtures.html): test discovery, `assert` messages and fixtures
 - [OWASP: LLM02 sensitive information disclosure](https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/):
   why access control belongs before the model, not in the prompt
+
+**The same idea in three RAG books' code**
+
+- [*Hands-On RAG for Production*, `chapter4/redaction.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter4/redaction.ipynb): Presidio replacing names and phone numbers
+  with typed placeholders such as `<PERSON>`
+- [*RAG from First Principles*, `06-RecencyWeightedReranking.py`](https://github.com/PacktPublishing/RAG-from-First-Principles/blob/main/07-PostRetrieval/01-Reranking/06-RecencyWeightedReranking.py):
+  LangChain's time-weighted retriever, which ranks by similarity and by how recently a document was used
+- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_05/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_05): a red-team notebook that tries to make the chain print its prompt, and a
+  blue-team notebook that scores relevance before it answers
 
 Next: [the capstone](../Capstone_RAG_Service/README.md), *How to ship a RAG service with its release gate*. Back to [the lab list](../README.md).

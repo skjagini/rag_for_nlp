@@ -11,6 +11,10 @@ Search a set of documents for a question with an embeddings API, check how often
 learn what a similarity score cannot tell you. The moment that teaches it: a question that no paragraph answers
 scores higher than questions the paragraphs do answer, so no score cutoff can tell the two kinds apart.
 
+Lab 00 checked that your setup reaches the API. Before a model can answer from your documents, something has to
+find the passages that hold the answer, and you need a way to tell whether it found them: this lab builds that
+search and measures it.
+
 ## What you will learn
 
 - How to build an embeddings client, embed a text and read the vector that comes back.
@@ -92,4 +96,14 @@ and rows out of step with their IDs.
 - [MTEB leaderboard](https://huggingface.co/spaces/mteb/leaderboard): how embedding models compare on public tasks;
   test a candidate on your own questions before you switch
 
-Next: [Lab 02](../02_Cited_Answers/README.md) (cited answers), or the self-study [Lab 03](../03_Chunking_With_Lineage/README.md) (chunking). Back to [the lab list](../README.md).
+**The same idea in three RAG books' code**
+
+- [*Hands-On RAG for Production*, `chapter2/embedding.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter2/embedding.ipynb): four sentences embedded with a local
+  Sentence Transformers model, their cosine similarities as a heatmap, and the same scores on a random slice of the
+  dimensions
+- [*RAG from First Principles*, `03-Embedding/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/03-Embedding): scripts for OpenAI embeddings in a small game recommender,
+  clustering, BM25, and BGE-M3's dense, sparse and multi-vector embeddings
+- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_08/CHAPTER8-1_DISTANCEMETRICS.ipynb`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/blob/main/CHAPTER_08/CHAPTER8-1_DISTANCEMETRICS.ipynb):
+  Euclidean distance, dot product and cosine distance written by hand for three sentences
+
+Next: [Lab 02](../02_Cited_Answers/README.md) (cited answers). Back to [the lab list](../README.md).

@@ -12,6 +12,10 @@ time measured on the same questions. The moment that teaches it: the whole corpu
 fewer questions right than retrieval, at many times the cost. The model answers the questions it missed when it gets
 the right passage alone, but not when that passage sits inside the whole corpus.
 
+Every lab so far has paid for retrieval: an index to build and keep current, a search before every answer, and in
+Lab 08 a second index that added work for no gain. This corpus is small enough to fit in one prompt, so this lab
+asks what retrieval buys here, in answers, tokens and dollars.
+
 ## What you will learn
 
 - How to answer the same questions three ways (no evidence, three retrieved chunks, the whole corpus) and record the
@@ -103,5 +107,12 @@ The notebook ends with a troubleshooting table: a prompt longer than the context
   answering worse as the input grows, and how related text distracts them
 - [Liu et al., *Lost in the Middle*, TACL 2023](https://arxiv.org/abs/2307.03172): how answers depended on where the
   relevant passage sat in a long prompt, on the models of 2023
+
+**The same idea in three RAG books' code**
+
+- [*Hands-On RAG for Production*, `chapter4/caching.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter4/caching.ipynb): exact-match and semantic caching of search results
+  in Redis, and a reworded question that only the semantic cache recognises
+- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_15/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_15): a semantic cache that masks amounts, years and tickers before matching,
+  and checks a match with a cross-encoder before reusing it
 
 Next: [Lab 11](../11_Release_Gate/README.md), *How to gate a RAG change before release*. Back to [the lab list](../README.md).

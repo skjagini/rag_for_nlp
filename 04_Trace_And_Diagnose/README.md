@@ -13,6 +13,10 @@ the model. Giving the model that passage alone shows three different causes: one
 passages, one was right all along in words the answer key did not list, and one the model still refuses. One failing
 step, three different repairs.
 
+You can now retrieve evidence and answer with citations that code checks, but when an answer is still wrong, the
+reply alone does not say whether the search, the packing or the model lost the answer. This lab records what each
+stage did, so you can name the one that failed.
+
 ## What you will learn
 
 - What a trace record holds, and how to make one for a question by hand.
@@ -96,5 +100,17 @@ looked up as a passage, and a trace whose reply is not JSON.
   of a request as a span, the production form of these records
 - [Joren et al., *Sufficient Context*, ICLR 2025](https://arxiv.org/abs/2411.06037): separating "the context was not
   enough" from "the model failed with enough context"
+
+**The same idea in three RAG books' code**
+
+- [*RAG from First Principles*, `06-Indexing/01-FromSmallChunksToLargeContext/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/06-Indexing/01-FromSmallChunksToLargeContext): three
+  ways to give the answer step more than the matched chunk: a sentence window, parent and child chunks, and the
+  chunks before and after
+- [*RAG from First Principles*, `07-PostRetrieval/03-Correction/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/07-PostRetrieval/03-Correction): corrective RAG (CRAG) in one
+  script: a model grades each retrieved document, and when none is relevant the question is rewritten and sent to a
+  web search
+- Awesome LLM Apps: [`rag_failure_diagnostics_clinic`](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/rag_tutorials/rag_failure_diagnostics_clinic), a script that asks a
+  model to sort a described RAG bug into one of 12 failure patterns (chunk boundary, embedding mismatch, stale index
+  ...) and suggest a small structural fix: names for the failures this lab locates by stage
 
 Next: [Lab 05](../05_Rebuild_With_LangChain/README.md), *How to rebuild a RAG pipeline with LangChain*. Back to [the lab list](../README.md).

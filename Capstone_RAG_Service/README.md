@@ -13,6 +13,9 @@ Put the pipeline behind a small web page that answers with citations and shows i
 are, so a customer who typed *agent* could read an internal runbook, and hiding the field from the screen changed
 nothing. The fix is a sign-in: the page, not the visitor, decides who is asking.
 
+So far the pipeline runs in a notebook, where you choose who is asking. A service gets questions from people who
+sign in, and must still filter each user's evidence and pass Lab 11's release tests (its Part E) before it ships.
+
 ## What you will learn
 
 - How to build and test the service's engine before any page: a permission filter, a cited answer, a quote check
@@ -162,5 +165,12 @@ password, a page launched without `auth=`, `app.py` started without a key, and a
   go and how they run
 - [OWASP: LLM02 sensitive information disclosure](https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/):
   why access control belongs before the model
+
+**The same idea in three RAG books' code**
+
+- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_06/CHAPTER6-1_GRADIO.ipynb`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/blob/main/CHAPTER_06/CHAPTER6-1_GRADIO.ipynb): a RAG chain behind a
+  Gradio `Interface` that shows the answer, a relevance score and the sources
+- Awesome LLM Apps: [`rag_chain`](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/rag_tutorials/rag_chain), PharmaQuery, a Streamlit page over uploaded research papers,
+  with a demo video in its README (LangChain, ChromaDB and Google's Gemini models)
 
 Back to [the lab list](../README.md).
