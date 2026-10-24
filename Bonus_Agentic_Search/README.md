@@ -7,13 +7,11 @@ pipeline and an agent that searches when it needs to, from measured answers and 
 
 ## Goal
 
-Give the model a search tool, let it decide whether to search, how often and for what, and judge from answers, model
-calls and tokens when that beats the fixed pipeline that searches once with the question. The moment that teaches it:
-asked *Who ruled the duchy of Normandy, and when was the Latin version of the word Norman first recorded?*, the fixed
-pipeline answers the second half with *the 10th and 11th centuries*, citing a passage whose quote passes Lab 03's check
-(3 of 3 runs). The passage that answers it ranked fourth. The agent splits the question into two searches and answers
-*the 9th century* (5 of 5 runs). On a one-fact question it makes two model calls where the pipeline makes one, and on
-*Hi there!* it skips the search the pipeline always makes.
+Give the model a search tool, let it decide whether and how often to search, and judge from answers, model calls and
+tokens when that beats the pipeline that searches once with the question. The moment that teaches it: a question with
+two parts gets one half wrong from the fixed pipeline, because the passage for that half ranks fourth and is never
+read; the model splits it into two searches and answers both parts. On a simple question it costs an extra model
+call, and on a greeting it skips a search the pipeline always makes.
 
 ## What you will learn
 
