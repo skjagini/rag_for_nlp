@@ -34,7 +34,8 @@ CONSTRUCTED = json.loads((ROOT / "11_Release_Gate" / "resources" / "constructed-
 USERS = CONSTRUCTED["users"]                             # which access labels each kind of user may read
 SIGN_INS = {"casey": "customer", "alex": "agent"}       # demo sign-ins; a real service uses your company's sign-in
 TRACES = ROOT / ".cache" / "capstone" / "traces.jsonl"   # gitignored: traces hold what users asked
-WARNING = "**Check the sources:** a quote below is not word for word in the line it cites."
+HELD = {"answer": "This answer could not be checked against its sources, so it is not shown. Read the sources instead.",
+        "claims": []}
 
 
 def build_store():
@@ -73,6 +74,11 @@ def answer_and_trace(question, user, hits):
     return record
 
 
+def shown(record):
+    """The record as the page shows it: the reply only when its quotes passed the check, HELD otherwise."""
+    return record if record["checked"] else {**record, "reply": HELD}
+
+
 def sources_text(hits):
     """The hits as the sources panel shows them: ID, title, access label, score and text."""
     return "\n\n".join(f"**[{document.id}]** {document.metadata.get('title', '')} · {document.metadata['access']} · "
@@ -80,9 +86,9 @@ def sources_text(hits):
 
 
 def answer_text(record):
-    """The answer with its quotes, and WARNING above it when the quote check failed."""
+    """The answer with its quotes."""
     quotes = [f"- [{claim['source_id']}] *{claim['quote']}*" for claim in record["reply"]["claims"]]
-    return "\n\n".join(([] if record["checked"] else [WARNING]) + [record["reply"]["answer"], *quotes])
+    return "\n\n".join([record["reply"]["answer"], *quotes])
 
 
 store = build_store()                     # the service's index, built when it starts
@@ -94,7 +100,7 @@ def respond(question, request: gr.Request):
     yield "*Searching...*", "", None
     hits = lc_pipeline.retrieve(store, question, filter=can_read(user))
     yield f"*Answering from {len(hits)} sources...*", sources_text(hits), None
-    record = answer_and_trace(question, user, hits)
+    record = shown(answer_and_trace(question, user, hits))
     yield answer_text(record), sources_text(hits), record
 
 

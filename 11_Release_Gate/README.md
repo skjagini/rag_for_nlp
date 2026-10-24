@@ -8,10 +8,9 @@ filtering, versioned indexes and release tests run on saved results | In class**
 ## Goal
 
 Stop a change before release with tests that read its saved results. The moment that teaches it: a change that lets
-support agents use the assistant passed 37 of 42 release questions against 35 for today's release, and the gate still
-failed it, because one incident note that customers may not read reached six customer packs. None of those replies
-repeated the note. Before that, an outdated version of one policy, left in the index after the update, answered 3 of
-3 runs with *24 hours*.
+support agents use the assistant scores better than today's release, and the tests still fail it, because a note
+customers may not read reached the evidence given to customers. Before that, an outdated policy left in the index
+after an update keeps answering with the old rule.
 
 ## What you will learn
 
@@ -24,10 +23,12 @@ repeated the note. Before that, an outdated version of one policy, left in the i
   saved results and read a failing assertion.
 - Why an average cannot pass a hard boundary.
 
+**In class:** Parts A and B. Parts C to F are self-study.
+
 ## Coming from
 
 [Lab 05](../05_Rebuild_With_LangChain/README.md) left documents out with a metadata filter, and
-[Lab 06](../06_Evaluation_Set/README.md) wrote the golden set and its refusal slice. [Lab 03](../03_Cited_Answers/README.md)
+[Lab 06](../06_Evaluation_Set/README.md) wrote the golden set and its refusal slice. [Lab 02](../02_Cited_Answers/README.md)
 showed that every answer check trusts the evidence, so the defence is control over what enters the index and who may
 read it. This lab adds documents that not every user may read and an outdated policy, then writes the checks a change
 must pass before it ships, as tests a CI job can run with no key.
@@ -39,13 +40,13 @@ user's allowed records counted by hand.
 **Part B: Filter by permission after the search, then before it.** A customer's question answered from the runbook,
 a post-filter that leaves no evidence, a pre-filter on the store, and the same runbook question asked by an agent and
 by a customer.
-**Part C: Replace an outdated policy in the index.** April's H02 left beside today's, the answers it gives, a version
+**Part C: Replace an outdated policy in the index (self-study).** April's H02 left beside today's, the answers it gives, a version
 check, `delete` and `get_by_ids`, and an add with the same ID.
-**Part D: Save the rows of a change, with its manifest.** 42 release questions, one row each, a build manifest, and
+**Part D: Save the rows of a change, with its manifest (self-study).** 42 release questions, one row each, a build manifest, and
 today's release and the change saved as results files and compared question by question.
-**Part E: Write the release tests and run them with pytest.** The access check by hand, then `test_release.py`: the
+**Part E: Write the release tests and run them with pytest (self-study).** The access check by hand, then `test_release.py`: the
 first test, the failure read, the other four tests, and all five on the change.
-**Part F: Fix the change and pass the gate.** The allow-list filter, the gate passing, and the paired comparison.
+**Part F: Fix the change and pass the gate (self-study).** The allow-list filter, the gate passing, and the paired comparison.
 **Going further.** LangChain's indexing API removing the old version on update.
 **Challenge.** Ship the fixed change with April's H02 left in. Optional: check the citations instead of the packs.
 
@@ -60,23 +61,26 @@ first test, the failure read, the other four tests, and all five on the change.
 | Part E | R04 in six customer packs; `1 failed, 4 deselected`, then `2 failed, 3 passed` (access and regressions) |
 | Part F | fixed change 38 of 42; `5 passed`; gained A01 to A03, lost none |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 18 Oct 2026
-(macOS, Python 3.13.5, a fresh `uv sync`; `langchain-core` 1.6.12, `langchain-openai` 1.7.2, `pytest` 9.1.1). The same
-notebook ran on the `pip` route (Python 3.12.11) and with `gpt-6-luna` and `REASONING_EFFORT=none`. Model replies vary
+The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026
+(macOS, Python 3.13.5, a fresh `uv sync`; `langchain-core` 1.6.12, `langchain-openai` 1.7.2, `pytest` 9.1.1). The same day
+the notebook ran on the `pip` route (Python 3.12.11) and with `gpt-6-luna` and `REASONING_EFFORT=none`. Model replies vary
 between runs: compare which tests fail and which questions moved, not every word.
 
-**Across our runs.** Six runs of the release set on `gpt-4o-mini`, the saved run among them. The baseline passed 35 of 42 in five runs and 34 in
-one, the change 37 in all six, the fixed change 38 in all six. R04 reached the same six customer packs and G02 was the change's one loss every time, because
+**Across our runs.** Nine runs of the release set on `gpt-4o-mini`, the saved run among them. The baseline passed 35 of 42 in eight runs and 34
+in one, the change 37 in all nine, the fixed change 38 in all nine. R04 reached the same six customer packs and G02 was the change's one loss every time, because
 the search, not the model, puts R04 in those packs.
 
-**On the other routes.** The `pip` run gave the same numbers in every part. With `gpt-6-luna` the lab runs unchanged,
-the totals are the same (35, 37) and the fixed change passes 39 of 42 (it also refuses the Boreal export question,
-G08), and four things differ. Answering from the unfiltered runbook, it repeated the incident note too (*support should
-check the request time in the admin console*), 3 of 3. Asked the runbook question as a customer, it did not credit
-agents with 30 minutes (*Insufficient evidence.* 2 of 3). With both versions of H02 in the evidence it answered *24
-hours* to both questions, 6 of 6, instead of refusing the first. And R04 changed one of the change's answers: A04, the
-customer question that should be refused, became *Yes, support can send you a new Atlas reset link if the old link has
-expired.*, so the gate failed three tests, the refusal slice as well. The gate caught the change on both models.
+**On the other routes.** The `pip` run gave the same numbers in every part. With `gpt-6-luna` the lab runs unchanged and the gate
+catches the change, but the totals move between runs: on 24 Oct the baseline passed 35 of 42, the change 35 and the
+fixed change 37 (18 Oct: 35, 37 and 39). The fixed change still failed one test: it lost two questions the baseline
+passed (a complexity question answered in other words, and G09, now refused), and nobody had reviewed them, which is
+what that test is for. Four things differ from `gpt-4o-mini`. Answering from the unfiltered runbook, it repeated the
+incident note too (*support should check the request time in the admin console*), 3 of 3. Asked the runbook question as
+a customer, it did not credit agents with anything (*An Atlas reset link lasts 30 minutes.*, or *Insufficient
+evidence.* once). With both versions of H02 in the evidence it answered *24 hours* to both questions, 6 of 6, instead of
+refusing the first. And R04 changed one of the change's answers: A04, the customer question that should be refused,
+became *Yes, support can send you a new Atlas reset link.*, so the gate failed three tests, the refusal slice as well.
+The gate caught the change on both models.
 
 ## Before you start
 

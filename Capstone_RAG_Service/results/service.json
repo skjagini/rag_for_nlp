@@ -10,7 +10,7 @@
   "rerank_model": "gpt-4o-mini",
   "chat_endpoint": "https://api.openai.com/v1",
   "embed_endpoint": "https://api.openai.com/v1",
-  "run_date": "2026-10-19",
+  "run_date": "2026-10-24",
   "documents": [
    {
     "id": "S00-P00-C00",
@@ -1992,14 +1992,14 @@
     "S00-P01-C01",
     "S00-P02-C00"
    ],
-   "answer": "The AFC was represented by the Denver Broncos at Super Bowl 50.",
+   "answer": "The Denver Broncos represented the AFC at Super Bowl 50.",
    "refused": false,
    "passed": true,
    "claims": [
     {
-     "claim": "The AFC champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10",
+     "claim": "The Denver Broncos represented the AFC at Super Bowl 50.",
      "source_id": "S00-P00-C00",
-     "quote": "The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10"
+     "quote": "The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title."
     }
    ],
    "evidence": [
@@ -2134,7 +2134,7 @@
     {
      "claim": "Von Miller forced two fumbles in Super Bowl 50.",
      "source_id": "S00-P02-C00",
-     "quote": "Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles."
+     "quote": "Denver linebacker Von Miller...recording five solo tackles, 2½ sacks, and two forced fumbles."
     }
    ],
    "evidence": [
@@ -2181,7 +2181,7 @@
     "S01-P00-C00",
     "S01-P01-C03"
    ],
-   "answer": "Casimir Pulaski was born in 1745.",
+   "answer": "1745",
    "refused": false,
    "passed": true,
    "claims": [
@@ -2328,7 +2328,7 @@
     {
      "claim": "The Duchy of Normandy was a great fief of medieval France.",
      "source_id": "S02-P01-C01",
-     "quote": "a great fief of medieval France."
+     "quote": "was a great fief of medieval France."
     }
    ],
    "evidence": [
@@ -2466,7 +2466,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "The Latin version of the word Norman was recorded in the 9th century.",
+     "claim": "The Latin version of the word Norman was first recorded in the 9th century.",
      "source_id": "S02-P02-C00",
      "quote": "Latinized variously as Nortmannus, Normannus, or Nordmannus (recorded in Medieval Latin, 9th century)"
     }
@@ -2488,12 +2488,12 @@
     "S03-P01-C00",
     "S03-P02-C00"
    ],
-   "answer": "Nikola Tesla was born on 10 July 1856.",
+   "answer": "Nikola Tesla was born in the year 1856.",
    "refused": false,
    "passed": true,
    "claims": [
     {
-     "claim": "Nikola Tesla was born on 10 July 1856.",
+     "claim": "Nikola Tesla was born in the year 1856.",
      "source_id": "S03-P00-C00",
      "quote": "10 July 1856"
     }
@@ -2520,7 +2520,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Nikola Tesla was of Serbian ethnicity.",
+     "claim": "Nikola Tesla was a Serbian American inventor.",
      "source_id": "S03-P00-C00",
      "quote": "Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor..."
     }
@@ -2574,7 +2574,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Thomas Edison in New York City.",
+     "claim": "Tesla worked for Thomas Edison.",
      "source_id": "S03-P01-C00",
      "quote": "to work for Thomas Edison in New York City."
     }
@@ -2628,9 +2628,9 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Tesla pursued his ideas in his high-voltage, high-frequency power experiments.",
+     "claim": "Tesla conducted high-voltage experiments.",
      "source_id": "S03-P02-C00",
-     "quote": "his high-voltage, high-frequency power experiments"
+     "quote": "his high-voltage, high-frequency power experiments in New York and Colorado Springs"
     }
    ],
    "evidence": [
@@ -2736,7 +2736,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Mathematical models of computation are introduced to study problems and quantify the amount of resources needed to solve them.",
+     "claim": "Mathematical models of computation are used to study problems and quantify the amount of resources needed to solve them.",
      "source_id": "S04-P01-C00",
      "quote": "theory formalizes this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage."
     }
@@ -2812,7 +2812,7 @@
     "H04",
     "H01"
    ],
-   "answer": "Atlas reset links remain valid for 30 minutes.",
+   "answer": "Atlas reset links expire after 30 minutes.",
    "refused": false,
    "passed": true,
    "claims": [
@@ -2983,10 +2983,16 @@
     "H01",
     "H02"
    ],
-   "answer": "Insufficient evidence.",
-   "refused": true,
+   "answer": "Yes, password reset uses a mobile app.",
+   "refused": false,
    "passed": false,
-   "claims": [],
+   "claims": [
+    {
+     "claim": "Password reset uses a mobile app.",
+     "source_id": "H04",
+     "quote": "Password reset uses a mobile app."
+    }
+   ],
    "evidence": [
     "[H04] Boreal reset links expire after 10 minutes. Password reset uses a mobile app.",
     "[H01] Atlas passwords can be reset by email. Temporary accounts require a support agent.",
@@ -3009,7 +3015,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Support agents can send a reset link that stays valid for 4 hours.",
+     "claim": "Support agents can send a reset link that stays valid for 4 hours to an Atlas workspace owner who is locked out.",
      "source_id": "R01",
      "quote": "Support agents can send a reset link that stays valid for 4 hours to an Atlas workspace owner who is locked out."
     }
@@ -3065,7 +3071,7 @@
     {
      "claim": "Check the request time in the admin console before you send a new link.",
      "source_id": "R04",
-     "quote": "When a customer says an Atlas reset link expired too soon, check the request time in the admin console before you send a new link."
+     "quote": "check the request time in the admin console before you send a new link."
     }
    ],
    "evidence": [

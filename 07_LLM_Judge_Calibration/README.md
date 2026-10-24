@@ -7,13 +7,10 @@ checking an LLM judge against human labels | In class**
 
 ## Goal
 
-Label answers yourself, save the labels, then run an LLM judge with a frozen rubric on the same answers and count
-where it agrees with you before you trust its scores. The moment that teaches it: of five answers from your pipeline,
-you fail the two answered from the wrong product's policy, a Boreal question from the Atlas policy and an Atlas
-question from the Boreal one. The judge passes both in 3 of 3 runs, quoting spans that really are in the evidence, so
-the span check passes them too; a four-line check in code fails both. On twelve answers recorded from a small open
-model the judge agrees with you on all 11 that are not refusals, yet its reason for failing the one that obeyed a
-planted order never mentions the order.
+Label answers yourself, then check an LLM judge against your labels before you trust its scores. The moment that
+teaches it: you fail two answers that came from the wrong product's policy; the judge passes both, quoting real text
+from the evidence as its reason, and a few lines of code catch what it missed. On answers from a small open model the
+judge agrees with you, but fails one that followed an order planted in the evidence without ever naming the order.
 
 ## What you will learn
 
@@ -25,6 +22,9 @@ planted order never mentions the order.
 - How to check the judge's quoted spans in code, and what that check cannot see.
 - Which rules belong in a code check rather than in a judge's rubric.
 
+**In class:** Parts B to E. Parts A, F and G are self-study. In class, skip Part A's cells: its label cell stops until
+you label the summary, and Part B does not need it.
+
 ## Coming from
 
 [Lab 06](../06_Evaluation_Set/README.md) scored the pipeline on a golden set with string checks: an accepted answer
@@ -35,7 +35,7 @@ Python, so every count can be checked by hand.
 
 ## What you will do
 
-**Part A: Audit a summary against the claims it must keep.** Four required claims written first, a summary from
+**Part A: Audit a summary against the claims it must keep (self-study).** Four required claims written first, a summary from
 `CHAT_MODEL`, a recorded summary from a small open model, and both labelled claim by claim.
 **Part B: Label five answers and save the labels.** Five of Lab 06's policy cases through Lab 05's pipeline, your
 faithfulness labels, and a file that shows they came before any verdict.
@@ -45,9 +45,9 @@ its parsed reply.
 against its evidence, and three runs.
 **Part E: Check the judge's spans and the product in code.** The span check, what it cannot see, and a product check
 that catches what the judge missed.
-**Part F: Judge answers from another model.** The twelve recorded answers labelled and judged, the claims behind two
+**Part F: Judge answers from another model (self-study).** The twelve recorded answers labelled and judged, the claims behind two
 verdicts, and an ID check that finds the planted line.
-**Part G: Keep the judge in `shared/judge.py`.** The module read and used.
+**Part G: Keep the judge in `shared/judge.py` (self-study).** The module read and used.
 **Going further.** The same evidence in another order.
 **Challenge.** Write the product rule into the rubric. Optional: an order to the grader against a planted fact.
 

@@ -7,12 +7,10 @@ questions, with its cost | In class**
 
 ## Goal
 
-Add keyword search, fuse it with the vector search, rerank the candidates with a chat model, and decide from a
-question-by-question comparison whether each change helps and what it costs. The moment that teaches it: on the 30
-development questions, hybrid search, a common architecture, loses one question at hit@3 and, at hit@1, gains 1 and
-loses 3. The reranker gains 1 and loses 1, costs 961 tokens and 1.2 seconds per question, and for one question named a
-chunk that was not a candidate in 4 of 6 calls. It fixes a ranking both searches miss only on a question worded unlike
-its answer.
+Add keyword search and a reranker to the vector search, and decide from a question-by-question comparison whether
+each change helps and what it costs. The moment that teaches it: hybrid search, a common design, does not beat the
+vector search on these questions and moves a few the wrong way. The reranker fixes one question worded unlike its
+answer, adds a model call to every question, and sometimes names a chunk it was never given.
 
 ## What you will learn
 
@@ -22,6 +20,9 @@ its answer.
 - How to rerank candidates with a chat model and check the returned IDs in code.
 - How to price a retrieval stage in tokens, dollars and seconds.
 - How to write a decision from the paired results and the cost.
+
+**In class:** Parts A to D, and the decision table at the end of Part G (*Write the decision*). Parts E to H are
+self-study.
 
 ## Coming from
 
@@ -39,13 +40,13 @@ and both searches on the 30 questions.
 pushes the Norman answer down.
 **Part D: Compare hybrid search with the baseline, question by question.** The paired table at hit@3 and hit@1, the
 moved questions, and the sign test.
-**Part E: Rerank the candidates with a chat model.** One listwise rerank call with `RERANK_MODEL`, its tokens and
+**Part E: Rerank the candidates with a chat model (self-study).** One listwise rerank call with `RERANK_MODEL`, its tokens and
 seconds, and the check that the reply holds exactly the candidate IDs.
-**Part F: Rerank the 30 questions and count the cost.** Every reply checked, one question repeated five times, the
+**Part F: Rerank the 30 questions and count the cost (self-study).** Every reply checked, one question repeated five times, the
 paired table, the lost question read, and the cost per question.
-**Part G: Try both changes on Atlas questions and decide.** Five Atlas questions from Labs 01 and 04, then the
+**Part G: Try both changes on Atlas questions and decide (self-study).** Five Atlas questions from Labs 01 and 04, then the
 decision table and line.
-**Part H: Keep the pieces in `shared/hybrid.py`.** The module read and checked against the hand versions.
+**Part H: Keep the pieces in `shared/hybrid.py` (self-study).** The module read and checked against the hand versions.
 **Going further.** Maximal marginal relevance on the store.
 **Challenge.** Repair a rejected ranking. Optional: check whether the candidate order sways the reranker.
 

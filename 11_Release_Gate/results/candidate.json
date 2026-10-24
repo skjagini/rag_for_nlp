@@ -11,7 +11,7 @@
   "rerank_model": "gpt-4o-mini",
   "chat_endpoint": "https://api.openai.com/v1",
   "embed_endpoint": "https://api.openai.com/v1",
-  "run_date": "2026-10-18",
+  "run_date": "2026-10-24",
   "documents": [
    {
     "id": "S00-P00-C00",
@@ -1998,9 +1998,9 @@
    "passed": true,
    "claims": [
     {
-     "claim": "The AFC champion Denver Broncos",
+     "claim": "The AFC champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10",
      "source_id": "S00-P00-C00",
-     "quote": "The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title."
+     "quote": "The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10"
     }
    ],
    "evidence": [
@@ -2045,14 +2045,14 @@
     "S00-P02-C00",
     "S00-P00-C00"
    ],
-   "answer": "Cam Newton was named the NFL Most Valuable Player (MVP).",
+   "answer": "Quarterback Cam Newton was named the NFL Most Valuable Player (MVP).",
    "refused": false,
    "passed": true,
    "claims": [
     {
      "claim": "Cam Newton was named the NFL Most Valuable Player (MVP).",
      "source_id": "S00-P01-C00",
-     "quote": "quarterback Cam Newton was named the NFL Most Valuable Player (MVP)."
+     "quote": "quarterback Cam Newton was named the NFL Most Valuable Player (MVP)"
     }
    ],
    "evidence": [
@@ -2154,9 +2154,9 @@
    "passed": true,
    "claims": [
     {
-     "claim": "first female recipient of the Nobel Prize",
+     "claim": "Maria Curie was the first female recipient of the Nobel Prize.",
      "source_id": "S01-P00-C00",
-     "quote": "the first female recipient of the Nobel Prize"
+     "quote": "the first female recipient of the Nobel Prize."
     }
    ],
    "evidence": [
@@ -2175,7 +2175,7 @@
     "S01-P00-C00",
     "S01-P01-C03"
    ],
-   "answer": "Casimir Pulaski was born in 1745.",
+   "answer": "1745",
    "refused": false,
    "passed": true,
    "claims": [
@@ -2201,12 +2201,12 @@
     "S01-P01-C01",
     "S01-P02-C00"
    ],
-   "answer": "Over 100 different species of trees can be found in the Saxon Garden.",
+   "answer": "There are over 100 different species of trees in the Saxon Garden.",
    "refused": false,
    "passed": true,
    "claims": [
     {
-     "claim": "There are over 100 different species of trees",
+     "claim": "There are over 100 different species of trees in the Saxon Garden.",
      "source_id": "S01-P01-C00",
      "quote": "There are over 100 different species of trees"
     }
@@ -2317,7 +2317,7 @@
     {
      "claim": "The Duchy of Normandy was a great fief of medieval France.",
      "source_id": "S02-P01-C01",
-     "quote": "a great fief of medieval France."
+     "quote": "was a great fief of medieval France."
     }
    ],
    "evidence": [
@@ -2414,14 +2414,19 @@
     "S02-P00-C00",
     "S02-P01-C00"
    ],
-   "answer": "The original meaning of the word Norman is \"Northman\" or \"Norseman, Viking.\"",
+   "answer": "The original meaning of the word Norman is \"Norseman, Viking.\"",
    "refused": false,
    "passed": true,
    "claims": [
     {
-     "claim": "The original meaning of the word Norman is \"Northman\" or \"Norseman, Viking.\"",
+     "claim": "The original meaning of the word Norman is Norseman, Viking.",
      "source_id": "S02-P02-C00",
-     "quote": "Old Low Franconian Nortmann \"Northman\" or directly from Old Norse Norðmaðr, Latinized variously as Nortmannus, Normannus, or Nordmannus (recorded in Medieval Latin, 9th century) to mean \"Norseman, Viking\"."
+     "quote": "to mean \"Norseman, Viking\"."
+    },
+    {
+     "claim": "The word Norman comes from Norseman.",
+     "source_id": "S02-P00-C00",
+     "quote": "\"Norman\" comes from \"Norseman\"."
     }
    ],
    "evidence": [
@@ -2447,7 +2452,7 @@
     {
      "claim": "The Latin version of the word Norman was first recorded in the 9th century.",
      "source_id": "S02-P02-C00",
-     "quote": "Latinized variously as Nortmannus, Normannus, or Nordmannus (recorded in Medieval Latin, 9th century)"
+     "quote": "Latinized variously as Nortmannus, Normannus, or Nordmannus (recorded in Medieval Latin, 9th century) to mean \"Norseman, Viking\"."
     }
    ],
    "evidence": [
@@ -2497,7 +2502,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Nikola Tesla was of Serbian ethnicity.",
+     "claim": "Nikola Tesla was a Serbian American inventor.",
      "source_id": "S03-P00-C00",
      "quote": "Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor..."
     }
@@ -2603,7 +2608,7 @@
     {
      "claim": "Tesla conducted high-voltage experiments.",
      "source_id": "S03-P02-C00",
-     "quote": "his high-voltage, high-frequency power experiments in New York and Colorado Springs"
+     "quote": "high-voltage, high-frequency power experiments"
     }
    ],
    "evidence": [
@@ -2705,7 +2710,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Mathematical models of computation are used to study problems and quantify the amount of resources needed to solve them.",
+     "claim": "Mathematical models of computation are introduced to study problems and quantify the amount of resources needed to solve them.",
      "source_id": "S04-P01-C00",
      "quote": "theory formalizes this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage."
     }

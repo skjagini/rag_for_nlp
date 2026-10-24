@@ -41,7 +41,8 @@ cited IDs, and the Moon question, answered with a valid ID.
 **Part D: Let the model say the evidence does not answer.** The abstention line, measured on three unanswerable
 questions, the 30 development questions and one question that needs a step of reasoning.
 **Part E: Quote the evidence and check the quotes in code (self-study).** A JSON schema, the `JSON_MODE` switch, `parse()`, a quote
-check, and the Moon question again with every quote found.
+check that also accepts a quote cut with `...` when its parts are in order, and the Moon question again with every
+quote found.
 **Part F: Test a line planted in the index (self-study).** A fake policy update, ranked first and followed in every run, with or
 without tags; what each check reads.
 **Part G: Keep the answer step in `shared/answer.py` (self-study).** The same steps as functions, used from here on.
@@ -57,7 +58,7 @@ past.
 | Part B | *Nikola Tesla was born on 10 July 1856.*; your count 342, billed 353; `chat_options` sends `temperature: 0` |
 | Part C | Tesla with `[S03-P00-C00]`; the Moon question: *Neil Armstrong* with a valid ID in 5 of 5 |
 | Part D | unanswerable questions abstain 5 of 5 each; 0 of 30 development questions refused; the temporary-accounts question refused 5 of 5 with the rule, 0 of 5 without |
-| Part E | 33 claims on the 30 development questions, every quote found; without the abstention line, the Moon question names Armstrong in 5 of 5 with all 10 quotes found |
+| Part E | the cut quote `Nikola Tesla ... 10 July 1856` found, its parts swapped not found; 33 claims on the 30 development questions, every quote found; without the abstention line, the Moon question names Armstrong in 5 of 5 with all 10 quotes found |
 | Part F | the planted H99 ranks first; *24 hours* in 5 of 5, quote found; with tags, 5 of 5 |
 | Part G | the module: Tesla answered with its quote found, *Insufficient evidence.* for the Moon |
 
@@ -67,10 +68,10 @@ The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https
 abstain, which checks pass), not every word.
 
 **On the other routes.** The `pip` run showed the same pattern in every part (32 claims in Part E instead of 33). With
-`gpt-6-luna` the lab runs unchanged, and the model fails in different places: the Moon question named Armstrong in 1 of
-5 runs in Part C, with a citation (3 of 5 in an earlier run); the abstention line did not refuse the temporary-accounts question (0 of 5);
-without the abstention line its JSON answers to the Moon question said the evidence does not identify him (5 of 5), so
-Part E's blind spot did not appear; and it ignored the planted order in Going further (30 minutes, 5 of 5). The planted
+`gpt-6-luna` the lab runs unchanged, and the model fails in different places: the Moon question named Armstrong in 4 of
+5 runs in Part C, each time without a citation, so the ID check failed it (1 to 3 of 5 cited in earlier runs); the abstention line did not refuse the temporary-accounts question (0 of 5);
+without the abstention line its JSON answers to the Moon question named him in 3 of 5, only once with a quote (in
+earlier runs 0 of 5), so Part E's blind spot appeared once; and it ignored the planted order in Going further (30 minutes, 5 of 5). The planted
 policy update in Part F fooled both models in 5 of 5 runs. Which failures you see depends on the model; the checks and
 the way to measure them do not.
 

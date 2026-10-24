@@ -11,4 +11,4 @@ langchain-openai>=1.7,<2
 langchain-text-splitters>=1.1,<2
 pytest>=8,<10
 # Capstone only: pip install "gradio>=6,<7"
-# Optional LlamaIndex lab only, in a separate environment (it needs openai<3): pip install "llama-index-core>=0.14,<0.15" "llama-index-llms-openai-like>=0.8,<0.9" "llama-index-embeddings-openai-like>=0.4,<0.5"
+# Optional LlamaIndex lab only, in its own environment (it needs openai<3): see Optional_LlamaIndex_Pipeline/README.md and its requirements.txt

@@ -1,8 +1,9 @@
-"""Cited answers from retrieved evidence: the steps Lab 03 builds by hand, kept for the labs after it.
+"""Cited answers from retrieved evidence: the steps Lab 02 builds by hand, kept for the labs after it.
 
 pack() turns search hits into "[ID] text" evidence lines inside a token budget. answer() asks CHAT_MODEL for a JSON
 answer whose claims each name an evidence line and quote it, checks the reply's shape and retries once.
-quote_found() checks one quote against the evidence line it names.
+quote_found() checks one quote against the evidence line it names (a quote cut with "..." passes when its parts
+are there, in order).
 """
 from __future__ import annotations
 
@@ -36,11 +37,14 @@ SCHEMA = {
 
 
 def pack(hits: list, settings: dict, budget: int = 400) -> list[str]:
-    """Evidence lines "[ID] text" from (score, chunk) hits, best first, stopping before the token budget is passed."""
+    """Evidence lines "[ID] text" from (score, chunk) hits, best first, stopping before the token budget is passed.
+
+    A chunk with a "header" (a context header, Lab 03) has it packed in front of its text.
+    """
     encoding = tiktoken.get_encoding(settings["TOKEN_ENCODING"])
     lines, used = [], 0
     for _, chunk in hits:
-        line = f"[{chunk['chunk_id']}] {chunk['text']}"
+        line = f"[{chunk['chunk_id']}] {chunk.get('header', '')}{chunk['text']}"
         tokens = len(encoding.encode(line))
         if used + tokens > budget:
             break
@@ -87,7 +91,18 @@ def words(text: str) -> str:
 
 
 def quote_found(claim: dict, lines: list[str]) -> bool:
-    """True when the claim's quote, word for word, is in the evidence line its source_id names."""
+    """True when the claim's quote, word for word, is in the evidence line its source_id names.
+
+    A quote cut with "..." passes when each part is in that line, in order.
+    """
     evidence = {line[1:line.index("]")]: line[line.index("]") + 2:] for line in lines}
-    quote = words(claim["quote"])
-    return bool(quote) and claim["source_id"] in evidence and quote in words(evidence[claim["source_id"]])
+    if claim["source_id"] not in evidence:
+        return False
+    text, start = words(evidence[claim["source_id"]]), 0
+    parts = [words(part) for part in re.split(r"\.\.\.|…", claim["quote"]) if words(part)]
+    for part in parts:
+        start = text.find(part, start)
+        if start < 0:
+            return False
+        start += len(part)
+    return bool(parts)

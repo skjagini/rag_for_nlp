@@ -1,0 +1,9 @@
+# Optional LlamaIndex lab only. Install these in this lab's own environment, not in the repository's .venv:
+# LlamaIndex's OpenAI integration needs openai<3, and the other labs use openai 3.
+# The last three lines are what shared/settings.py, shared/search.py and shared/answer.py import.
+llama-index-core>=0.14,<0.15
+llama-index-llms-openai-like>=0.8,<0.9
+llama-index-embeddings-openai-like>=0.4,<0.5
+numpy>=2.0,<3
+tiktoken>=0.8,<1
+python-dotenv>=1.0,<2

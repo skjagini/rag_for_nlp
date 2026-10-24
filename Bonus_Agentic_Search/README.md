@@ -54,9 +54,9 @@ should change nothing.
 | Part D | `CompiledStateGraph`, recursion limit 9999; the same two queries and *the 9th century*; with `run_limit=1`, *Tool call limit exceeded. ...* for one call |
 | Part E | one fact: both right 9 of 9, 9 against 18 model calls, 3,981 against 4,056 tokens in; two parts: fixed 3 of 9, agent 9 of 9, 4,242 against 6,123 tokens in; no search: fixed 0 of 6, agent 3 of 6 (it refuses the thank-you) |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 18 Oct 2026
+The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026
 (macOS, Python 3.13.5, a fresh `uv sync`; `langchain` 1.4.6, `langchain-core` 1.6.12, `langchain-openai` 1.7.2,
-`langgraph` 1.2.16). The same notebook ran on the `pip` route (Python 3.12.11) and with `gpt-6-luna` and
+`langgraph` 1.2.16). The same day the notebook ran on the `pip` route (Python 3.12.11) and with `gpt-6-luna` and
 `REASONING_EFFORT=none`. Model replies vary between runs: compare which answers are right and how many calls each
 design makes, not every word.
 
@@ -67,7 +67,7 @@ both designs behave differently. The fixed pipeline answers the Normandy questio
 evidence does not give the date (3 of 3), so Part A's wrong half with a found quote does not appear; it is still
 right on only 3 of 9 two-part runs. On the Normandy question the agent first searches with the whole question, then
 for the missing part, one search per reply instead of two in one (2 or 3 searches, 3 or 4 calls), and the two-part
-questions cost it 11,733 tokens in against the pipeline's 4,215, nearly three times. One-fact questions cost it 5,662
+questions cost it 13,002 tokens in against the pipeline's 4,215, about three times. One-fact questions cost it 5,654
 tokens in against 3,954. It also searches for *Hi there!* and *Thanks, that is all I needed.* (6 of 6, with queries
 such as *greeting hello hi there*) before it replies politely, so it is right 6 of 6 there at twice the pipeline's
 calls. In the challenge, the small-talk line stopped those searches and every one-fact question still searched and

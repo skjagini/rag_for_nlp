@@ -8,18 +8,17 @@ results | Self-study**
 
 ## Goal
 
-Put the pipeline you built behind a small web page that answers with citations and shows its sources and its trace,
-and ship it only when Lab 11's release gate passes on the page's own results. The moment that teaches it: the first
-page asked visitors who they are. A customer who answered *agent* read the support runbook's *4 hours* in 3 of 3
-requests, through a permission filter that does exactly what Lab 11 tested, and hiding the field from the screen
-changed nothing. The fix is a sign-in: the page, not the visitor, decides who is asking.
+Put the pipeline behind a small web page that answers with citations and shows its sources, and ship it only when Lab
+11's release tests pass on the page's own results. The moment that teaches it: the first page asked visitors who they
+are, so a customer who typed *agent* could read an internal runbook, and hiding the field from the screen changed
+nothing. The fix is a sign-in: the page, not the visitor, decides who is asking.
 
 ## What you will learn
 
 - How to build and test the service's engine before any page: a permission filter, a cited answer, a quote check
   and one trace record per request.
-- How to put the engine behind a Gradio page that shows its progress and shows the answer only after the quote check
-  has run.
+- How to put the engine behind a Gradio page that shows its progress, shows the answer only after the quote check
+  has run, and holds back an answer it cannot check.
 - How to test a page from code as several visitors with `gradio_client`, update by update.
 - Why a page must take the user from a sign-in and never from a field the visitor fills, and how Gradio's `auth` does
   it.
@@ -38,7 +37,7 @@ puts that pipeline behind a page that people can use, and runs the same tests on
 **Part A: Build the engine and test it before any page.** The labelled index, the permission filter, one answer with
 its token count, the quote check, and one trace record per request, combined into `answer_and_trace()`.
 **Part B: Put the engine behind a page that streams its progress.** A Gradio page that asks for the question and the
-user, its three updates read from code with `gradio_client`.
+user and holds back an answer whose quotes fail the check, its three updates read from code with `gradio_client`.
 **Part C: Decide who is asking.** A customer who says *agent*, the same with the field hidden, then a sign-in that maps
 each login to a user, tested with three visitors.
 **Part D: Run the service from `app.py`.** The file read, its functions compared with the notebook's, and how to start
@@ -46,7 +45,7 @@ it.
 **Part E: Run the release gate on the service's results.** Lab 11's 42 release questions through the signed-in page,
 `results/service.json`, the gate, the paired comparison, and the CI workflow.
 **Going further.** Saving and loading the index, and the one-line change to a database store.
-**Challenge.** Read the service's traces. Optional: stop a right answer from failing the quote check.
+**Challenge.** Read the service's traces. Optional: test a rule against shortened quotes.
 
 ![One request through the service, and the release gate on its saved results](resources/service_flow.png)
 
@@ -55,35 +54,40 @@ it.
 | After | You should see |
 |---|---|
 | Part A | 281 documents (277 `public`, 3 `staff`, 1 `internal`); the runbook question: customer H02, H01, H04, *30 minutes*; agent R04, R01, H02, *4 hours*; one trace line |
-| Part B | three updates: *Searching...*, the three sources, then the answer with its quote and the trace |
+| Part B | a failed check shows *This answer could not be checked against its sources, so it is not shown.*; three updates: *Searching...*, the three sources, then the answer with its quote and the trace |
 | Part C | a customer who says *agent*: R04, R01, H02 and *4 hours*, 3 of 3, also with the field hidden; signed in: casey *30 minutes*, alex *4 hours*, 3 of 3 each; no sign-in: `AuthenticationError` |
-| Part D | six functions, each `same as in the notebook: True` |
-| Part E | 38 of 42 passed; `5 passed`; gained A01, A02, A03, lost none |
+| Part D | seven functions, each `same as in the notebook: True` |
+| Part E | 38 of 42 passed, 0 held back; `5 passed`; gained A01, A02, A03, lost none |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 19 Oct 2026
+The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026
 (macOS, Python 3.13.5, a fresh `uv sync --group capstone`; `gradio` 6.30.0, `gradio_client` 2.7.2, `langchain-core`
 1.6.12, `langchain-openai` 1.7.2, `pytest` 9.1.1). Model replies vary between runs: compare who read what and which
 tests pass, not every word.
 
-**Across our runs.** Seven runs of Part E on `gpt-4o-mini`, the saved run among them. The service passed 38 of 42 and the gate said `5 passed` in all
-seven, gaining A01 to A03 and losing nothing. The customer who said *agent* read R01 and got *4 hours* in every
-request of the runs we read, with the field shown or hidden, because the search, not the model, decides what reaches
-the pack. In four of the seven runs one answer failed the quote check and was shown under the warning: each time we
-looked, the right answer *Von Miller forced two fumbles in Super Bowl 50.*, whose quote the model shortened with `...`.
-Asked again and again, that answer failed the check 2 of 10, 7 of 15, 8 of 10, 5 of 10 and 6 of 10 times; with Task
-2's line, 0 of 10 in each run with it. On the whole release set, though, the line moved the failure to another right
-answer (*When did Tesla discover the possibility of wireless connectivity?*, a quote with one word added) in both runs
-we tried. A fix can move a failure rather than remove it, so run the whole set after any change to the rules.
+**Across our runs.** Thirteen runs of Part E on `gpt-4o-mini`, the saved run among them. The service passed 38 of 42
+and the gate said `5 passed` in all thirteen, gaining A01 to A03 and losing nothing. The customer who said *agent* read
+R01 and got *4 hours* in every request of the runs we read, with the field shown or hidden, because the search, not the
+model, decides what reaches the pack.
 
-**On the other routes.** The `pip` run (Python 3.12.14, same package versions) gave the same results in every part.
-With `gpt-6-luna` and `REASONING_EFFORT=none` the lab runs unchanged and the access moment is the same (R01 and *4
-hours* in 6 of 6 for the customer who said *agent*), and three things differ. The customer's own runbook question is
-refused (*Insufficient evidence.* in Part A, 1 of 3 for casey in Part C) instead of answered with *30 minutes*. The
-service also passes 38 of 42, but different questions: it gains G05, G08 and G09 and loses three that Lab 11's baseline
-passed (the Vistula animals, the meaning of *Norman*, answered with curly quotes that the reference check misses, and
-G03, a refusal it now answers), so the gate says `2 failed, 3 passed` (refusals and regressions). Lab 11's saved
-baseline comes from `gpt-4o-mini`: to judge a model change, run Lab 11 on the new model first and compare with that
-baseline.
+The page holds back an answer whose quotes fail the check: the visitor sees *This answer could not be checked against
+its sources, so it is not shown.* and the sources, and the trace file keeps the reply. A guard like that must be
+measured on the answers it should let through. Up to 19 Oct, the check failed one right answer in four of seven runs:
+*Von Miller forced two fumbles in Super Bowl 50.*, whose quote the model shortened with `...` (2 to 8 of 10 times when
+asked again and again), so the page then showed failing answers under a warning instead. Since Lab 02's check accepts
+a cut whose parts are in the line in order, no answer failed it in any run of 24 Oct: three runs with the warning page,
+then four with the page that holds back (uv, its solved copy, pip and `gpt-6-luna`), held back 0 of 42 each time. A rule
+against cutting quotes (Task 2's line) had also stopped the Von Miller failure, but moved it to another right answer
+(*When did Tesla discover the possibility of wireless connectivity?*, a quote with one word added) in both runs we
+tried. A fix can move a failure rather than remove it, so run the whole set after any change to the rules.
+
+**On the other routes.** The `pip` run (Python 3.12.11; `openai` 3.37.0 and `langchain-core` 1.7.0, newer than the
+lock) gave the same results in every part: 38 of 42, none held back, `5 passed`. With `gpt-6-luna` and `REASONING_EFFORT=none` the lab runs unchanged and the access moment is the same (R01 and *4
+hours* in 6 of 6 for the customer who said *agent*). Its answers are worded differently, and casey's runbook question,
+which an earlier `gpt-6-luna` run often refused, got *30 minutes* in 3 of 3. Through the page it passed 37 of 42, with
+none held back. It gained G05, G08 and G09, which `gpt-4o-mini` fails, and lost four questions: G03, a refusal it now
+answers, the Vistula animals, the meaning of *Norman* (answered with curly quotes that the reference check misses) and
+a complexity question. So the gate says `2 failed, 3 passed` (refusals and regressions). Lab 11's saved baseline comes
+from `gpt-4o-mini`: to judge a model change, run Lab 11 on the new model first and compare with that baseline.
 
 ## Before you start
 
@@ -144,7 +148,7 @@ with the change, so the pull request fails when a release test does. We ran the 
 Python 3.12 environment with only `requirements.txt` installed: `5 passed`.
 
 The notebook ends with a troubleshooting table: Gradio not installed, Gradio removed by a later `uv sync`, a wrong
-password, a page launched without `auth=`, and `app.py` started without a key.
+password, a page launched without `auth=`, `app.py` started without a key, and an answer held back.
 
 ## Resources
 

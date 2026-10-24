@@ -1,20 +1,19 @@
-"""The pipeline of Labs 01 and 03, rebuilt with LangChain in Lab 05: the baseline for the labs after it.
+"""The pipeline of Labs 01 and 02, rebuilt with LangChain in Lab 05: the baseline for the labs after it.
 
-load_corpus() reads Lab 03's corpus: the 272 chunks and the five policies. to_documents() turns its records into
+load_corpus() is Lab 04's corpus(): the 272 chunks and the five policies. to_documents() turns its records into
 LangChain Documents. build_store() embeds them into an InMemoryVectorStore. retrieve() searches it, with k=3 by
 default (the store's own default is 4). evidence() writes the hits as "[ID] text" lines, and answer() asks for a
-CitedAnswer with Lab 03's rules, so shared.answer.quote_found() checks its claims unchanged.
+CitedAnswer with Lab 02's rules, so shared.answer.quote_found() checks its claims unchanged.
 """
 from __future__ import annotations
-
-import json
 
 from langchain_core.documents import Document
 from langchain_core.vectorstores import InMemoryVectorStore
 from pydantic import BaseModel
 
 from shared.answer import RULES
-from shared.settings import DATA, lc_chat_model, lc_embeddings
+from shared.settings import lc_chat_model, lc_embeddings
+from shared.trace import corpus as load_corpus
 
 
 class Claim(BaseModel):
@@ -26,13 +25,6 @@ class Claim(BaseModel):
 class CitedAnswer(BaseModel):
     answer: str
     claims: list[Claim]
-
-
-def load_corpus() -> list[dict]:
-    """The 272 chunks and the five policies, each policy as one chunk whose ID is its source ID (as in Lab 03)."""
-    chunks = json.loads((DATA / "squad-chunks.json").read_text(encoding="utf-8"))
-    policies = json.loads((DATA / "support-case.json").read_text(encoding="utf-8"))
-    return chunks + [{**policy, "chunk_id": policy["source_id"]} for policy in policies]
 
 
 def to_documents(records: list[dict]) -> list[Document]:

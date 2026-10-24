@@ -8,10 +8,9 @@ retrieval from measured answers, tokens, cost and seconds | Self-study**
 ## Goal
 
 Decide between putting the whole corpus in the prompt and retrieving a few chunks, from answers, tokens, cost and
-seconds measured on the same questions. The moment that teaches it: the whole corpus fits in one prompt, about
-19,466 tokens, yet on `gpt-4o-mini` it passed the answer check for 25 of 34 questions against
-31 for retrieval, at 40 times the input tokens per question. Given the supporting passage alone, the
-model answered the questions it had missed in 18 of 18 runs; inside the whole corpus, in 0 of 18.
+time measured on the same questions. The moment that teaches it: the whole corpus fits in one prompt, yet it answers
+fewer questions right than retrieval, at many times the cost. The model answers the questions it missed when it gets
+the right passage alone, but not when that passage sits inside the whole corpus.
 
 ## What you will learn
 
@@ -49,14 +48,14 @@ table, and what the notebook cost.
 | After | You should see |
 |---|---|
 | Part A | 125 lines, 19,466 tokens; Tesla 1856 from all three routes; Atlas *24 hours* with no evidence, *30 minutes* from the other two |
-| Part B | screen: no evidence 19, retrieval 31, whole corpus 25 of 34; refused 0, 1 and 4; claims 35 (35 quotes found) and 31 (29 found) |
-| Part C | 0.02, 0.12 and 3.00 dollars per 1,000 questions; 489 against 19,700 input tokens; corpus first: 626,688 of 669,798 tokens cached, 1.61 dollars, 22 passed |
-| Part D | six questions lost; passage alone 18 of 18, its article 15, whole corpus 0; moved first 18, to the middle 6, last 12 |
-| Part E | 97,564 tokens a question at five times the corpus; seven copies (136,262 tokens) refused at 128,000; the notebook used 2,836,809 input tokens, 0.31 dollars |
+| Part B | screen: no evidence 19, retrieval 31, whole corpus 23 of 34; refused 0, 1 and 6; claims 34 (34 quotes found) and 29 (28 found) |
+| Part C | 0.02, 0.11 and 2.99 dollars per 1,000 questions; 489 against 19,700 input tokens; corpus first: 607,104 of 669,798 tokens cached, 1.65 dollars, 23 passed |
+| Part D | eight questions lost; passage alone 24 of 24, its article 21, whole corpus 0; moved first 24, to the middle 11, last 18 |
+| Part E | 97,564 tokens a question at five times the corpus; seven copies (136,262 tokens) refused at 128,000; the notebook used 3,315,159 input tokens, 0.36 dollars |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 18 Oct 2026
-(macOS, Python 3.13.5, a fresh `uv sync`; `langchain-core` 1.6.12, `langchain-openai` 1.7.2). The same notebook ran on
-the `pip` route (Python 3.12.14) and with `gpt-6-luna` and `REASONING_EFFORT=none`. Model replies vary between runs:
+The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026
+(macOS, Python 3.13.5, a fresh `uv sync`; `langchain-core` 1.6.12, `langchain-openai` 1.7.2). The same day the notebook ran on
+the `pip` route (Python 3.12.11) and with `gpt-6-luna` and `REASONING_EFFORT=none`. Model replies vary between runs:
 compare the counts and which answers fail, not every word, and never one run's seconds as the latency.
 
 **Across our runs.** Six runs on `gpt-4o-mini`: four of the whole notebook, the saved run among them, and two of Part B
@@ -64,21 +63,23 @@ alone. Retrieval passed 31 of 34 in all six; the whole corpus passed 23 to 25, a
 route 18 or 19. With the corpus first, 21 to 23 passed. In Part D the passage alone and the passage moved first passed
 in every run; inside the whole corpus, in its own place, it passed in 0 to 2 runs per notebook run, and the middle (6
 to 12) and last (12 to 18) moved between runs. Median seconds: retrieval 1.22 to 1.43, whole corpus 1.38 to 1.70.
-Each notebook run cost 0.29 to 0.34 dollars.
+Each notebook run cost 0.29 to 0.36 dollars. On 24 Oct 2026 three more runs (the saved one, the solved notebook and
+pip) gave the whole corpus 23 of 34 each and lost eight questions in Part D instead of six; run within the hour after
+another, they cached far more of the question-first prompts (470,016 and 432,896 tokens against 19,584).
 
-**On the other routes.** The `pip` run gave the same pattern: 19, 31 and 25 of 34; six questions lost; in Part D the passage alone 18 of 18,
-inside the whole corpus 0 of 18, moved first 18 of 18. With `gpt-6-luna` the lab runs unchanged, and four things
-differ. It answers better from the whole corpus: 28 of 34 against 32 for retrieval (15 with no evidence), 2 refused;
-four questions were lost, and in Part D the whole corpus passed 1 of 12 runs, moved last 12 of 12, first 9 of 12, the
+**On the other routes.** The `pip` run gave the same pattern: 19, 31 and 23 of 34; eight questions lost; in Part D the passage alone 24 of 24,
+inside the whole corpus 1 of 24, moved first 24 of 24. With `gpt-6-luna` the lab runs unchanged, and four things
+differ. It answers better from the whole corpus: 28 of 34 against 32 for retrieval (16 with no evidence), 2 refused;
+four questions were lost, and in Part D the whole corpus passed 1 of 12 runs, moved last 12 of 12, first 8 of 12, the
 middle 8 of 12. It cached nothing with the corpus first (0 of 669,696 input tokens), so that order saved nothing (30
 of 34 passed). It answered the seven copies (136,262 tokens) instead of raising the error: its window is larger. And
 the dollars it prints are `gpt-4o-mini`'s prices from `models.env`; `gpt-6-luna` is listed at 0.10 and 0.50 dollars
 per million input and output tokens, so set the `CHAT_PRICE_*` lines when you switch. In Going further, without the
-abstention line, it passed 9 of 12 runs and still declined the Moon question.
+abstention line, it passed 10 of 12 runs and still declined the Moon question.
 
 ## Before you start
 
-- **Lab 00 first,** then Labs 03 to 05: this lab uses `shared/lc_pipeline.py` (Lab 05), `shared/answer.py` (Lab 03)
+- **Lab 00 first,** then Labs 02, 04 and 05: this lab uses `shared/lc_pipeline.py` (Lab 05), `shared/answer.py` (Lab 02)
   and the screen from Lab 04.
 - **Open the notebook:** on Colab with the badge above (add `OPENAI_API_KEY` under Secrets first); locally or in a
   codespace, open `10_long_context_or_retrieval.ipynb` and choose the `.venv` kernel. Run Setup and Config first.

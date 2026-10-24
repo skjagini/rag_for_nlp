@@ -7,12 +7,11 @@ failing stage with oracle context | In class**
 
 ## Goal
 
-Trace every question through the pipeline, find the wrong answers, and name the stage where each one went wrong. The
-moment that teaches it: 34 questions give three wrong answers, and the stage table puts all three at the same place:
-the supporting passage was retrieved and packed, and the answer is still wrong. Oracle context, the labelled passage
-alone, splits them: one answer becomes right in 5 of 5 runs, one becomes right in words the label does not list, and
-one is still refused in 5 of 5. Three wrong answers at one stage need three different repairs, and the trace shows
-which.
+Follow every question through the pipeline, find the wrong answers, and name the step where each one went wrong. The
+moment that teaches it: the wrong answers all fail at the same step, after the right passage was found and given to
+the model. Giving the model that passage alone shows three different causes: one answer was misled by the other
+passages, one was right all along in words the answer key did not list, and one the model still refuses. One failing
+step, three different repairs.
 
 ## What you will learn
 
@@ -24,9 +23,12 @@ which.
   how an incomplete label turns a right answer into a "miss".
 - How to save a baseline run that later labs compare against.
 
+**In class:** Parts A and D. Parts B, C, E and F are self-study. Run the cells of Parts B and C in class without
+stopping on them, because Part D reads the traces and screen results they make.
+
 ## Coming from
 
-[Lab 03](../03_Cited_Answers/README.md) built the answer step and `shared/answer.py`: the model answers from packed
+[Lab 02](../02_Cited_Answers/README.md) built the answer step and `shared/answer.py`: the model answers from packed
 evidence with quoted citations, or says *Insufficient evidence.* This lab runs that pipeline on every question and
 keeps a record of each step, so a wrong answer can be traced to the step that caused it. It stays in plain Python;
 Lab 05 then rebuilds the same pipeline with LangChain.
@@ -35,14 +37,14 @@ Lab 05 then rebuilds the same pipeline with LangChain.
 
 **Part A: Trace one question by hand.** Search, pack, hash the prompt, call the model and keep the raw reply, the
 tokens billed and the stamp in one record.
-**Part B: Trace every question.** The same steps as a function, run on the 30 development questions and four Atlas
+**Part B: Trace every question (self-study).** The same steps as a function, run on the 30 development questions and four Atlas
 questions written for this lab.
-**Part C: Screen the answers.** A whole-word check against the expected answer strings, and the three answers it flags.
+**Part C: Screen the answers (self-study).** A whole-word check against the expected answer strings, and the three answers it flags.
 **Part D: Find the stage where the support was lost.** A stage table that follows the supporting passage through the
 corpus, the hits, the pack and the answer.
-**Part E: Give the model only the labelled passage.** Oracle context on the three failures, and the abstention line
+**Part E: Give the model only the labelled passage (self-study).** Oracle context on the three failures, and the abstention line
 tested on its own.
-**Part F: Save the baseline in `shared/trace.py`.** The trace step as a module, and the 30 development questions traced
+**Part F: Save the baseline in `shared/trace.py` (self-study).** The trace step as a module, and the 30 development questions traced
 once, saved and read back.
 **Challenge.** Find the packed line that misled the model. Optional: name the stage in three traces written by hand.
 
@@ -71,7 +73,7 @@ baseline passes 28 of 30. Which failures you see depends on the model; the way t
 
 ## Before you start
 
-- **Lab 00 first,** then Labs 01 and 03: this lab uses `shared/search.py`, `shared/answer.py` and the cached chunk
+- **Lab 00 first,** then Labs 01 and 02: this lab uses `shared/search.py`, `shared/answer.py` and the cached chunk
   vectors.
 - **Open the notebook:** on Colab with the badge above (add `OPENAI_API_KEY` under Secrets first); locally or in a
   codespace, open `04_trace_and_diagnose.ipynb` and choose the `.venv` kernel. Run Setup and Config first.

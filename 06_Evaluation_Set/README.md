@@ -7,11 +7,10 @@ retrieval, answers and refusals per question | In class**
 
 ## Goal
 
-Write golden records for your pipeline, score it one question at a time, and report every measure with its
-denominator and every kind of question on its own. The moment that teaches it: token F1, the classic answer metric,
-gives a wrong duration half credit (*30 minutes* against *10 minutes*: 0.500) and a right sentence about Tesla only 0.222 (both in Part B). And on the 38 records of the course golden set the pipeline passes 34, while the
-eight policy cases, written for the questions it must refuse or answer with care, pass 5: one of them
-answers a Boreal question from the Atlas policy in 3 of 3 runs.
+Write a test set for your pipeline, score it one question at a time, and report each kind of question on its own. The
+moment that teaches it: the standard word-overlap score gives half credit to a wrong number of minutes and little
+credit to a right answer written as a full sentence. And the pipeline looks good on the whole set while failing some
+of the policy questions written to test it, one of them answering a Boreal question from the Atlas policy.
 
 ## What you will learn
 
@@ -21,6 +20,8 @@ answers a Boreal question from the Atlas policy in 3 of 3 runs.
   a set with hashes.
 - How to run a pipeline on a golden set and keep one row per question.
 - How to score refusals on their own, and report each kind of question as its own slice.
+
+**In class:** Parts A to D. Parts E and F are self-study.
 
 ## Coming from
 
@@ -38,9 +39,9 @@ Part A, and four answers to predict.
 **Part C: Write ten golden records.** One record by hand, seven from the development questions, three about the
 policies (a paraphrase, an exception, a refusal), versioned with hashes and saved outside the index.
 **Part D: Run the pipeline on the ten records.** One record by hand, then one row per record.
-**Part E: Report each measure with its denominator.** hit@3, MRR@3, EM and F1, the rows behind them, a reference
+**Part E: Report each measure with its denominator (self-study).** hit@3, MRR@3, EM and F1, the rows behind them, a reference
 check that fits generated sentences, and the refusals on their own lines.
-**Part F: Score the course golden set by slice.** The reviewed policy cases, `shared/evals.py`, 38 records scored,
+**Part F: Score the course golden set by slice (self-study).** The reviewed policy cases, `shared/evals.py`, 38 records scored,
 the slices, three runs of the policy cases, and the rows saved for later labs.
 **Challenge.** Write records for a slice the set lacks. Optional: version a change to the set.
 
@@ -73,7 +74,7 @@ model the string checks, not the pipeline, are what fail: read the failing rows 
 
 ## Before you start
 
-- **Lab 00 first,** then Lab 05: this lab uses `shared/lc_pipeline.py` and Lab 03's `RULES`.
+- **Lab 00 first,** then Lab 05: this lab uses `shared/lc_pipeline.py` and Lab 02's `RULES`.
 - **Open the notebook:** on Colab with the badge above (add `OPENAI_API_KEY` under Secrets first); locally or in a
   codespace, open `06_evaluation_set.ipynb` and choose the `.venv` kernel. Run Setup and Config first.
 - **Data:** `data/development-questions.json`, `data/squad-chunks.json` and `data/support-case.json`, read in place.

@@ -28,8 +28,11 @@ def embed(texts: list[str], settings: dict, batch_size: int = 100) -> np.ndarray
 
 
 def chunk_vectors(chunks: list[dict], settings: dict) -> np.ndarray:
-    """The chunks' vectors, row i for chunks[i]: embedded the first time, read from .cache/ after that."""
-    texts = [chunk["text"] for chunk in chunks]
+    """The chunks' vectors, row i for chunks[i]: embedded the first time, read from .cache/ after that.
+
+    A chunk with a "header" (a context header, Lab 03) is embedded with the header in front of its text.
+    """
+    texts = [chunk.get("header", "") + chunk["text"] for chunk in chunks]
     key = json.dumps([embed_url(settings), settings["EMBED_MODEL"], settings.get("EMBED_DIMENSIONS"), texts])
     name = settings["EMBED_MODEL"].replace("/", "_")
     path = ROOT / ".cache" / f"chunks-{name}-{hashlib.sha256(key.encode()).hexdigest()[:12]}.npz"
