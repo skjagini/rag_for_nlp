@@ -1,0 +1,199 @@
+{
+ "about": "Constructed for these labs on 24 Oct 2026: questions a customer might ask about support_handbook.md, each labelled with the policy files that answer it, from the policy text, before any search ran. 'customer words' questions share few words with their policy; 'rare term' questions use a word the policy uses. Not human annotations, not a benchmark.",
+ "questions": [
+  {
+   "question_id": "CH01",
+   "question": "My album download stopped working, I bought it about four months ago.",
+   "files": [
+    "policy_digital_downloads.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH02",
+   "question": "The record I got is bent and won't play properly.",
+   "files": [
+    "policy_damaged_media.md",
+    "policy_warranty.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH03",
+   "question": "Can I pay with bitcoin?",
+   "files": [
+    "policy_payment.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH04",
+   "question": "How long until my money comes back?",
+   "files": [
+    "policy_refunds.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH05",
+   "question": "Will my parcel arrive faster if I live in the same country?",
+   "files": [
+    "policy_shipping.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH06",
+   "question": "Do you sell my information to other companies?",
+   "files": [
+    "policy_privacy.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH07",
+   "question": "Who can I talk to if my rep says no and I disagree?",
+   "files": [
+    "policy_escalations.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH08",
+   "question": "I lost the code from my present card, can you send me another one?",
+   "files": [
+    "policy_gift_cards.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH09",
+   "question": "Can I move my songs over to my wife's account?",
+   "files": [
+    "policy_library.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH10",
+   "question": "When can I reach a person?",
+   "files": [
+    "policy_support_hours.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH11",
+   "question": "I was billed twice for the same album today.",
+   "files": [
+    "policy_refunds.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH12",
+   "question": "The album I ordered early keeps getting pushed back.",
+   "files": [
+    "policy_preorders.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH13",
+   "question": "I'm at university, do I get money off?",
+   "files": [
+    "policy_student_discount.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH14",
+   "question": "Can I swap the CD for the vinyl version?",
+   "files": [
+    "policy_exchanges.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH15",
+   "question": "How long do you hold on to my old support emails?",
+   "files": [
+    "policy_data_retention.md",
+    "policy_accounts.md"
+   ],
+   "kind": "customer words"
+  },
+  {
+   "question_id": "CH16",
+   "question": "What is the SLA for a first reply?",
+   "files": [
+    "policy_support_hours.md"
+   ],
+   "kind": "rare term"
+  },
+  {
+   "question_id": "CH17",
+   "question": "Is split tender allowed?",
+   "files": [
+    "policy_payment.md"
+   ],
+   "kind": "rare term"
+  },
+  {
+   "question_id": "CH18",
+   "question": "Can I cancel before the street date?",
+   "files": [
+    "policy_preorders.md"
+   ],
+   "kind": "rare term"
+  },
+  {
+   "question_id": "CH19",
+   "question": "Does a .edu email get a discount?",
+   "files": [
+    "policy_student_discount.md"
+   ],
+   "kind": "rare term"
+  },
+  {
+   "question_id": "CH20",
+   "question": "Do you add VAT after the invoice is issued?",
+   "files": [
+    "policy_international.md"
+   ],
+   "kind": "rare term"
+  },
+  {
+   "question_id": "CH21",
+   "question": "Is Margaret Park one of your representatives?",
+   "files": [
+    "policy_support_reps.md"
+   ],
+   "kind": "rare term"
+  },
+  {
+   "question_id": "CH22",
+   "question": "Can I get a partial refund on a multi-disc set?",
+   "files": [
+    "policy_refunds.md"
+   ],
+   "kind": "rare term"
+  },
+  {
+   "question_id": "CH23",
+   "question": "Is there a warranty on third-party needles?",
+   "files": [
+    "policy_warranty.md"
+   ],
+   "kind": "rare term"
+  },
+  {
+   "question_id": "CH24",
+   "question": "What happens after the first byte of a download?",
+   "files": [
+    "policy_cancellations.md"
+   ],
+   "kind": "rare term"
+  }
+ ]
+}
