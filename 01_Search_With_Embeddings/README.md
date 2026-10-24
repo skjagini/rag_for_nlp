@@ -7,10 +7,9 @@ meaning and measuring retrieval | In class**
 
 ## Goal
 
-Rank a corpus for a question through an embeddings API, measure how often the right paragraph comes back, and know
-what a similarity score cannot tell you. The moment that teaches it: ten questions labelled answerable or not before
-any search. *Who sang the national anthem at Super Bowl 50?*, which no paragraph answers, scores 0.6554, higher than
-three of the five questions the corpus does answer, so no score cutoff can separate the two kinds.
+Search a set of documents for a question with an embeddings API, check how often the right paragraph comes back, and
+learn what a similarity score cannot tell you. The moment that teaches it: a question that no paragraph answers
+scores higher than questions the paragraphs do answer, so no score cutoff can tell the two kinds apart.
 
 ## What you will learn
 
@@ -21,6 +20,9 @@ three of the five questions the corpus does answer, so no score cutoff can separ
 - How to test, on questions labelled before the search, whether a score cutoff tells answerable questions from
   unanswerable ones.
 - How to search the corpus with `shared/search.py`, which keeps these steps for the labs after this one.
+
+**In class:** Parts A, B, C and E. Parts D, F and G are self-study. Run Part D's cells in class without stopping on
+them, because Part E ranks the vectors Part D builds.
 
 ## Coming from
 
@@ -37,12 +39,13 @@ library.
 sentences, and why the dot product is enough for unit-length vectors.
 **Part C: Search the five product policies.** Rank five Atlas and Boreal policies for an Atlas question, and see a
 policy for the wrong product come second.
-**Part D: Embed the corpus in batches.** 272 chunks in batches of 100, with the IDs kept in the same order as the rows.
+**Part D: Embed the corpus in batches (self-study).** 272 chunks in batches of 100, with the IDs kept in the same order as the rows.
 **Part E: Rank the corpus for 30 questions and count hit@3.** One matrix product for all questions, hit@3 and hit@1,
 and why the one hit@1 miss happened.
-**Part F: Test whether a score cutoff separates answerable questions.** A cutoff chosen from two good examples, then
-ten questions labelled before the search and five cutoffs counted.
-**Part G: Keep the search in `shared/search.py`.** The same steps as functions, with a cache, used from here on.
+**Part F: Test whether a score cutoff separates answerable questions (self-study).** A cutoff chosen from two good
+examples, then ten questions labelled before the search: what that one cutoff answers and refuses, then four cutoffs
+compared.
+**Part G: Keep the search in `shared/search.py` (self-study).** The same steps as functions, with a cache, used from here on.
 **Going further.** Shorter vectors with `EMBED_DIMENSIONS` (OpenAI only), measured on hit@3 and hit@1.
 **Challenge.** Test the cutoff on four questions of your own. Optional: reword the Atlas question and see where the
 answering policy lands.
@@ -52,16 +55,16 @@ answering policy lands.
 | After | You should see |
 |---|---|
 | Part A | `text-embedding-3-small`, 1,536 numbers, 8 tokens billed |
-| Part B | toy cosines A 1.0, B 0.7071; real sentences 1–2 0.7307, 1–3 0.3137, 2–3 0.2729 |
-| Part C | H02 0.6970, H04 (Boreal) 0.4882, H01 0.4254, H05 0.2401, H03 0.1775 |
+| Part B | toy cosines A 1.0, B 0.7071; real sentences 1–2 about 0.73, 1–3 about 0.31, 2–3 about 0.27 |
+| Part C | H02 about 0.70, H04 (Boreal) 0.49, H01 0.43, H05 0.24, H03 0.18 |
 | Part D | three batches, 21,539 tokens, `D: (272, 1536)` |
-| Part E | Tesla's top chunk `S03-P00-C00` (0.7192); hit@3 30/30; hit@1 29/30, missing *Who was the Super Bowl 50 MVP?* |
-| Part F | anthem question 0.6555, above the 0.60 cutoff; lowest answerable 0.5700, highest unanswerable 0.6554; 0.55 makes one mistake on the ten and refuses 3 of the 30 development questions |
+| Part E | Tesla's top chunk `S03-P00-C00` (about 0.72); hit@3 30/30; hit@1 29/30, missing *Who was the Super Bowl 50 MVP?* |
+| Part F | anthem question about 0.66, above the 0.60 cutoff; at 0.60, 8 of the 10 decided right (the anthem answered, Apollo 1 refused); lowest answerable about 0.57, highest unanswerable about 0.66; 0.55 makes one mistake on the ten and refuses 3 of the 30 development questions |
 | Part G | the module's vectors within a few thousandths of `D`, hit@3 30 of 30 |
 | Going further | 256 numbers: hit@3 30 of 30, hit@1 27 of 30 |
 
-The saved outputs come from `text-embedding-3-small` at `https://api.openai.com/v1` on 18 Oct 2026 (macOS, Python
-3.13.5, a fresh `uv sync`). The same notebook gave the same counts with `pip` on Python 3.12.14 and with
+The saved outputs come from `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026 (macOS, Python
+3.13.5, a fresh `uv sync`). The same day the notebook gave the same counts with `pip` on Python 3.12.11 and with
 `CHAT_MODEL`, `JUDGE_MODEL` and `RERANK_MODEL` set to `gpt-6-luna` and `REASONING_EFFORT=none` (this lab calls no
 chat model, so only the stamp changed). Scores can move by a few thousandths between runs (up to 0.0044 in ours);
 check the order and the counts.
@@ -89,4 +92,4 @@ and rows out of step with their IDs.
 - [MTEB leaderboard](https://huggingface.co/spaces/mteb/leaderboard): how embedding models compare on public tasks;
   test a candidate on your own questions before you switch
 
-Next: [Lab 03](../03_Cited_Answers/README.md) (cited answers), or the self-study [Lab 02](../02_Chunking_With_Lineage/README.md) (chunking). Back to [the lab list](../README.md).
+Next: [Lab 02](../02_Cited_Answers/README.md) (cited answers), or the self-study [Lab 03](../03_Chunking_With_Lineage/README.md) (chunking). Back to [the lab list](../README.md).
