@@ -2,7 +2,7 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tatwan/rag_for_nlp/blob/main/00_Environment_Check/00_environment_check.ipynb)
 
-**CPU | API key: `OPENAI_API_KEY` | Practises: the setup every lab needs**
+**CPU | API key: `OPENAI_API_KEY` | Practises: the setup every lab needs | Before Day 1**
 
 ## Goal
 
@@ -19,10 +19,13 @@ endpoint the labs will use.
 - How to tell a blocked network from a key problem.
 - How to read a failed check and fix it with the troubleshooting tables.
 
+**Before Day 1:** set up your route and run the notebook on the machine you will use in class. If a line in its
+last cell shows ❌, bring its output.
+
 ## Before you start
 
 You need an OpenAI API key (your own, or the class key your instructor gives you) and, on every route except Colab
-and Codespaces, a terminal. No route downloads a model or needs a GPU. The notebook sends three short requests with
+and Codespaces, a terminal. No route downloads a model or needs a GPU. The notebook sends five short requests with
 your key; together they cost a small fraction of a US cent.
 
 ## Choose a route
@@ -216,17 +219,18 @@ Your key stays in Secrets.
 
 ## What the notebook checks
 
+The notebook is a checklist: run every cell from the top, and read the last one.
+
 **Setup and Config.** The two cells every lab opens with: they find the repository folder (on Colab they copy it and
 install the packages first), read the settings and find your key without printing it.
 **Part A: Check Python and the packages.** Python 3.11 to 3.14, and each package inside its range in
 `requirements.txt`.
 **Part B: Check the data files.** Every file in `data/` against its SHA-256 hash.
-**Part C: Check the settings.** Every setting, and whether it came from `models.env`, your `.env` or the environment.
-**Part D: Check that you can reach the endpoint.** One request without your key, to test the network alone.
-**Part E: Check the tokenizer.** `tiktoken` loads its encoding, a one-time download from a second address.
-**Part F: Check the key with one embedding.** One request to the embedding model with your key.
-**Part G: Check the chat model.** One question to each chat model in the settings.
-**Part H: Check JSON replies.** A reply that must follow a small JSON schema.
+**Part C: Check that you can reach the endpoint.** One request without your key, to test the network alone.
+**Part D: Check the tokenizer.** `tiktoken` loads its encoding, a one-time download from a second address.
+**Part E: Check the key with one embedding.** One request to the embedding model with your key.
+**Part F: Check the chat models.** One question to each chat model in the settings.
+**Part G: Check JSON replies.** One answer in the JSON shape the labs ask for.
 **Check that you are ready.** One ✅ or ❌ per check.
 
 ## Checkpoints
@@ -234,17 +238,16 @@ install the packages first), read the settings and find your key without printin
 | After | You should see |
 |---|---|
 | Config | the stamp (models, endpoints, date) and `OPENAI_API_KEY found in ...` |
-| Part A | Python 3.11 to 3.14; `outside their range: none` (ours: Python 3.13.5, `openai` 3.35.1) |
-| Part B | 5 of 5 files match; changed: none; missing: none |
-| Part C | `Problems: none` |
-| Part D | `https://api.openai.com/v1 answered: HTTP 401` (no key is sent, so 401 is a pass) |
-| Part E | `o200k_base: 8 tokens` and the token numbers |
-| Part F | 1536 numbers, length 1.000 |
-| Part G | a reply in any wording, and the model that answered (ours: `1856` from `gpt-4o-mini-2024-07-18`) |
-| Part H | `json_schema -> {'year': 1856} | right shape` |
+| Part A | Python 3.11 to 3.14; `outside their range: none` |
+| Part B | `5 of 5 files match` |
+| Part C | `https://api.openai.com/v1 answered: HTTP 401` (no key is sent, so 401 is a pass) |
+| Part D | `o200k_base: 8 tokens` |
+| Part E | 1536 numbers |
+| Part F | a reply from each chat model, and the model that answered |
+| Part G | an answer with its claims |
 | The last cell | ✅ on every line |
 
-The replies in Parts G and H can change in wording from run to run and from model to model.
+The replies in Parts F and G can change in wording from run to run and from model to model.
 
 ## The models and endpoint every lab uses
 
@@ -254,7 +257,7 @@ embedding, judge and reranking models and the API address for every lab. The shi
 machine only, put the same line in your `.env`: it wins over `models.env`, and an environment variable wins over
 both. `gpt-4o-mini` is due to shut down on 14 January 2027. To run on its replacement, set `CHAT_MODEL`,
 `JUDGE_MODEL` and `RERANK_MODEL` to `gpt-6-luna` and `REASONING_EFFORT=none`: the effort goes to every chat model,
-and `gpt-4o-mini` rejects it. We ran this lab on `gpt-6-luna` that way, and every check passed. The notebook's Part C shows where each value came from, and every lab prints
+and `gpt-4o-mini` rejects it. We ran this lab on `gpt-6-luna` that way, and every check passed. Config prints the values in use, and every lab prints
 the same stamp, so you can always tell which models produced a result.
 
 ## Troubleshooting the setup
