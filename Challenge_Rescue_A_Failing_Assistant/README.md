@@ -108,11 +108,6 @@ not reach names the stage.
 Some records have no support on purpose. G08 should be refused, because no Boreal export policy exists: ask what the
 model was given that made it answer, and which stage could have stopped it.
 
-If you want names for failures beyond these four stages, the
-[RAG Failure Diagnostics Clinic](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/rag_tutorials/rag_failure_diagnostics_clinic)
-lists twelve patterns (grounding drift, chunk boundaries, query routing, evaluation blind spots and others). Use it as
-vocabulary; the trace is your evidence.
-
 ## Step 4: Change one thing
 
 Write a copy of `evals.score()` with your one change, and leave everything else as it is. Here the change is `k`, as
@@ -199,5 +194,3 @@ One page, in this order:
 - Lab 04, Part D: the stage table this guide uses.
 - Lab 06, Part F: the 38 golden records and the three steady failures.
 - Lab 08, Part D: `paired()` and `sign_test()`.
-- [RAG Failure Diagnostics Clinic (Awesome LLM Apps)](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/rag_tutorials/rag_failure_diagnostics_clinic):
-  twelve named failure patterns and a script that asks a model to classify a bug report.
