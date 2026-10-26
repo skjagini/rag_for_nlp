@@ -13,9 +13,9 @@ keeps what it built in `shared/`, so you can open any lab on its own.
 | Lab | What you do | In class or self-study |
 |---|---|---|
 | [00 Environment check](00_Environment_Check/README.md) | Set up your route, check it in one run, and see which models and endpoint the labs use | Before Day 1 |
-| [01 Search with embeddings](01_Search_With_Embeddings/README.md) | Rank the corpus for a question, measure the ranking, and see what a score cannot tell you | In class: A, B, C, E |
-| [02 Cited answers](02_Cited_Answers/README.md) | Answer with quoted sources or refuse, check the citations in code, and see what the checks miss | In class: A to D |
-| [03 Chunking](03_Chunking_With_Lineage/README.md) | Load a Markdown page and a PDF and keep where each line came from, split documents so a rule keeps its exception, and choose a chunking from measurements | In class: A |
+| [01 Search with embeddings](01_Search_With_Embeddings/README.md) | Rank the corpus for a question, measure the ranking, and see what a score cannot tell you | In class: A, B, C, then E to the hit@3 count |
+| [02 Cited answers](02_Cited_Answers/README.md) | Answer with quoted sources or refuse, check the citations in code, and see what the checks miss | In class: A to D (two subsections self-study) |
+| [03 Chunking](03_Chunking_With_Lineage/README.md) | Load a Markdown page and a PDF and keep where each line came from, split documents so a rule keeps its exception, and choose a chunking from measurements | In class: A, to Checkpoint A |
 | [04 Trace and diagnose](04_Trace_And_Diagnose/README.md) | Trace every question and find the stage where an answer failed | In class: A, D |
 | [05 Rebuild with LangChain](05_Rebuild_With_LangChain/README.md) | Rebuild the same pipeline with LangChain, compare it with your own code step by step, and find the defaults that make its answers differ | Instructor demo: A, C, D |
 | [06 Evaluation set](06_Evaluation_Set/README.md) | Write a golden set and score retrieval and answers per question | In class: A to D |

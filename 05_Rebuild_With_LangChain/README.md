@@ -110,13 +110,4 @@ reasoning model, a dictionary schema without a name, and a filter that reads a f
 - [LangChain reference: `OpenAIEmbeddings`](https://reference.langchain.com/python/langchain-openai/embeddings/base/OpenAIEmbeddings):
   `check_embedding_ctx_length` and the settings for other OpenAI-compatible servers
 
-**The same idea in three RAG books' code**
-
-- [*RAG from First Principles*, `00-SimpleRAG/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/00-SimpleRAG):
-  one small RAG written with LlamaIndex, LangChain, LangGraph and plain Python, as short scripts; compare which steps
-  each framework does for you
-- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_02/CHAPTER2-1_RAG_PIPELINE.ipynb`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/blob/main/CHAPTER_02/CHAPTER2-1_RAG_PIPELINE.ipynb):
-  a whole LangChain pipeline in one notebook (a web page, a splitter, Chroma and a chain, with a prompt
-  pulled from LangChain Hub); compare the values it leaves to defaults with Part D's
-
 Next: [Lab 06](../06_Evaluation_Set/README.md) (build an evaluation set). Back to [the lab list](../README.md).

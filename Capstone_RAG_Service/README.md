@@ -166,11 +166,4 @@ password, a page launched without `auth=`, `app.py` started without a key, and a
 - [OWASP: LLM02 sensitive information disclosure](https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/):
   why access control belongs before the model
 
-**The same idea in three RAG books' code**
-
-- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_06/CHAPTER6-1_GRADIO.ipynb`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/blob/main/CHAPTER_06/CHAPTER6-1_GRADIO.ipynb): a RAG chain behind a
-  Gradio `Interface` that shows the answer, a relevance score and the sources
-- Awesome LLM Apps: [`rag_chain`](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/rag_tutorials/rag_chain), PharmaQuery, a Streamlit page over uploaded research papers,
-  with a demo video in its README (LangChain, ChromaDB and Google's Gemini models)
-
 Back to [the lab list](../README.md).

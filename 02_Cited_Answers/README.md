@@ -9,24 +9,24 @@ abstention, and checking them in code | In class**
 
 Answer a question from retrieved evidence with citations, check the citations in code, and learn what each check
 cannot see. The moment that teaches it: asked who first walked on the Moon, with evidence about the Apollo program
-that never names him, the model answers *Neil Armstrong* and cites a real chunk, even with quotes that really are in
-it, so every check passes. What stops it is one rule line that lets the model say the evidence does not answer.
+that never names him, the model answers *Neil Armstrong* and cites a real chunk, so the check passes. What stops it is
+one rule line that lets the model say the evidence does not answer.
 
-You can now rank passages for a question and count how often the right one comes back, but a ranked list is not an
-answer, and a high score does not show that a passage answers. This lab adds the answer step: the model answers
-from the passages and cites them, and code checks the citations.
+Lab 01 ranked passages for a question; a ranked list is not an answer. This lab adds the **answer step**: the model
+answers from the passages and cites them, and code checks the citations.
 
 ## What you will learn
 
-- How to pack retrieved chunks as `[ID] text` evidence lines inside a token budget, and compare your token count with
-  the API's.
-- How to call a chat model by hand, and why `chat_options()` sends `temperature` to one model and not to another.
-- How to ask for citations and check the cited IDs in code.
-- How to let the model answer *Insufficient evidence.*, and measure what that rule costs on questions it should answer.
+- How to pack retrieved chunks as `[ID] text` evidence lines inside a token budget.
+- How to call a chat model by hand, read the reply object, and set `temperature` through `chat_options()`.
+- How to ask for citations and check the cited IDs in code, and why a valid ID does not prove a claim.
+- How to let the model answer *Insufficient evidence.*, and what that rule costs on a question it should answer.
 - How to get claims with quotes as JSON, check the reply's shape, and check each quote against its evidence line.
 - How a line planted in the index gets past every one of these checks.
 
-**In class:** Parts A to D. Parts E, F and G are self-study.
+**In class:** Parts A to D, except the two subsections marked self-study inside them (what `chat_options()` sends to
+a reasoning model, in Part B; the rule measured on the 30 development questions, in Part D). Parts E, F and G are
+self-study.
 
 ## Coming from
 
@@ -38,12 +38,14 @@ It stays in plain Python with the OpenAI SDK, so the request, the JSON schema an
 
 **Part A: Pack the evidence for one question.** Search the chunks and the five policies, then pack the best chunks as
 `[ID] text` lines inside a 400-token budget.
-**Part B: Answer from the evidence by hand.** One Chat Completions call with a system and a user message, your token
-count beside `usage`, then `chat_options()` read and used.
+**Part B: Answer from the evidence by hand.** `chat_client()` read and built, the two messages printed before they are
+sent, one Chat Completions call with the reply object read field by field, your token count beside `usage`, and
+`chat_options()` used. Self-study subsection: what `chat_options()` sends to a reasoning model.
 **Part C: Ask for citations and check the IDs.** One rule line with an example, a regular expression that checks the
 cited IDs, and the Moon question, answered with a valid ID.
 **Part D: Let the model say the evidence does not answer.** The abstention line, measured on three unanswerable
-questions, the 30 development questions and one question that needs a step of reasoning.
+questions and one question that needs a step of reasoning. Self-study subsection: the rule on the 30 development
+questions.
 **Part E: Quote the evidence and check the quotes in code (self-study).** A JSON schema, the `JSON_MODE` switch, `parse()`, a quote
 check that also accepts a quote cut with `...` when its parts are in order, and the Moon question again with every
 quote found.
@@ -61,17 +63,17 @@ past.
 | Part A | 277 chunks; Tesla's evidence: four lines, 316 tokens |
 | Part B | *Nikola Tesla was born on 10 July 1856.*; your count 342, billed 353; `chat_options` sends `temperature: 0` |
 | Part C | Tesla with `[S03-P00-C00]`; the Moon question: *Neil Armstrong* with a valid ID in 5 of 5 |
-| Part D | unanswerable questions abstain 5 of 5 each; 0 of 30 development questions refused; the temporary-accounts question refused 5 of 5 with the rule, 0 of 5 without |
-| Part E | the cut quote `Nikola Tesla ... 10 July 1856` found, its parts swapped not found; 33 claims on the 30 development questions, every quote found; without the abstention line, the Moon question names Armstrong in 5 of 5 with all 10 quotes found |
-| Part F | the planted H99 ranks first; *24 hours* in 5 of 5, quote found; with tags, 5 of 5 |
+| Part D | unanswerable questions abstain 5 of 5 each; the temporary-accounts question refused 5 of 5 with the rule, 0 of 5 without; self-study: 0 of 30 development questions refused |
+| Part E | the cut quote `Nikola Tesla ... 10 July 1856` found, its parts swapped not found; 32 claims on the 30 development questions, 0 quotes not found; without the abstention line, the Moon question names Armstrong in 5 of 5 with all 9 quotes found |
+| Part F | the planted H99 ranks first; *24 hours* in 5 of 5, every quote found in H99; with tags, 5 of 5 |
 | Part G | the module: Tesla answered with its quote found, *Insufficient evidence.* for the Moon |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026
-(macOS, Python 3.13.5, a fresh `uv sync`). The same day the notebook ran on the `pip` route (Python 3.12.11) and with
+The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 26 Oct 2026
+(macOS, Python 3.13.5, a fresh `uv sync`). On 24 Oct 2026 the notebook ran on the `pip` route (Python 3.12.11) and with
 `gpt-6-luna` and `REASONING_EFFORT=none`. Model replies vary between runs: compare the pattern (which answers
 abstain, which checks pass), not every word.
 
-**On the other routes.** The `pip` run showed the same pattern in every part (32 claims in Part E instead of 33). With
+**On the other routes.** The `pip` run showed the same pattern in every part. With
 `gpt-6-luna` the lab runs unchanged, and the model fails in different places: the Moon question named Armstrong in 4 of
 5 runs in Part C, each time without a citation, so the ID check failed it (1 to 3 of 5 cited in earlier runs); the abstention line did not refuse the temporary-accounts question (0 of 5);
 without the abstention line its JSON answers to the Moon question named him in 3 of 5, only once with a quote (in
@@ -101,18 +103,5 @@ The notebook ends with a troubleshooting table: `temperature` on a reasoning mod
   retrieved content, and the layered controls
 - [Joren et al., *Sufficient Context*, ICLR 2025](https://arxiv.org/abs/2411.06037): why models answer instead of
   abstaining when the context is not enough
-
-**The same idea in three RAG books' code**
-
-- [*Hands-On RAG for Production*, `chapter1/sample-rag.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter1/sample-rag.ipynb): a whole pipeline in a few cells: a PDF
-  loaded and split, LanceDB as the vector store, and an LCEL chain told to answer only from the top three chunks
-- [*Hands-On RAG for Production*, `chapter3/hallucinations.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter3/hallucinations.ipynb): Vectara's HHEM model scoring, from
-  0 to 1, how well a summary is supported by its source, on four pairs from consistent to a wrong unit
-- [*RAG from First Principles*, `08-Generation/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/08-Generation): scripts for prompt templates, few-shot examples, JSON and
-  Pydantic output parsing, function calling and Self-RAG
-- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_03/CHAPTER3-1_SOURCES.ipynb`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/blob/main/CHAPTER_03/CHAPTER3-1_SOURCES.ipynb): a LangChain
-  chain that returns the retrieved documents beside its answer, so the sources can be shown with it
-- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_05/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_05): a red-team notebook that tries to make the chain print its
-  prompt, and a blue-team notebook that scores relevance with a second model call and answers *I don't know.* below 4
 
 Next: [Lab 03](../03_Chunking_With_Lineage/README.md) Part A (in class; the rest of Lab 03 is self-study), then [Lab 04](../04_Trace_And_Diagnose/README.md) (find the stage where an answer failed). Back to [the lab list](../README.md).

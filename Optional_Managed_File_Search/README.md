@@ -102,10 +102,5 @@ removed file, and files left behind by a failed run.
 - [OpenAI API reference: vector stores](https://developers.openai.com/api/reference/resources/vector_stores): every
   method, including `delete` for stores and for files
 
-**The same idea in three RAG books' code**
-
-- [*Hands-On RAG for Production*, `chapter5/`](https://github.com/ofermend/hands-on-rag/tree/main/chapter5): Vectara, a managed RAG platform: a PDF uploaded, queried with its hybrid
-  search and reranker, and the answer given a factual consistency score
-
 Next: [Optional A: How to build the same pipeline with LlamaIndex](../Optional_LlamaIndex_Pipeline/README.md). Back to
 [Lab 05](../05_Rebuild_With_LangChain/README.md), the pipeline this lab compares with, or to [the lab list](../README.md).

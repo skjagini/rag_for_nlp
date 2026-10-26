@@ -42,10 +42,11 @@ recall.
 Part A, and four answers to predict.
 **Part C: Write ten golden records.** One record by hand, seven from the development questions, three about the
 policies (a paraphrase, an exception, a refusal), versioned with hashes and saved outside the index.
-**Part D: Run the pipeline on the ten records.** One record by hand, then one row per record.
+**Part D: Run the pipeline on the ten records.** The four `lc_pipeline` functions, printed from their source, then
+one record by hand and one row per record.
 **Part E: Report each measure with its denominator (self-study).** hit@3, MRR@3, EM and F1, the rows behind them, a reference
 check that fits generated sentences, and the refusals on their own lines.
-**Part F: Score the course golden set by slice (self-study).** The reviewed policy cases, `shared/evals.py`, 38 records scored,
+**Part F: Score the shared golden set by slice (self-study).** The reviewed policy cases, `shared/evals.py`, 38 records scored,
 the slices, three runs of the policy cases, and the rows saved for later labs.
 **Challenge.** Write records for a slice the set lacks. Optional: version a change to the set.
 
@@ -103,14 +104,5 @@ IDs, a reciprocal rank of a miss, and an average over refusal records.
   exact match recall, a short reference found inside a long generated answer
 - [LangSmith: evaluation concepts](https://docs.langchain.com/langsmith/evaluation-concepts): datasets, reference
   outputs, evaluators and experiments as a hosted service
-
-**The same idea in three RAG books' code**
-
-- [*Hands-On RAG for Production*, `chapter6/metrics.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter6/metrics.ipynb): context precision and recall from retrieved and
-  relevant chunk IDs, and BLEU and ROUGE-L for the answers, on three worked examples
-- [*RAG from First Principles*, `09-Evaluation/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/09-Evaluation): one script each for RAGAS, TruLens, DeepEval and LlamaIndex's
-  evaluators
-- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_09/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_09): RAGAS generating a ten-question test set from a PDF, then
-  scoring a vector-search chain against a hybrid one
 
 Next: [Lab 07](../07_LLM_Judge_Calibration/README.md) (check an LLM judge against your own labels). Back to [the lab list](../README.md).

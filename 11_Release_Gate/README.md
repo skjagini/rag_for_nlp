@@ -94,7 +94,7 @@ The gate caught the change on both models.
   codespace, open `11_release_gate.ipynb` and choose the `.venv` kernel. Run Setup and Config first.
 - **Data:** `data/squad-chunks.json`, `data/support-case.json` and Lab 06's golden cases, read in place, plus
   `resources/constructed-records.json`, written for this lab (who may read what, four restricted records, the April
-  version of H02 and four release cases). They are not real policies; the course data files are unchanged.
+  version of H02 and four release cases). They are not real policies; the files in `data/` are unchanged.
 - **Files:** `test_release.py` holds the release tests; the notebook writes `results/baseline.json`,
   `results/candidate.json` and `results/fixed.json`, and the saved ones come from our run.
 - **Cost:** 148 short chat calls and one embedding of the corpus on `gpt-4o-mini`; task 1 of the challenge adds 42.
@@ -123,14 +123,5 @@ find, and pytest started from the wrong folder.
   [fixtures](https://docs.pytest.org/en/stable/how-to/fixtures.html): test discovery, `assert` messages and fixtures
 - [OWASP: LLM02 sensitive information disclosure](https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/):
   why access control belongs before the model, not in the prompt
-
-**The same idea in three RAG books' code**
-
-- [*Hands-On RAG for Production*, `chapter4/redaction.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter4/redaction.ipynb): Presidio replacing names and phone numbers
-  with typed placeholders such as `<PERSON>`
-- [*RAG from First Principles*, `06-RecencyWeightedReranking.py`](https://github.com/PacktPublishing/RAG-from-First-Principles/blob/main/07-PostRetrieval/01-Reranking/06-RecencyWeightedReranking.py):
-  LangChain's time-weighted retriever, which ranks by similarity and by how recently a document was used
-- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_05/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_05): a red-team notebook that tries to make the chain print its prompt, and a
-  blue-team notebook that scores relevance before it answers
 
 Next: [the capstone](../Capstone_RAG_Service/README.md), *How to ship a RAG service with its release gate*. Back to [the lab list](../README.md).

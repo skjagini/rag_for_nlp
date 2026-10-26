@@ -1,0 +1,23 @@
+# Instructor material and build records: kept locally, never published
+instructor/
+progress/
+AGENTS.md
+CLAUDE.md
+**/solved/
+archive/
+slides/
+*.pptx
+
+# Secrets and environments
+.env
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+*.pyc
+.DS_Store
+.claude/
+.codex*/
+
+# Local caches the labs write (embeddings, run outputs)
+.cache/

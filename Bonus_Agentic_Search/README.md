@@ -58,9 +58,9 @@ should change nothing.
 | Part D | `CompiledStateGraph`, recursion limit 9999; the same two queries and *the 9th century*; with `run_limit=1`, *Tool call limit exceeded. ...* for one call |
 | Part E | one fact: both right 9 of 9, 9 against 18 model calls, 3,981 against 4,056 tokens in; two parts: fixed 3 of 9, agent 9 of 9, 4,242 against 6,123 tokens in; no search: fixed 0 of 6, agent 3 of 6 (it refuses the thank-you) |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026
+The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 26 Oct 2026
 (macOS, Python 3.13.5, a fresh `uv sync`; `langchain` 1.4.6, `langchain-core` 1.6.12, `langchain-openai` 1.7.2,
-`langgraph` 1.2.16). The same day the notebook ran on the `pip` route (Python 3.12.11) and with `gpt-6-luna` and
+`langgraph` 1.2.16). On 24 Oct 2026 the notebook ran on the `pip` route (Python 3.12.11) and with `gpt-6-luna` and
 `REASONING_EFFORT=none`. Model replies vary between runs: compare which answers are right and how many calls each
 design makes, not every word.
 
@@ -87,12 +87,12 @@ answered. Which design wins on which question depends on the model: measure it o
   in the notebook.
 - **Packages:** `langchain`, `langchain-core`, `langchain-openai` and `langgraph` (installed with `langchain`), already
   installed by Lab 00's setup.
-- **Network:** the graph picture in Part D is drawn by the mermaid.ink web service; if your network blocks it, the
-  notebook's troubleshooting table prints the same graph as text.
+- **Network:** only the API. Part D prints the agent's graph as Mermaid text; displaying `agent` on its own would draw
+  it through the mermaid.ink web service, which some networks block (see the troubleshooting table).
 - **Cost:** one embedding of the corpus and about a hundred short chat calls, well under one US cent on `gpt-4o-mini`.
 
 The notebook ends with a troubleshooting table: a tool call sent back without its result, a recursion limit set too
-low, the graph picture on a blocked network, and tools on a reasoning model at the wrong effort.
+low, the graph picture on a blocked network when `agent` is displayed, and tools on a reasoning model at the wrong effort.
 
 ## Resources
 
@@ -105,12 +105,5 @@ low, the graph picture on a blocked network, and tools on a reasoning model at t
 - [OpenAI: function calling](https://developers.openai.com/api/docs/guides/function-calling): tool calls, parallel calls
   in one reply, and the tool results the API expects back
 - [Asai et al., *Self-RAG*, ICLR 2024](https://arxiv.org/abs/2310.11511): a model trained to decide when to retrieve
-
-**The same idea in three RAG books' code**
-
-- [*RAG from First Principles*, `10-AdvanceRAG/04-AgenticRAG/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/10-AdvanceRAG/04-AgenticRAG): agentic and adaptive RAG as LangGraph
-  graphs, with nodes that grade the retrieved documents and rewrite the question, and pictures of both graphs
-- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_12/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_12): a LangGraph agent that chooses between web search and a retriever tool,
-  then grades what came back
 
 Back to [the lab list](../README.md).

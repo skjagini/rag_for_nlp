@@ -1,3 +1,4 @@
 # Keep the data files byte for byte as committed, on every system, so their SHA-256 hashes match.
 # Without this, Git on Windows can change line endings on checkout and Lab 00's data check fails.
 data/** -text
+03_Chunking_With_Lineage/resources/** -text

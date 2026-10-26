@@ -25,8 +25,8 @@ search and measures it.
   unanswerable ones.
 - How to search the corpus with `shared/search.py`, which keeps these steps for the labs after this one.
 
-**In class:** Parts A, B, C and E. Parts D, F and G are self-study. Run Part D's cells in class without stopping on
-them, because Part E ranks the vectors Part D builds.
+**In class:** Parts A, B and C, then Part E up to the hit@3 count. The rest of Part E and Parts D, F and G are
+self-study. Run Part D's cells in class without stopping on them, because Part E ranks the vectors Part D builds.
 
 ## Coming from
 
@@ -95,15 +95,5 @@ and rows out of step with their IDs.
   `kind="stable"`
 - [MTEB leaderboard](https://huggingface.co/spaces/mteb/leaderboard): how embedding models compare on public tasks;
   test a candidate on your own questions before you switch
-
-**The same idea in three RAG books' code**
-
-- [*Hands-On RAG for Production*, `chapter2/embedding.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter2/embedding.ipynb): four sentences embedded with a local
-  Sentence Transformers model, their cosine similarities as a heatmap, and the same scores on a random slice of the
-  dimensions
-- [*RAG from First Principles*, `03-Embedding/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/03-Embedding): scripts for OpenAI embeddings in a small game recommender,
-  clustering, BM25, and BGE-M3's dense, sparse and multi-vector embeddings
-- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_08/CHAPTER8-1_DISTANCEMETRICS.ipynb`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/blob/main/CHAPTER_08/CHAPTER8-1_DISTANCEMETRICS.ipynb):
-  Euclidean distance, dot product and cosine distance written by hand for three sentences
 
 Next: [Lab 02](../02_Cited_Answers/README.md) (cited answers). Back to [the lab list](../README.md).

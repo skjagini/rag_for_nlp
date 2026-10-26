@@ -7,28 +7,24 @@ failing stage with oracle context | In class**
 
 ## Goal
 
-Follow every question through the pipeline, find the wrong answers, and name the step where each one went wrong. The
-moment that teaches it: the wrong answers all fail at the same step, after the right passage was found and given to
-the model. Giving the model that passage alone shows three different causes: one answer was misled by the other
-passages, one was right all along in words the answer key did not list, and one the model still refuses. One failing
-step, three different repairs.
-
-You can now retrieve evidence and answer with citations that code checks, but when an answer is still wrong, the
-reply alone does not say whether the search, the packing or the model lost the answer. This lab records what each
-stage did, so you can name the one that failed.
+Follow every question through the pipeline, find the wrong answers, and name the stage where each one went wrong. The
+moment that teaches it: the three wrong answers all failed at the same stage, generation, after the right passage had
+been found and packed every time, so the fix is not in the search. Part E (self-study) then gives the model that
+passage alone and tells the three causes apart: one answer misled by the other passages, one right in words the answer
+key did not list, one the model still refuses.
 
 ## What you will learn
 
-- What a trace record holds, and how to make one for a question by hand.
-- How to trace a whole question set and count what it cost.
-- How to screen answers against expected answer strings, and read the answers the screen flags.
-- How to build a stage table that follows the supporting passage through the hits, the pack and the answer.
-- How to use oracle context to tell a failure caused by the other evidence from one caused by the answer step, and
-  how an incomplete label turns a right answer into a "miss".
+- What a trace record holds, and how to make one by hand.
+- How to trace a question set and read its cost from the records.
+- How to screen answers against expected strings, and read what the screen flags.
+- How to build a stage table that follows the support through the hits, the pack and the answer.
+- How to use oracle context to separate a failure caused by the other evidence from one caused by the answer step,
+  and to spot an incomplete label.
 - How to save a baseline run that later labs compare against.
 
-**In class:** Parts A and D. Parts B, C, E and F are self-study. Run the cells of Parts B and C in class without
-stopping on them, because Part D reads the traces and screen results they make.
+**In class:** Parts A and D; run the cells of Parts B and C without stopping on them, because Part D reads what they
+make. Parts B, C, E and F are self-study.
 
 ## Coming from
 
@@ -39,17 +35,18 @@ Lab 05 then rebuilds the same pipeline with LangChain.
 
 ## What you will do
 
-**Part A: Trace one question by hand.** Search, pack, hash the prompt, call the model and keep the raw reply, the
+**Part A: Trace one question by hand.** Search, pack, print the system and user messages, call the model and keep the raw reply, the
 tokens billed and the stamp in one record.
-**Part B: Trace every question (self-study).** The same steps as a function, run on the 30 development questions and four Atlas
-questions written for this lab.
-**Part C: Screen the answers (self-study).** A whole-word check against the expected answer strings, and the three answers it flags.
-**Part D: Find the stage where the support was lost.** A stage table that follows the supporting passage through the
-corpus, the hits, the pack and the answer.
-**Part E: Give the model only the labelled passage (self-study).** Oracle context on the three failures, and the abstention line
-tested on its own.
-**Part F: Save the baseline in `shared/trace.py` (self-study).** The trace step as a module, and the 30 development questions traced
-once, saved and read back.
+**Part B: Trace every question (self-study).** The prompt hash, Part A's steps as a function, and a run on the 30
+development questions and four Atlas questions written for this lab.
+**Part C: Screen the answers (self-study).** An exact-match screen against the expected answer strings, and the
+answers it flags.
+**Part D: Find the stage where the support was lost.** The flagged answers read first, then a stage table that
+follows the supporting passage through the corpus, the hits, the pack and the answer.
+**Part E: Give the model only the labelled passage (self-study).** Oracle context on the three failures, and the
+abstention line tested on its own.
+**Part F: Save the baseline in `shared/trace.py` (self-study).** The trace step as a module, and the 30 development
+questions traced once, saved and read back.
 **Challenge.** Find the packed line that misled the model. Optional: name the stage in three traces written by hand.
 
 ## Checkpoints
@@ -57,23 +54,19 @@ once, saved and read back.
 | After | You should see |
 |---|---|
 | Part A | 5 hits and 4 packed lines for the Tesla question; a JSON reply; 500 input tokens billed |
-| Part B | 34 traces; 17,641 input tokens |
+| Part B | prompt hash `c2aa8c003db7`; 34 traces; 17,641 input tokens |
 | Part C | passed 31 of 34; flagged: the complexity, temporary-accounts and mobile-app questions |
 | Part D | support in the corpus, hits and pack 34 of 34; all three failures at `generation` |
-| Part E | with oracle context: mobile app right 5 of 5; complexity right in other words, screen 0 of 5; temporary accounts still refused 5 of 5, answered 5 of 5 without the abstention line |
+| Part E | with oracle context: mobile app right 5 of 5; complexity right in other words 5 of 5, screen 0 of 5; temporary accounts still refused 5 of 5, answered 5 of 5 without the abstention line |
 | Part F | 30 traces read back the same; `baseline-gpt-4o-mini-<hash>.json`; 29 of 30 pass the screen |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 18 Oct 2026
-(macOS, Python 3.13.5, a fresh `uv sync`, `openai` 3.35.1). The same notebook ran on the `pip` route (Python 3.12.11)
-and with `gpt-6-luna` and `REASONING_EFFORT=none`. Model replies vary between runs: compare which questions fail and
-at which stage, not every word.
-
-**On the other routes.** The `pip` run gave the same three failures, stages and oracle results. With `gpt-6-luna` the
-lab runs unchanged and fails elsewhere: it answered the temporary-accounts and mobile-app questions correctly, so the
-screen flagged only two of 34, and both answers were right in other words. The complexity question got *the amount of
-resources needed to solve it* even with the full pack, and the Vistula question got *otters, beavers* where the label
-says *otter, beaver*. On that model, Part E's oracle shows two incomplete labels and no pipeline failure, and the
-baseline passes 28 of 30. Which failures you see depends on the model; the way to find their stage does not.
+The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 26 Oct 2026
+(macOS, Python 3.13.5, a fresh `uv sync`, `openai` 3.35.1). Model replies vary between runs: compare which questions
+fail and at which stage, not every word. Earlier runs (18 Oct 2026) on the `pip` route (Python 3.12.11) gave the same
+three failures, stages and oracle results. With `gpt-6-luna` and `REASONING_EFFORT=none` the lab runs unchanged and
+the screen flags two of 34, both right in other words (the complexity question and the Vistula question's *otters,
+beavers*): on that model Part E shows two incomplete labels and no pipeline failure, and the baseline passes 28 of 30.
+Which failures you see depends on the model; the way to find their stage does not.
 
 ## Before you start
 
@@ -100,17 +93,5 @@ looked up as a passage, and a trace whose reply is not JSON.
   of a request as a span, the production form of these records
 - [Joren et al., *Sufficient Context*, ICLR 2025](https://arxiv.org/abs/2411.06037): separating "the context was not
   enough" from "the model failed with enough context"
-
-**The same idea in three RAG books' code**
-
-- [*RAG from First Principles*, `06-Indexing/01-FromSmallChunksToLargeContext/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/06-Indexing/01-FromSmallChunksToLargeContext): three
-  ways to give the answer step more than the matched chunk: a sentence window, parent and child chunks, and the
-  chunks before and after
-- [*RAG from First Principles*, `07-PostRetrieval/03-Correction/`](https://github.com/PacktPublishing/RAG-from-First-Principles/tree/main/07-PostRetrieval/03-Correction): corrective RAG (CRAG) in one
-  script: a model grades each retrieved document, and when none is relevant the question is rewritten and sent to a
-  web search
-- Awesome LLM Apps: [`rag_failure_diagnostics_clinic`](https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/rag_tutorials/rag_failure_diagnostics_clinic), a script that asks a
-  model to sort a described RAG bug into one of 12 failure patterns (chunk boundary, embedding mismatch, stale index
-  ...) and suggest a small structural fix: names for the failures this lab locates by stage
 
 Next: [Lab 05](../05_Rebuild_With_LangChain/README.md), *How to rebuild a RAG pipeline with LangChain*. Back to [the lab list](../README.md).

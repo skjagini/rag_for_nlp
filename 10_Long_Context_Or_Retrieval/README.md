@@ -90,7 +90,7 @@ abstention line, it passed 10 of 12 runs and still declined the Moon question.
 - **Data:** `data/squad-passages.json`, `data/squad-chunks.json`, `data/support-case.json` and
   `data/development-questions.json`, read in place. The four Atlas questions are written in the notebook, as in Lab 04.
 - **Cost:** ⚠️ more than the other labs. More than 150 calls send the whole corpus (about 20,000 tokens each); our run
-  used 2,836,809 input tokens, about 0.31 US dollars on `gpt-4o-mini`, plus about 21,000 embedding tokens.
+  used 3,315,159 input tokens, about 0.36 US dollars on `gpt-4o-mini`, plus about 21,000 embedding tokens.
   Task 1 of the challenge adds 15 whole-corpus calls. The cost table reads the prices in `models.env`; change them with the model.
 
 The notebook ends with a troubleshooting table: a prompt longer than the context window, the dictionary that
@@ -107,12 +107,5 @@ The notebook ends with a troubleshooting table: a prompt longer than the context
   answering worse as the input grows, and how related text distracts them
 - [Liu et al., *Lost in the Middle*, TACL 2023](https://arxiv.org/abs/2307.03172): how answers depended on where the
   relevant passage sat in a long prompt, on the models of 2023
-
-**The same idea in three RAG books' code**
-
-- [*Hands-On RAG for Production*, `chapter4/caching.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter4/caching.ipynb): exact-match and semantic caching of search results
-  in Redis, and a reworded question that only the semantic cache recognises
-- [*Unlocking Data with Generative AI and RAG* (2nd ed.), `CHAPTER_15/`](https://github.com/PacktPublishing/Unlocking-Data-with-Generative-AI-and-RAG-Second-Edition/tree/main/CHAPTER_15): a semantic cache that masks amounts, years and tickers before matching,
-  and checks a match with a cross-encoder before reusing it
 
 Next: [Lab 11](../11_Release_Gate/README.md), *How to gate a RAG change before release*. Back to [the lab list](../README.md).

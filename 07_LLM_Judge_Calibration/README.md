@@ -113,12 +113,5 @@ evidence passed to `span_found()` as one string.
 - [Es et al., *RAGAS*, 2023](https://arxiv.org/abs/2309.15217): faithfulness as the share of an answer's claims the
   context supports
 
-**The same idea in three RAG books' code**
-
-- [*Hands-On RAG for Production*, `chapter6/llm-as-a-judge.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter6/llm-as-a-judge.ipynb): a GPT-4o judge that scores
-  faithfulness and answer relevance from 1 to 5, with its reasoning, on short made-up examples
-- [*Hands-On RAG for Production*, `chapter6/umbrela.ipynb`](https://github.com/ofermend/hands-on-rag/blob/main/chapter6/umbrela.ipynb): UMBRELA, a judge that scores how well each
-  retrieved passage answers a query, from 0 to 3, through a structured-output schema
-
 Next: [Lab 08](../08_Hybrid_Search_And_Reranking/README.md) (improve retrieval with hybrid search and reranking). Back
 to [the lab list](../README.md).
