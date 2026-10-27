@@ -74,17 +74,10 @@ chunk by a chat model, with its calls counted.
 | Part G | with titles, policy answers 10 of 10 for all four; tokens per question passage 446, window 266, sentence 122, structured 232; handbook paragraphs with headings 23 of 24 first, 71 tokens |
 | Going further | 7 chunks when sized in characters, 2 from the tokenizer; 10 context calls (about 880 tokens), policy answers 10 of 10 |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on
-26 Oct 2026 (macOS, Python 3.13.5, a fresh `uv sync`). Model replies vary between runs: the abstention line now and
-then refuses a question that takes a step of reasoning (Lab 02 measured it), so a row that is 10 of 10 here can be 9 of
-10 in your run. Compare the pattern, which chunking fails which question, not every word. Part A makes no chat call:
-its records, checks and ranks do not depend on the chat model.
-
-**On the other routes.** The `pip` runs (Python 3.12.11, 24 Oct 2026) showed the same pattern in every part, and Part
-A's records, checks and ranks were the same within 0.0001. On `gpt-6-luna` (`REASONING_EFFORT=none`) the lab runs
-unchanged; the sentence chunks fail differently (5 of 10 in Part F, the temporary-account question answered wrongly
-instead of refused), and with titles every chunking is 10 of 10 on both models. Which failure a cut causes depends on
-the model; that a cut can lose an exception does not.
+**About the saved outputs.** They come from `gpt-4o-mini` and `text-embedding-3-small`. Model replies vary from run to
+run, so compare the pattern (which chunking fails which question), not every word. The abstention line now and
+then refuses a question that takes a step of reasoning, so a row that is 10 of 10 here can be 9 of 10 in your run. Part
+A makes no chat call, so its records, checks and ranks do not depend on the model.
 
 ## Before you start
 
@@ -101,10 +94,9 @@ the model; that a cut can lose an exception does not.
   PDF with [pypdf](https://pypi.org/project/pypdf/) (pure Python, BSD licence), installed with the other packages.
 - **Data:** `data/squad-passages.json`, `data/squad-chunks.json`, `data/support-case.json` and
   `data/development-questions.json`, read in place and never changed. Part D reads this lab's `resources/`:
-  `support_handbook.md`, the support handbook of Chinook, a made-up music shop, copied unchanged from another of the
-  author's lab repositories (customer and staff names from the MIT-licensed [Chinook sample database](https://github.com/lerocha/chinook-database));
-  its first line names the build script it came from, which is not in this repo (SHA-256
-  `d27874b858aecefed0116e5b520d614592c408863dc3085ddd73671e34effaea`, the same as the original),
+  `support_handbook.md`, the support handbook of Chinook, a made-up music shop, written for these labs (customer and
+  staff names from the MIT-licensed [Chinook sample database](https://github.com/lerocha/chinook-database); SHA-256
+  `cec1126e76b958b7e8ce8dcf7fc8f4912cffe4e5deb738dfb2d4e55fd47f0cdb`),
   and `handbook-questions.json`, 24 questions constructed for this lab and labelled before any search. Each chunking's vectors are saved in `.cache/`,
   which git ignores.
 - **Cost:** Part A embeds a few hundred tokens and makes no chat call. The whole notebook makes about 120 short chat

@@ -2,7 +2,7 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tatwan/rag_for_nlp/blob/main/00_Environment_Check/00_environment_check.ipynb)
 
-**CPU | API key: `OPENAI_API_KEY` | Practises: the setup every lab needs | Before Day 1**
+**CPU | API key: `OPENAI_API_KEY` | Practises: the setup every lab needs | Run first**
 
 ## Goal
 
@@ -19,12 +19,12 @@ endpoint the labs will use.
 - How to tell a blocked network from a key problem.
 - How to read a failed check and fix it with the troubleshooting tables.
 
-**Before Day 1:** set up your route and run the notebook on the machine you will use in class. If a line in its
-last cell shows ❌, bring its output.
+**Run this first:** set up your route and run the notebook on the machine you will use for the labs. If a line in its
+last cell shows ❌, the troubleshooting table below says what to do.
 
 ## Before you start
 
-You need an OpenAI API key (your own, or the class key your instructor gives you) and, on every route except Colab
+You need an OpenAI API key (your own, or one you were given for these labs) and, on every route except Colab
 and Codespaces, a terminal. No route downloads a model or needs a GPU. The notebook sends five short requests with
 your key; together they cost a small fraction of a US cent.
 
@@ -35,8 +35,8 @@ your key; together they cost a small fraction of a US cent.
 | **A. Local with `uv`** (recommended on your own machine) | you can install a command-line tool | VS Code with its Python and Jupyter extensions, Git or a ZIP download |
 | **B. Local with `pip`** | your laptop does not allow `uv` | Python 3.11 to 3.14 already installed (3.12 or 3.13 is best), VS Code, Git or a ZIP |
 | **C. GitHub Codespaces** | you cannot install anything, or your organisation works in Codespaces | a GitHub account; everything runs in the browser |
-| **D. Ubuntu VM** (22.04 or 24.04) | your class gives you a Linux machine | a terminal on the VM; it then follows route A or B |
-| **E. Colab** | Colab is allowed for your class | a Google account |
+| **D. Ubuntu VM** (22.04 or 24.04) | you were given a Linux machine | a terminal on the VM; it then follows route A or B |
+| **E. Colab** | you can use Colab | a Google account |
 
 Routes A, C and D install the exact versions in `uv.lock`, the ones every saved output in these labs came from.
 Routes B and E install from `requirements.txt`, which allows a range of versions; Part A of the notebook prints what

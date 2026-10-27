@@ -11,7 +11,7 @@
   "rerank_model": "gpt-4o-mini",
   "chat_endpoint": "https://api.openai.com/v1",
   "embed_endpoint": "https://api.openai.com/v1",
-  "run_date": "2026-10-24",
+  "run_date": "2026-10-27",
   "documents": [
    {
     "id": "S00-P00-C00",
@@ -1993,14 +1993,14 @@
     "S00-P01-C01",
     "S00-P02-C00"
    ],
-   "answer": "The Denver Broncos represented the AFC at Super Bowl 50.",
+   "answer": "The AFC was represented by the Denver Broncos at Super Bowl 50.",
    "refused": false,
    "passed": true,
    "claims": [
     {
-     "claim": "The Denver Broncos represented the AFC at Super Bowl 50.",
+     "claim": "The AFC champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10",
      "source_id": "S00-P00-C00",
-     "quote": "The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title."
+     "quote": "The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10"
     }
    ],
    "evidence": [
@@ -2045,7 +2045,7 @@
     "S00-P02-C00",
     "S00-P00-C00"
    ],
-   "answer": "Cam Newton was named the NFL Most Valuable Player (MVP).",
+   "answer": "Quarterback Cam Newton was named the NFL Most Valuable Player (MVP).",
    "refused": false,
    "passed": true,
    "claims": [
@@ -2130,7 +2130,7 @@
     {
      "claim": "Von Miller forced two fumbles in Super Bowl 50.",
      "source_id": "S00-P02-C00",
-     "quote": "Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles."
+     "quote": "Denver linebacker Von Miller...recording five solo tackles, 2½ sacks, and two forced fumbles."
     }
    ],
    "evidence": [
@@ -2175,12 +2175,12 @@
     "S01-P00-C00",
     "S01-P01-C03"
    ],
-   "answer": "Casimir Pulaski was born in Warsaw in 1745.",
+   "answer": "1745",
    "refused": false,
    "passed": true,
    "claims": [
     {
-     "claim": "Casimir Pulaski was born in Warsaw in 1745.",
+     "claim": "Casimir Pulaski was born in 1745.",
      "source_id": "S01-P00-C01",
      "quote": "Casimir Pulaski, a Polish general and hero of the American Revolutionary War, was born here in 1745."
     }
@@ -2502,7 +2502,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Nikola Tesla was a Serbian American inventor.",
+     "claim": "Nikola Tesla was of Serbian ethnicity.",
      "source_id": "S03-P00-C00",
      "quote": "Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor..."
     }
@@ -2556,7 +2556,7 @@
     {
      "claim": "Tesla worked for Thomas Edison.",
      "source_id": "S03-P01-C00",
-     "quote": "work for Thomas Edison in New York City."
+     "quote": "to work for Thomas Edison in New York City."
     }
    ],
    "evidence": [
@@ -2686,7 +2686,7 @@
     {
      "claim": "Computational complexity theory focuses on classifying computational problems according to their inherent difficulty.",
      "source_id": "S04-P00-C00",
-     "quote": "Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty."
+     "quote": "Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty, and relating those classes to each other."
     }
    ],
    "evidence": [
@@ -2710,7 +2710,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Mathematical models of computation are introduced to study these problems and quantify the amount of resources needed to solve them.",
+     "claim": "Mathematical models of computation are used to study problems and quantify the amount of resources needed to solve them.",
      "source_id": "S04-P01-C00",
      "quote": "theory formalizes this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage."
     }
@@ -2974,7 +2974,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Support agents can send a reset link that stays valid for 4 hours to an Atlas workspace owner who is locked out.",
+     "claim": "Support agents can send a reset link that stays valid for 4 hours.",
      "source_id": "R01",
      "quote": "Support agents can send a reset link that stays valid for 4 hours to an Atlas workspace owner who is locked out."
     }

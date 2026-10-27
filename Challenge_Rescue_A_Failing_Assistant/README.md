@@ -1,6 +1,6 @@
 # Final challenge: How to rescue a failing RAG assistant
 
-**CPU | API key: `OPENAI_API_KEY` (chat and embedding calls) | Self-study, after Day 2**
+**CPU | API key: `OPENAI_API_KEY` (chat and embedding calls) | Optional, after Lab 11**
 
 ## Goal
 
@@ -80,7 +80,7 @@ for claim in reply.claims:
     print(" ", claim.source_id, "|", claim.quote)
 ```
 
-Lab 04's `trace()` records the same stages for Day 1's plain pipeline (k=5 and a 400-token pack), with the prompt hash
+Lab 04's `trace()` records the same stages for the plain pipeline of Labs 01 to 04 (k=5 and a 400-token pack), with the prompt hash
 and the tokens billed. Run it too when you suspect packing: Lab 05 showed that the two pipelines give the answer step
 different evidence.
 

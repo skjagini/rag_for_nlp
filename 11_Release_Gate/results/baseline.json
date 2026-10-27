@@ -11,7 +11,7 @@
   "rerank_model": "gpt-4o-mini",
   "chat_endpoint": "https://api.openai.com/v1",
   "embed_endpoint": "https://api.openai.com/v1",
-  "run_date": "2026-10-24",
+  "run_date": "2026-10-27",
   "documents": [
    {
     "id": "S00-P00-C00",
@@ -1993,12 +1993,12 @@
     "S00-P01-C01",
     "S00-P02-C00"
    ],
-   "answer": "The AFC was represented by the Denver Broncos at Super Bowl 50.",
+   "answer": "The Denver Broncos represented the AFC at Super Bowl 50.",
    "refused": false,
    "passed": true,
    "claims": [
     {
-     "claim": "The AFC champion Denver Broncos",
+     "claim": "The Denver Broncos represented the AFC at Super Bowl 50.",
      "source_id": "S00-P00-C00",
      "quote": "The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn their third Super Bowl title."
     }
@@ -2024,7 +2024,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "The NFC champion Carolina Panthers",
+     "claim": "The NFC champion was the Carolina Panthers.",
      "source_id": "S00-P00-C00",
      "quote": "the National Football Conference (NFC) champion Carolina Panthers"
     }
@@ -2045,14 +2045,14 @@
     "S00-P02-C00",
     "S00-P00-C00"
    ],
-   "answer": "Cam Newton was named the NFL Most Valuable Player (MVP).",
+   "answer": "Cam Newton was named the NFL Most Valuable Player.",
    "refused": false,
    "passed": true,
    "claims": [
     {
-     "claim": "Cam Newton was named the NFL Most Valuable Player (MVP)",
+     "claim": "Cam Newton was named the NFL Most Valuable Player (MVP).",
      "source_id": "S00-P01-C00",
-     "quote": "quarterback Cam Newton was named the NFL Most Valuable Player (MVP)"
+     "quote": "quarterback Cam Newton was named the NFL Most Valuable Player (MVP)."
     }
    ],
    "evidence": [
@@ -2180,7 +2180,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Casimir Pulaski was born in 1745.",
+     "claim": "Casimir Pulaski was born in Warsaw in 1745.",
      "source_id": "S01-P00-C01",
      "quote": "Casimir Pulaski, a Polish general and hero of the American Revolutionary War, was born here in 1745."
     }
@@ -2201,12 +2201,12 @@
     "S01-P01-C01",
     "S01-P02-C00"
    ],
-   "answer": "There are over 100 different species of trees in the Saxon Garden.",
+   "answer": "Over 100 different species of trees can be found in the Saxon Garden.",
    "refused": false,
    "passed": true,
    "claims": [
     {
-     "claim": "There are over 100 different species of trees in the Saxon Garden.",
+     "claim": "There are over 100 different species of trees",
      "source_id": "S01-P01-C00",
      "quote": "There are over 100 different species of trees"
     }
@@ -2260,7 +2260,7 @@
     {
      "claim": "The Vistula river's environment changes strikingly.",
      "source_id": "S01-P02-C00",
-     "quote": "About 15 kilometres (9 miles) from Warsaw, the Vistula river's environment changes strikingly and features a perfectly preserved ecosystem, with a habitat of animals that includes the otter, beaver and hundreds of bird species."
+     "quote": "About 15 kilometres (9 miles) from Warsaw, the Vistula river's environment changes strikingly and features a perfectly preserved ecosystem."
     }
    ],
    "evidence": [
@@ -2414,19 +2414,14 @@
     "S02-P00-C00",
     "S02-P01-C00"
    ],
-   "answer": "The original meaning of the word Norman is \"Northman\" or \"Norseman, Viking.\"",
+   "answer": "The original meaning of the word Norman is \"Norseman, Viking.\"",
    "refused": false,
    "passed": true,
    "claims": [
     {
-     "claim": "The original meaning of the word Norman is \"Northman\" or \"Norseman, Viking.\"",
+     "claim": "The original meaning of the word Norman is \"Norseman, Viking.\"",
      "source_id": "S02-P02-C00",
-     "quote": "to mean \"Norseman, Viking\"."
-    },
-    {
-     "claim": "The word Norman comes from \"Norseman.\"",
-     "source_id": "S02-P00-C00",
-     "quote": "\"Norman\" comes from \"Norseman\"."
+     "quote": "to mean \"Norseman, Viking\""
     }
    ],
    "evidence": [
@@ -2502,7 +2497,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Nikola Tesla was a Serbian American inventor.",
+     "claim": "Nikola Tesla was of Serbian ethnicity.",
      "source_id": "S03-P00-C00",
      "quote": "Nikola Tesla (Serbian Cyrillic: Никола Тесла; 10 July 1856 – 7 January 1943) was a Serbian American inventor..."
     }
@@ -2528,7 +2523,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Tesla emigrated to the United States in 1884.",
+     "claim": "Tesla emigrated to the United States in 1884",
      "source_id": "S03-P01-C00",
      "quote": "emigrating to the United States in 1884"
     }
@@ -2554,7 +2549,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Thomas Edison in New York City.",
+     "claim": "Tesla worked for Thomas Edison.",
      "source_id": "S03-P01-C00",
      "quote": "to work for Thomas Edison in New York City."
     }
@@ -2606,9 +2601,9 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Tesla conducted high-voltage experiments.",
+     "claim": "Tesla pursued his ideas in high-voltage experiments.",
      "source_id": "S03-P02-C00",
-     "quote": "high-voltage, high-frequency power experiments"
+     "quote": "his high-voltage, high-frequency power experiments in New York and Colorado Springs"
     }
    ],
    "evidence": [
@@ -2686,7 +2681,7 @@
     {
      "claim": "Computational complexity theory focuses on classifying computational problems according to their inherent difficulty.",
      "source_id": "S04-P00-C00",
-     "quote": "Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty."
+     "quote": "Computational complexity theory is a branch of the theory of computation in theoretical computer science that focuses on classifying computational problems according to their inherent difficulty, and relating those classes to each other."
     }
    ],
    "evidence": [
@@ -2710,7 +2705,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "Mathematical models of computation are introduced to study problems and quantify the amount of resources needed to solve them.",
+     "claim": "Mathematical models of computation are used to study problems and quantify the amount of resources needed to solve them.",
      "source_id": "S04-P01-C00",
      "quote": "theory formalizes this intuition, by introducing mathematical models of computation to study these problems and quantifying the amount of resources needed to solve them, such as time and storage."
     }
@@ -2736,7 +2731,7 @@
    "passed": true,
    "claims": [
     {
-     "claim": "The two fields of theoretical computer science that closely mirror computational complexity theory are analysis of algorithms and computability theory.",
+     "claim": "The two fields are analysis of algorithms and computability theory.",
      "source_id": "S04-P02-C00",
      "quote": "Closely related fields in theoretical computer science are analysis of algorithms and computability theory."
     }
@@ -2783,7 +2778,7 @@
     "H04",
     "H01"
    ],
-   "answer": "Atlas reset links expire after 30 minutes.",
+   "answer": "Atlas reset links remain valid for 30 minutes.",
    "refused": false,
    "passed": true,
    "claims": [

@@ -8,9 +8,10 @@ questions, with its cost | In class**
 ## Goal
 
 Add keyword search and a reranker to the vector search, and decide from a question-by-question comparison whether
-each change helps and what it costs. The moment that teaches it: hybrid search, a common design, does not beat the
-vector search on these questions and moves a few the wrong way. The reranker fixes one question worded unlike its
-answer, adds a model call to every question, and sometimes names a chunk it was never given.
+each change helps. The moment that teaches it: **hybrid search**, a common design that runs a keyword search beside
+the vector search and merges the two lists, gains one of the 30 development questions at rank 1 and loses three, a split that
+chance explains as well as a real effect. Then one model call reads the candidates for a customer's question that
+both searches and their merge rank wrong, and puts the answering policy first.
 
 You can now measure the pipeline question by question and know how far to trust a judge. What you cannot yet say
 is whether a common retrieval change, keyword search or a reranker, makes this pipeline better: this lab tries
@@ -18,15 +19,15 @@ both and decides from the questions each one gains and loses.
 
 ## What you will learn
 
-- How BM25 scores a chunk by the words it shares with a question, by hand and with `bm25s`.
-- How reciprocal rank fusion combines two ranked lists without adding scores on different scales.
-- How to compare a change with the baseline question by question in a paired table, and what a sign test says.
-- How to rerank candidates with a chat model and check the returned IDs in code.
+- How BM25, the classic keyword ranking, scores a chunk from the words it shares with a question.
+- How reciprocal rank fusion merges two ranked lists by their ranks instead of their scores.
+- How to compare a change with the baseline question by question, and read a sign test on the questions that moved.
+- How to rerank candidates with a chat model, and check in code that the reply names only the candidates.
 - How to price a retrieval stage in tokens, dollars and seconds.
 - How to write a decision from the paired results and the cost.
 
-**In class:** Parts A to D, and the decision table at the end of Part G (*Write the decision*). Parts E to H are
-self-study.
+**In class:** Parts B to D, then Part E up to Checkpoint E (one rerank call). Part A, the ID check after
+Checkpoint E, and Parts F to H are self-study.
 
 ## Coming from
 
@@ -36,20 +37,21 @@ Lab 05's baseline on the same questions, one row per question.
 
 ## What you will do
 
-**Part A: Score the five policies with BM25 by hand.** The formula in plain Python, the words each policy shares with
-a paraphrased question, then `bm25s` set up to give the same order.
-**Part B: Search the corpus with BM25.** A BM25 index of the 277 records beside the vector store, the MVP question,
-and both searches on the 30 questions.
-**Part C: Fuse the two lists with reciprocal rank fusion.** A three-item example by hand, `rrf()`, and why fusion
-pushes the Norman answer down.
+**Part A: Score the five policies with BM25 by hand (self-study).** The BM25 formula in plain Python, the words each
+policy shares with a paraphrased question, then `bm25s` set up to give the same order.
+**Part B: Search the corpus with BM25.** Dense and sparse retrieval, the BM25 formula read term by term, a BM25 index of
+the 277 records beside the vector store, the MVP question, and both searches on the 30 questions.
+**Part C: Fuse the two lists with reciprocal rank fusion.** The RRF formula, a three-item example by hand, `rrf()`, and
+why fusion pushes the Norman answer down.
 **Part D: Compare hybrid search with the baseline, question by question.** The paired table at hit@3 and hit@1, the
-moved questions, and the sign test.
-**Part E: Rerank the candidates with a chat model (self-study).** One listwise rerank call with `RERANK_MODEL`, its tokens and
-seconds, and the check that the reply holds exactly the candidate IDs.
-**Part F: Rerank the 30 questions and count the cost (self-study).** Every reply checked, one question repeated five times, the
-paired table, the lost question read, and the cost per question.
-**Part G: Try both changes on Atlas questions and decide (self-study).** Five Atlas questions from Labs 01 and 04, then the
-decision table and line.
+moved questions, and the sign test as a formula and in code.
+**Part E: Rerank the candidates with a chat model.** Two-stage retrieval, where the recovery question's answer sits in
+each list, one listwise rerank call with `RERANK_MODEL` that puts it first, and its tokens and seconds. Self-study at
+the end: the check that the reply holds exactly the candidate IDs.
+**Part F: Rerank the 30 questions and count the cost (self-study).** Every reply checked, one question repeated five
+times, the paired table, the lost question read, and the cost per question.
+**Part G: Try both changes on Atlas questions and decide (self-study).** Five Atlas questions from Labs 04 and 06, then
+the decision table and line.
 **Part H: Keep the pieces in `shared/hybrid.py` (self-study).** The module read and checked against the hand versions.
 **Going further.** Maximal marginal relevance on the store.
 **Challenge.** Repair a rejected ranking. Optional: check whether the candidate order sways the reranker.
@@ -59,31 +61,20 @@ decision table and line.
 | After | You should see |
 |---|---|
 | Part A | H01 1.705, H02 1.519, H04 1.412; H02 shares `['atlas', 'the']`; `bm25s` ratio 2.20 for every policy |
-| Part B | 4,083 distinct words; BM25 puts `S00-P02-C00` first for the MVP question; vector hit@1 29, hit@3 30; BM25 22 and 28 |
+| Part B | 4,083 distinct words; for the MVP question vector ranks the answer 2nd, BM25 1st (9.805); vector hit@1 29, hit@3 30; BM25 22 and 28 |
 | Part C | A 0.032522, B 0.032266, C 0.016129; the Norman answer fourth with 0.0164 |
 | Part D | hybrid hit@1 27, hit@3 29; hit@3 lost 1 (Norman); hit@1 gained 1, lost 3; p = 1.000 and 0.625 |
-| Part E | reranked `H02`, `H01`, `H04`; 561 tokens in; `exactly the candidate IDs: True` |
-| Part F | 29 of 30 replies pass; the Saxon Garden reply names `S02-P00-C02`, and fails in 3 of 5 repeats; hit@1 gained 1 (MVP), lost 1; 961 tokens and about 1,179 ms per question against about 220 ms for the vector search |
+| Part E | H02 at rank 3 (vector), 6 (BM25), 4 (hybrid); reranked `H02`, `H01`, `H04`; 561 tokens in; self-study: `exactly the candidate IDs: True` |
+| Part F | 28 of 30 replies pass (the Tesla reply names `S03-P00-C01`, an ID not in the corpus); the Saxon Garden question fails 4 of 5 repeats; hit@1 gained 1 (MVP), lost 1; 961 tokens and about 1,600 ms per question against about 230 ms for the vector search |
 | Part G | right first: vector 3 of 5, hybrid 3 of 5, reranked 4 of 5; the mobile-app reply fails the check (left out `['H03']`) |
 | Part H | same BM25 and fused lists 30 of 30; p = 0.625; `['H02', 'H01', 'H04']` |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 18 Oct 2026
-(macOS, Python 3.13.5, a fresh `uv sync`; `bm25s` 0.3.13, `langchain-core` 1.6.12, `langchain-openai` 1.7.2). BM25,
-fusion and the sign test give the same numbers on every run; the vector search can move a score by a few thousandths;
-the reranker's replies vary. Compare the counts and which checks pass, not every millisecond.
-
-**Across runs.** We ran the 30-question rerank pass 11 times on `gpt-4o-mini` while building the lab: 0 to 3 replies
-failed the ID check per pass, and the Saxon Garden reply named a chunk that was not a candidate in 9 of the 11 (in 11
-of 15 repeats). The paired result was the same in every pass: hit@3 unchanged, hit@1 gained the MVP question and lost
-the computational measure question.
-
-**On the other routes.** The `pip` route (Python 3.12.11, which installed `bm25s` 0.3.14) gave the same BM25, fusion
-and paired numbers; 28 of 30 replies passed, and 4 of 5 Saxon Garden repeats failed. With `CHAT_MODEL`, `JUDGE_MODEL`
-and `RERANK_MODEL` set to `gpt-6-luna` and `REASONING_EFFORT=none` the lab runs unchanged, and the reranker behaves
-better: every reply passed the ID check (30 of 30, and 5 of 5 repeats), it gained the MVP question and lost none
-(hit@1 30 of 30), and it put the right policy first for 5 of 5 Atlas questions, the mobile-app one included. It is
-slower, 1,645 ms per question, for about the same tokens (960 in, 80 out). The dollar line uses the prices in
-`models.env`, which are `gpt-4o-mini`'s: change `CHAT_PRICE_INPUT` and `CHAT_PRICE_OUTPUT` with the model.
+**About the saved outputs.** They come from `gpt-4o-mini` and `text-embedding-3-small`. BM25, fusion and the sign test
+give the same numbers every run; the vector search can move a score by a few thousandths; the reranker's replies vary.
+The rerank call in Part E put H02 first in every call we made (18 of 18). In Part F's 30-question pass, 0 to 3 replies
+fail the ID check per pass: most name a real chunk that was not a candidate, and one named an ID that does not exist.
+The dollar line uses the prices in `models.env`: change `CHAT_PRICE_INPUT` and `CHAT_PRICE_OUTPUT` when you change the
+model.
 
 ## Before you start
 
@@ -101,8 +92,10 @@ JSON mode without the word JSON, and `REASONING_EFFORT` sent to a reranker that 
 ## Resources
 
 - [`bm25s`](https://github.com/xhluca/bm25s): the BM25 package, its tokenizer options and scoring variants
+- [Okapi BM25](https://en.wikipedia.org/wiki/Okapi_BM25): the formula, IDF, `k1` and `b`
 - [Cormack, Clarke and Büttcher (2009)](https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf): reciprocal rank
-  fusion
+  fusion and `c = 60`
+- [Sign test](https://en.wikipedia.org/wiki/Sign_test): the test on the questions that moved
 - [Elasticsearch: reciprocal rank fusion](https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion)
   and [Qdrant: hybrid queries](https://qdrant.tech/documentation/concepts/hybrid-queries/): hybrid search in a search
   engine and a vector database

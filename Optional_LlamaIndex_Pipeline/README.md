@@ -58,12 +58,10 @@ Lab 05's LangChain results, and the defaults each framework sets for you.
 | Part F | `BadRequestError: Error code: 400 ... 'tool_choice' ...`; *Nikola Tesla was born in the year 1856.*, quote found; *Insufficient evidence.* for the Moon |
 | Part G | both refuse 0 of 30, 30 and 32 claims, every quote found; same cited IDs 28 of 30, same text 24 of 30 |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026
-(macOS, Python 3.13.5, this lab's own environment made with `uv`: `llama-index-core` 0.14.25,
-`llama-index-llms-openai-like` 0.8.1, `llama-index-embeddings-openai-like` 0.4.0, `openai` 2.54.0). Model replies vary
-between runs: compare the counts and which checks pass, not every word.
-
-**On the other routes.** The `pip` route (Python 3.12.11, `openai` 2.54.0) gave the same search results and the same checks. With `CHAT_MODEL`, `JUDGE_MODEL` and `RERANK_MODEL` set to `gpt-6-luna` and `REASONING_EFFORT=none`, the Completions cell in Part B prints `TypeError: Completions.create() got an unexpected keyword argument 'reasoning_effort'` instead of a reply; every later part runs unchanged. Its answers vary more in wording and in the number of claims, as in Lab 05.
+**About the saved outputs.** They come from `gpt-4o-mini` and `text-embedding-3-small`, in this lab's own environment
+(see below). Model replies vary from run to run, so compare the counts and which checks pass, not every word. On a
+reasoning model (`REASONING_EFFORT` set), the Completions cell in Part B prints `TypeError: Completions.create() got an
+unexpected keyword argument 'reasoning_effort'` instead of a reply; every later part runs unchanged.
 
 ## Before you start
 
@@ -101,8 +99,7 @@ between runs: compare the counts and which checks pass, not every word.
 - **Cost:** four embeddings of the corpus (about 21,000 tokens each) and about 70 short chat calls, well under one US
   cent on `gpt-4o-mini`; the challenge adds one more embedding of the corpus.
 
-We ran the `uv` and `pip` routes on macOS. We could not test the Colab and Codespaces steps here (no Colab session or
-codespace from this machine).
+The Colab and Codespaces steps for this lab's own environment are not tested.
 
 The notebook ends with a troubleshooting table: the repository's kernel chosen by mistake, a model built without
 `api_key`, `OpenAILike` left on the Completions endpoint (two errors), `output_cls` without structured outputs, and the

@@ -1,7 +1,5 @@
 # Chinook support handbook
 
-Built from the 20 policy files in data/corpus/ by tools/D01/samples/s23_handbook_build_offline.py. Do not edit: rebuild it from the corpus.
-
 ## Accounts
 Source: policy_accounts.md
 

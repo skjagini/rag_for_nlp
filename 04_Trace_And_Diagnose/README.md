@@ -60,13 +60,9 @@ questions traced once, saved and read back.
 | Part E | with oracle context: mobile app right 5 of 5; complexity right in other words 5 of 5, screen 0 of 5; temporary accounts still refused 5 of 5, answered 5 of 5 without the abstention line |
 | Part F | 30 traces read back the same; `baseline-gpt-4o-mini-<hash>.json`; 29 of 30 pass the screen |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 26 Oct 2026
-(macOS, Python 3.13.5, a fresh `uv sync`, `openai` 3.35.1). Model replies vary between runs: compare which questions
-fail and at which stage, not every word. Earlier runs (18 Oct 2026) on the `pip` route (Python 3.12.11) gave the same
-three failures, stages and oracle results. With `gpt-6-luna` and `REASONING_EFFORT=none` the lab runs unchanged and
-the screen flags two of 34, both right in other words (the complexity question and the Vistula question's *otters,
-beavers*): on that model Part E shows two incomplete labels and no pipeline failure, and the baseline passes 28 of 30.
-Which failures you see depends on the model; the way to find their stage does not.
+**About the saved outputs.** They come from `gpt-4o-mini` and `text-embedding-3-small`. Model replies vary from run to
+run, so compare the pattern (which questions fail and at which stage), not every word. On another model the failures can move to other questions; the checks, and the way to measure them,
+stay the same.
 
 ## Before you start
 

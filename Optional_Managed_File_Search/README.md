@@ -55,23 +55,10 @@ against 3 on ten questions, in tokens and found answers.
 | Part E | `['file_search_call', 'message']`, 20 results read, *Denver Broncos* citing `S00-P00.txt`, 5,515 input tokens; 51,532 against 18,422 input tokens, answer found 8 and 8 of 10 |
 | Last section | 128 files and 3 stores in the account; the store deleted and 120 of 120 files still there; then 8 files and 2 stores, 0 of our 120 files and 0 of our 1 stores left |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026
-(macOS, Python 3.13.5, a fresh `uv sync`; `openai` 3.35.1), with `MANAGED_SEARCH=on`. The same day the notebook ran
-on the `pip` route (Python 3.12.11, `openai` 3.37.0), with `gpt-6-luna` and `REASONING_EFFORT=none`, and once with
-the switch empty, where it finished with no error and the hosted cells printed nothing. Model replies and the
-service's scores vary a little between runs: compare the counts, not every number.
-
-**Across runs.** In seven runs that day (one exploration run, two runs each of the student and solved notebooks,
-`pip` and `gpt-6-luna`) the store with its ranker gave hit@3 30 and hit@1 28 every time, and with `ranker='none'`
-hit@3 20 to 22 and hit@1 12 or 13. The two failed answers in Part E were the same two questions in every `gpt-4o-mini` run.
-
-**On the other routes.** The `pip` route gave the same counts as the saved run (`ranker='none'` at hit@3 22), and
-51,808 against 18,436 input tokens, 8 and 8 answers found. With `CHAT_MODEL`, `JUDGE_MODEL` and `RERANK_MODEL` set to
-`gpt-6-luna` and `REASONING_EFFORT=none` the lab runs unchanged; Parts A to D do not use the chat model and gave the
-same results (`ranker='none'`: hit@3 21, hit@1 12). In Part E luna read more tokens (6,567 for the first question;
-63,546 against 25,791 for the ten) and found the accepted answer for 9 of 10 either way: it named the Krasiński Palace
-Garden, and still answered the computational question with *computational complexity theory*. The dollar column uses
-the price in `models.env`, which is `gpt-4o-mini`'s: change `CHAT_PRICE_INPUT` with the model.
+**About the saved outputs.** They come from `gpt-4o-mini` and `text-embedding-3-small`, with `MANAGED_SEARCH=on`. Model
+replies and the service's scores vary a little between runs, so compare the counts, not every number. Over seven runs
+the store with its ranker gave hit@3 30 and hit@1 28 every time, and with `ranker='none'` hit@3 20 to 22 and hit@1 12
+or 13. The dollar column uses the price in `models.env`: change `CHAT_PRICE_INPUT` when you change the model.
 
 ## Before you start
 

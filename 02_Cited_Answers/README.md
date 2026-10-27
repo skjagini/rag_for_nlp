@@ -68,18 +68,10 @@ past.
 | Part F | the planted H99 ranks first; *24 hours* in 5 of 5, every quote found in H99; with tags, 5 of 5 |
 | Part G | the module: Tesla answered with its quote found, *Insufficient evidence.* for the Moon |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 26 Oct 2026
-(macOS, Python 3.13.5, a fresh `uv sync`). On 24 Oct 2026 the notebook ran on the `pip` route (Python 3.12.11) and with
-`gpt-6-luna` and `REASONING_EFFORT=none`. Model replies vary between runs: compare the pattern (which answers
-abstain, which checks pass), not every word.
-
-**On the other routes.** The `pip` run showed the same pattern in every part. With
-`gpt-6-luna` the lab runs unchanged, and the model fails in different places: the Moon question named Armstrong in 4 of
-5 runs in Part C, each time without a citation, so the ID check failed it (1 to 3 of 5 cited in earlier runs); the abstention line did not refuse the temporary-accounts question (0 of 5);
-without the abstention line its JSON answers to the Moon question named him in 3 of 5, only once with a quote (in
-earlier runs 0 of 5), so Part E's blind spot appeared once; and it ignored the planted order in Going further (30 minutes, 5 of 5). The planted
-policy update in Part F fooled both models in 5 of 5 runs. Which failures you see depends on the model; the checks and
-the way to measure them do not.
+**About the saved outputs.** They come from `gpt-4o-mini` and `text-embedding-3-small`. Model replies vary from run to
+run, so compare the pattern (which answers abstain, which checks pass), not every word. The planted policy update in Part F
+fooled every model we tried, in every run. On another model the failures can move to other questions; the checks, and the way to measure them,
+stay the same.
 
 ## Before you start
 

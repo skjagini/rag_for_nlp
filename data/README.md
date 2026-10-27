@@ -46,10 +46,10 @@ Two limits to keep in mind when you read a score:
   these labels are not a complete list of relevant chunks.
 - The 30 questions come from only five articles, so one article's quirks repeat six times.
 
-A second set of 30 questions from other articles is held back by the instructor and never scored in the labs: it
+A second set of 30 questions from other articles is held back and never scored in the labs: it
 is the set you would score once, after every choice is frozen.
 
 **Licence.** The SQuAD passages and questions are from Rajpurkar et al., SQuAD 1.1, and Wikipedia contributors,
 under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Source: the
 [official SQuAD dataset](https://rajpurkar.github.io/SQuAD-explorer/). The text is unchanged; the IDs and chunk
-records are additions. The Atlas and Boreal policies are original material written for this course.
+records are additions. The Atlas and Boreal policies are original material written for these labs.

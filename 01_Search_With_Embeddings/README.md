@@ -26,7 +26,7 @@ search and measures it.
 - How to search the corpus with `shared/search.py`, which keeps these steps for the labs after this one.
 
 **In class:** Parts A, B and C, then Part E up to the hit@3 count. The rest of Part E and Parts D, F and G are
-self-study. Run Part D's cells in class without stopping on them, because Part E ranks the vectors Part D builds.
+self-study. Run Part D's cells without stopping on them, because Part E ranks the vectors Part D builds.
 
 ## Coming from
 
@@ -67,11 +67,8 @@ answering policy lands.
 | Part G | the module's vectors within a few thousandths of `D`, hit@3 30 of 30 |
 | Going further | 256 numbers: hit@3 30 of 30, hit@1 27 of 30 |
 
-The saved outputs come from `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026 (macOS, Python
-3.13.5, a fresh `uv sync`). The same day the notebook gave the same counts with `pip` on Python 3.12.11 and with
-`CHAT_MODEL`, `JUDGE_MODEL` and `RERANK_MODEL` set to `gpt-6-luna` and `REASONING_EFFORT=none` (this lab calls no
-chat model, so only the stamp changed). Scores can move by a few thousandths between runs (up to 0.0044 in ours);
-check the order and the counts.
+**About the saved outputs.** They come from `text-embedding-3-small`; this lab calls no chat model. Scores can move by
+a few thousandths between runs, so check the order and the counts, not the last decimal.
 
 ## Before you start
 

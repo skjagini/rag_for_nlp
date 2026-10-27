@@ -62,35 +62,21 @@ it.
 | Part D | seven functions, each `same as in the notebook: True` |
 | Part E | 38 of 42 passed, 0 held back; `5 passed`; gained A01, A02, A03, lost none |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026
-(macOS, Python 3.13.5, a fresh `uv sync --group capstone`; `gradio` 6.30.0, `gradio_client` 2.7.2, `langchain-core`
-1.6.12, `langchain-openai` 1.7.2, `pytest` 9.1.1). Model replies vary between runs: compare who read what and which
-tests pass, not every word.
-
-**Across our runs.** Thirteen runs of Part E on `gpt-4o-mini`, the saved run among them. The service passed 38 of 42
-and the gate said `5 passed` in all thirteen, gaining A01 to A03 and losing nothing. The customer who said *agent* read
-R01 and got *4 hours* in every request of the runs we read, with the field shown or hidden, because the search, not the
-model, decides what reaches the pack.
+**About the saved outputs.** They come from `gpt-4o-mini` and `text-embedding-3-small`. Model replies vary from run to
+run, so compare the pattern (who read what and which tests pass), not every word. Over thirteen runs the
+service passed 38 of 42 and the gate said `5 passed` every time. The customer who said *agent* read R01 and got *4
+hours* every time, because the search, not the model, decides what reaches the pack.
 
 The page holds back an answer whose quotes fail the check: the visitor sees *This answer could not be checked against
 its sources, so it is not shown.* and the sources, and the trace file keeps the reply. A guard like that must be
-measured on the answers it should let through. Up to 19 Oct, the check failed one right answer in four of seven runs:
-*Von Miller forced two fumbles in Super Bowl 50.*, whose quote the model shortened with `...` (2 to 8 of 10 times when
-asked again and again), so the page then showed failing answers under a warning instead. Since Lab 02's check accepts
-a cut whose parts are in the line in order, no answer failed it in any run of 24 Oct: three runs with the warning page,
-then four with the page that holds back (uv, its solved copy, pip and `gpt-6-luna`), held back 0 of 42 each time. A rule
-against cutting quotes (Task 2's line) had also stopped the Von Miller failure, but moved it to another right answer
-(*When did Tesla discover the possibility of wireless connectivity?*, a quote with one word added) in both runs we
-tried. A fix can move a failure rather than remove it, so run the whole set after any change to the rules.
+measured on the answers it should let through. An earlier, stricter quote check failed a right answer in four of seven
+runs: *Von Miller forced two fumbles in Super Bowl 50.*, whose quote the model shortened with `...`. Since Lab 02's check
+accepts a cut whose parts are in the line in order, the page has held back 0 of 42 in every run. A rule against
+cutting quotes (Task 2's line) also stopped the Von Miller failure, but moved it to another right answer. A fix can move
+a failure rather than remove it, so run the whole set after any change to the rules.
 
-**On the other routes.** The `pip` run (Python 3.12.11; `openai` 3.37.0 and `langchain-core` 1.7.0, newer than the
-lock) gave the same results in every part: 38 of 42, none held back, `5 passed`. With `gpt-6-luna` and `REASONING_EFFORT=none` the lab runs unchanged and the access moment is the same (R01 and *4
-hours* in 6 of 6 for the customer who said *agent*). Its answers are worded differently, and casey's runbook question,
-which an earlier `gpt-6-luna` run often refused, got *30 minutes* in 3 of 3. Through the page it passed 37 of 42, with
-none held back. It gained G05, G08 and G09, which `gpt-4o-mini` fails, and lost four questions: G03, a refusal it now
-answers, the Vistula animals, the meaning of *Norman* (answered with curly quotes that the reference check misses) and
-a complexity question. So the gate says `2 failed, 3 passed` (refusals and regressions). Lab 11's saved baseline comes
-from `gpt-4o-mini`: to judge a model change, run Lab 11 on the new model first and compare with that baseline.
+To judge a model change, run Lab 11 on the new model first and compare with that baseline: Lab 11's saved baseline
+comes from `gpt-4o-mini`.
 
 ## Before you start
 

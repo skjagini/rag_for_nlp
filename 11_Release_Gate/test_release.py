@@ -25,7 +25,7 @@ RECORDS = json.loads((HERE / "resources" / "constructed-records.json").read_text
 POLICIES = json.loads((ROOT / "data" / "support-case.json").read_text(encoding="utf-8"))
 USERS = {user: set(levels) for user, levels in RECORDS["users"].items()}     # what each user may read
 CURRENT = {doc["source_id"]: doc["version"] for doc in POLICIES + RECORDS["restricted"]}
-MIN_QUOTES_FOUND = 0.95
+MIN_QUOTES_FOUND = 0.95   # quotes found / quotes checked must reach this; picked before any run (notebook, Part E)
 REVIEWED = {}   # question_id: why losing it is accepted, written after reading its rows
 
 

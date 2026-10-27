@@ -1,5 +1,5 @@
 {
-  "about": "Constructed for Lab 11, not real policies: who may read what (users), four restricted records for the Atlas support team, the April version of H02 that the October policy replaced, and four release cases asked as a support agent or a customer. The five course policies in data/support-case.json are unchanged.",
+  "about": "Constructed for Lab 11, not real policies: who may read what (users), four restricted records for the Atlas support team, the April version of H02 that the October policy replaced, and four release cases asked as a support agent or a customer. The five policies in data/support-case.json are unchanged.",
   "users": {
     "customer": ["public"],
     "agent": ["public", "staff", "internal"]

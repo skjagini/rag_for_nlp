@@ -57,29 +57,12 @@ table, and what the notebook cost.
 | Part D | eight questions lost; passage alone 24 of 24, its article 21, whole corpus 0; moved first 24, to the middle 11, last 18 |
 | Part E | 97,564 tokens a question at five times the corpus; seven copies (136,262 tokens) refused at 128,000; the notebook used 3,315,159 input tokens, 0.36 dollars |
 
-The saved outputs come from `gpt-4o-mini` and `text-embedding-3-small` at `https://api.openai.com/v1` on 24 Oct 2026
-(macOS, Python 3.13.5, a fresh `uv sync`; `langchain-core` 1.6.12, `langchain-openai` 1.7.2). The same day the notebook ran on
-the `pip` route (Python 3.12.11) and with `gpt-6-luna` and `REASONING_EFFORT=none`. Model replies vary between runs:
-compare the counts and which answers fail, not every word, and never one run's seconds as the latency.
-
-**Across our runs.** Six runs on `gpt-4o-mini`: four of the whole notebook, the saved run among them, and two of Part B
-alone. Retrieval passed 31 of 34 in all six; the whole corpus passed 23 to 25, and the no-evidence
-route 18 or 19. With the corpus first, 21 to 23 passed. In Part D the passage alone and the passage moved first passed
-in every run; inside the whole corpus, in its own place, it passed in 0 to 2 runs per notebook run, and the middle (6
-to 12) and last (12 to 18) moved between runs. Median seconds: retrieval 1.22 to 1.43, whole corpus 1.38 to 1.70.
-Each notebook run cost 0.29 to 0.36 dollars. On 24 Oct 2026 three more runs (the saved one, the solved notebook and
-pip) gave the whole corpus 23 of 34 each and lost eight questions in Part D instead of six; run within the hour after
-another, they cached far more of the question-first prompts (470,016 and 432,896 tokens against 19,584).
-
-**On the other routes.** The `pip` run gave the same pattern: 19, 31 and 23 of 34; eight questions lost; in Part D the passage alone 24 of 24,
-inside the whole corpus 1 of 24, moved first 24 of 24. With `gpt-6-luna` the lab runs unchanged, and four things
-differ. It answers better from the whole corpus: 28 of 34 against 32 for retrieval (16 with no evidence), 2 refused;
-four questions were lost, and in Part D the whole corpus passed 1 of 12 runs, moved last 12 of 12, first 8 of 12, the
-middle 8 of 12. It cached nothing with the corpus first (0 of 669,696 input tokens), so that order saved nothing (30
-of 34 passed). It answered the seven copies (136,262 tokens) instead of raising the error: its window is larger. And
-the dollars it prints are `gpt-4o-mini`'s prices from `models.env`; `gpt-6-luna` is listed at 0.10 and 0.50 dollars
-per million input and output tokens, so set the `CHAT_PRICE_*` lines when you switch. In Going further, without the
-abstention line, it passed 10 of 12 runs and still declined the Moon question.
+**About the saved outputs.** They come from `gpt-4o-mini` and `text-embedding-3-small`. Model replies vary from run to
+run, so compare the pattern (the counts and which answers fail), not every word. Never take one run's seconds as
+the latency. Over six runs, retrieval passed 31 of 34 every time, the whole corpus 23 to 25 and no evidence 18 or 19,
+and each notebook run cost about 0.30 to 0.36 US dollars. OpenAI keeps a prompt cache for a while, so a run within the
+hour after another reports far more cached tokens. The dollars printed use the prices in `models.env`: change the
+`CHAT_PRICE_*` lines when you change the model.
 
 ## Before you start
 
